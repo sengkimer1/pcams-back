@@ -1,9 +1,8 @@
-import { Pool,QueryResult } from "pg";
+import { Pool } from "pg";
 import bcrypt from "bcrypt";
 import { IUser, IUserRepository, IUserWithoutPassword } from "../interfaces/userinterfaces";
 import { queryWithLogging } from "./utils";
-import { v4 as uuidv4 } from 'uuid';
-
+import { v4 as uuidv4 } from "uuid";
 
 export class PostgresUserRepository implements IUserRepository {
   constructor(private pool: Pool) {}
@@ -11,7 +10,7 @@ export class PostgresUserRepository implements IUserRepository {
   async findAll(): Promise<IUserWithoutPassword[]> {
     const { rows } = await queryWithLogging(
       this.pool,
-      `SELECT id, email, role, full_name, phone_number, profile_picture, address FROM users`
+      `SELECT id, email, role_id, khmer_name, english_name, date_of_birth, nationality, position FROM users`
     );
     return rows;
   }
@@ -19,7 +18,7 @@ export class PostgresUserRepository implements IUserRepository {
   async findById(id: string): Promise<IUserWithoutPassword | null> {
     const { rows } = await queryWithLogging(
       this.pool,
-      `SELECT id, email, role, full_name, phone_number, profile_picture, address FROM users WHERE id = $1`,
+      `SELECT id, email, role_id, khmer_name, english_name, date_of_birth, nationality, position FROM users WHERE id = $1`,
       [id]
     );
     return rows[0] || null;
@@ -34,4 +33,31 @@ export class PostgresUserRepository implements IUserRepository {
     return rows[0] || null;
   }
 
+  async create(user: IUser): Promise<IUserWithoutPassword> {
+    const hashedPassword = await bcrypt.hash(user.password!, 10);
+    const id = uuidv4();
+
+    const {
+      role_id,
+      khmer_name,
+      english_name,
+      date_of_birth,
+      nationality,
+      position,
+      email,
+    } = user;
+
+    const { rows } = await queryWithLogging(
+      this.pool,
+      `INSERT INTO users (
+        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password
+      ) VALUES (
+        $1, $2, $3, $4, $5, $6, $7, $8, $9
+      )
+      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email`,
+      [id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, hashedPassword]
+    );
+
+    return rows[0];
+  }
 }

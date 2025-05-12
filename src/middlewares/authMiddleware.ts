@@ -1,31 +1,30 @@
-import { Request, Response, NextFunction, RequestHandler } from "express";
+// src/middlewares/authMiddleware.ts
+import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
-interface AuthRequest extends Request {
-  user?: {id:string};
+interface AuthPayload {
+  id: string;
+  role_id: number;
 }
 
-export const authMiddleware = (
-  req: AuthRequest,
-  res: Response,
-  next: NextFunction
-) => {
-  const token = req.header("Authorization")?.replace("Bearer ", "");
+export interface AuthRequest extends Request {
+  user?: AuthPayload;
+}
 
-  if (!token) {
-    res.status(401).json({ message: "No token provided." });
+export function authMiddleware(req: AuthRequest, res: Response, next: NextFunction): void {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    res.status(401).json({ message: "Unauthorized" });
     return;
   }
+
+  const token = authHeader.split(" ")[1];
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET as string);
-    req.user = {id:(decoded as any).id};
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as AuthPayload;
+    req.user = decoded;
     next();
-  } catch (error) {
-    if (error instanceof Error) {
-      console.log(error.message);
-    }
+  } catch (err) {
     res.status(401).json({ message: "Invalid token" });
-    return;
   }
-};
+}
