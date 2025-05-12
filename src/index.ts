@@ -1,15 +1,35 @@
-// app.js
+// ... other imports
+import authRoutes from "./routes/authRoutes"; // Should be a function accepting a controller
+import { AuthController } from "./controller/authController";
+import { UserService } from "./services/userService";
+import { connectPostgresDb } from "./config/db";
+import { PostgresUserRepository } from "./repositories/userRepository";
+import { loggingMiddleware } from "./middlewares/logginMiddleware";
 import express, { Request, Response } from "express";
+import dotenv from "dotenv";
+
+dotenv.config(); // Load .env
+
 const app = express();
 const PORT = 3000;
 
-// Middleware to parse JSON
-app.use(express.json());
+const pgPool = connectPostgresDb();
 
-// Basic route
-app.get('/', (req, res) => {
-  res.send('Hello, Express!');
-});
+// Repository
+const userRepository = new PostgresUserRepository(pgPool);
+
+// Service
+const userService = new UserService(userRepository);
+
+// Controller
+const authController = new AuthController(userService);
+
+// Middleware
+app.use(express.json());
+app.use(loggingMiddleware);
+
+// Routes
+app.use("/api/auth", authRoutes(authController));
 
 // Start server
 app.listen(PORT, () => {
