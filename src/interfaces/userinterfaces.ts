@@ -23,7 +23,9 @@ export interface IUserRepository {
   findAll(): Promise<IUser[]>;
   findById(id: string): Promise<IUser | null>;
   findByEmail(email: string): Promise<IUser | null>;
+  // create(user: IUser): Promise<IUser>; // ADD THIS
 }
+
 
 export interface IUserService {
   getAllUsers(): Promise<IUserWithoutPassword[]>;

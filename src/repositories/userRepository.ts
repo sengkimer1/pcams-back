@@ -1,9 +1,6 @@
-import { Pool,QueryResult } from "pg";
-import bcrypt from "bcrypt";
+import { Pool } from "pg";
 import { IUser, IUserRepository, IUserWithoutPassword } from "../interfaces/userinterfaces";
 import { queryWithLogging } from "./utils";
-import { v4 as uuidv4 } from 'uuid';
-
 
 export class PostgresUserRepository implements IUserRepository {
   constructor(private pool: Pool) {}
@@ -34,4 +31,26 @@ export class PostgresUserRepository implements IUserRepository {
     return rows[0] || null;
   }
 
+  async create(user: IUser): Promise<IUserWithoutPassword> {
+    const {
+      email,
+      password,
+      role_id,
+      khmer_name,
+      english_name,
+      age,
+      national,
+      position
+    } = user;
+
+    const { rows } = await queryWithLogging(
+      this.pool,
+      `INSERT INTO users (email, password, role_id, khmer_name, english_name, age, national, position)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+       RETURNING id, email, role_id, khmer_name, english_name, age, national, position`,
+      [email, password, role_id, khmer_name, english_name, age, national, position]
+    );
+
+    return rows[0];
+  }
 }

@@ -38,3 +38,30 @@
   "error": "relation \"users\" does not exist",
   "duration": "11ms"
 }
+2025-05-12 15:53:35 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_events (id,camp_event_name) VALUES ($1,$2) RETURNING id, camp_event_name",
+  "params": [
+    "1e7ff768-8f77-45c2-818a-02b306a0c3b7",
+    "Winter Camp 2025"
+  ],
+  "error": "relation \"camp_events\" does not exist",
+  "duration": "341ms"
+}
+2025-05-12 15:54:48 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (id,camp_event_name) VALUES ($1,$2) RETURNING id, camp_event_name",
+  "params": [
+    "a0637102-663c-4e31-838d-1abde84e3076",
+    "Winter Camp 2025"
+  ],
+  "error": "invalid input syntax for type integer: \"a0637102-663c-4e31-838d-1abde84e3076\"",
+  "duration": "285ms"
+}
+2025-05-13 07:37:04 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (id,camp_event_name) VALUES ($1,$2) RETURNING id, camp_event_name",
+  "params": [
+    "058142d2-95ef-4a30-a7c2-58b9f6fc0da0",
+    "Winter Camp 2025"
+  ],
+  "error": "invalid input syntax for type integer: \"058142d2-95ef-4a30-a7c2-58b9f6fc0da0\"",
+  "duration": "273ms"
+}

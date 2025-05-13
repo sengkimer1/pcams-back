@@ -190,3 +190,315 @@
   "rowCount": 1,
   "duration": "357ms"
 }
+2025-05-12 15:53:34 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campevent/create",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "c5e2c46d-c8d4-4d73-a3d6-a9e62efc718c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "44"
+  },
+  "body": {
+    "camp_event_name": "Winter Camp 2025"
+  }
+}
+2025-05-12 15:53:35 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_events (id,camp_event_name) VALUES ($1,$2) RETURNING id, camp_event_name",
+  "params": [
+    "1e7ff768-8f77-45c2-818a-02b306a0c3b7",
+    "Winter Camp 2025"
+  ],
+  "error": "relation \"camp_events\" does not exist",
+  "duration": "341ms"
+}
+2025-05-12 15:54:47 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campevent/create",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "69e32eec-73de-4d41-b7d5-9ca4cebca28f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "44"
+  },
+  "body": {
+    "camp_event_name": "Winter Camp 2025"
+  }
+}
+2025-05-12 15:54:48 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (id,camp_event_name) VALUES ($1,$2) RETURNING id, camp_event_name",
+  "params": [
+    "a0637102-663c-4e31-838d-1abde84e3076",
+    "Winter Camp 2025"
+  ],
+  "error": "invalid input syntax for type integer: \"a0637102-663c-4e31-838d-1abde84e3076\"",
+  "duration": "285ms"
+}
+2025-05-13 07:37:04 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campevent/create",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "25e0339d-98bc-4cb0-a5cb-719f4d69b903",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "44"
+  },
+  "body": {
+    "camp_event_name": "Winter Camp 2025"
+  }
+}
+2025-05-13 07:37:04 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (id,camp_event_name) VALUES ($1,$2) RETURNING id, camp_event_name",
+  "params": [
+    "058142d2-95ef-4a30-a7c2-58b9f6fc0da0",
+    "Winter Camp 2025"
+  ],
+  "error": "invalid input syntax for type integer: \"058142d2-95ef-4a30-a7c2-58b9f6fc0da0\"",
+  "duration": "273ms"
+}
+2025-05-13 07:49:59 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "609a0a5f-bc78-4bb8-a507-abbc8512d243",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 07:50:00 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "256ms"
+}
+2025-05-13 07:50:05 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "67ff7b5b-b130-44f5-9908-10ce41b3b321",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 07:50:06 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "47ms"
+}
+2025-05-13 07:52:16 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "ddba0f35-4ddc-4477-a67e-a991492a4ef8",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 07:52:17 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "275ms"
+}
+2025-05-13 07:58:47 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "311fdd98-63b0-465f-9de0-58406a1d6173",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 07:58:47 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "258ms"
+}
+2025-05-13 08:06:43 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "46642e1f-3fba-417a-bb22-64cb138e03e2",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:06:44 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "283ms"
+}
+2025-05-13 08:11:55 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "70adfaef-0ae7-4779-a192-6219ed5ec97f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:11:55 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "283ms"
+}
+2025-05-13 08:20:36 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "32927bb8-7e9b-4d9c-8edc-60675c7a9fce",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:20:37 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "415ms"
+}
+2025-05-13 08:20:38 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "59394453-625f-4e69-b619-b5acfe718706",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:20:38 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "60ms"
+}
+2025-05-13 08:20:59 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "cc0d8e5c-122b-41e4-b8fc-fbde279ca99e",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:21:00 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "580ms"
+}
