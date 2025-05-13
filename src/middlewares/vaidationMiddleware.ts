@@ -49,6 +49,14 @@ const idParamSchema = z.object({
   id: z.string().regex(/^\d+$/, "ID must be a number"),
 });
 
+// Zod schema for creating a Camp Event
+const campEventSchema = z.object({
+  camp_event_name: z.string({
+    required_error: "Camp event name is required"
+  }).min(1, "Camp event name cannot be empty")
+});
+
+
 // Middleware: Validate user creation
 export const validateUser = (
   req: Request,
@@ -93,6 +101,23 @@ export const validateIdInURLParam = (
 ): void => {
   try {
     idParamSchema.parse(req.params);
+    next();
+  } catch (error) {
+    if (error instanceof ZodError) {
+      res.status(400).json({ message: error.errors[0].message });
+      return;
+    }
+    next(error);
+  }
+};
+
+export const validateCampEvent = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void => {
+  try {
+    campEventSchema.parse(req.body);
     next();
   } catch (error) {
     if (error instanceof ZodError) {
