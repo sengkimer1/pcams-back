@@ -260,3 +260,105 @@
   "rowCount": 1,
   "duration": "311ms"
 }
+2025-05-13 08:00:17 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "084679d5-f812-4dc6-849b-48d7e93ce647",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "270"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role_id": 2,
+    "khmer_name": "លឺម​ សុភ័ក្រ្ត",
+    "english": "Sopheak Lim",
+    "date_of_birth": "03/03/2006",
+    "nationality": "Khmer",
+    "position": "student pse volunteer "
+  }
+}
+2025-05-13 08:00:28 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "cd6586d1-678d-440d-978c-a326aa3b547e",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:00:28 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "515ms"
+}
+2025-05-13 08:01:06 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "5339e152-5c44-4ba7-9003-e50f32c4bdb1",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:01:07 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "429ms"
+}
+2025-05-13 08:13:13 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "af3eda84-049a-4ef8-8223-b6e51933b436",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:13:13 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "297ms"
+}

@@ -7,7 +7,7 @@ export class UserController {
   async createUser(req: Request, res: Response) {
     try {
       const user = await this.userService.createUser(
-        (req as any).user.role_id, // injected from authMiddleware
+        (req as any).user.role_id, 
         req.body
       );
       res.status(201).json(user);
