@@ -34,7 +34,7 @@ app.use(loggingMiddleware);
 
 // Routes
 app.use("/api/auth", authRoutes(authController));
-app.use("/api/users", authMiddleware, userRoutes(userController));
+app.use("/api/users", userRoutes(userController));
 
 // Start server
 app.listen(PORT, () => {
