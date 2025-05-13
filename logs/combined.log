@@ -362,3 +362,417 @@
   "rowCount": 1,
   "duration": "297ms"
 }
+2025-05-13 08:33:31 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "d7fddb85-2f56-4e67-a307-47fc1bc12ad9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:33:32 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "419ms"
+}
+2025-05-13 08:50:21 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "8280a2e9-fe4a-4464-9244-de61cc16af75",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:50:22 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "428ms"
+}
+2025-05-13 09:01:39 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "58092fd0-b772-4f20-a522-181908c0e79a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 09:01:39 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "323ms"
+}
+2025-05-13 10:22:46 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-events",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "4da797a0-61c7-4c5d-ac47-bbd4754eda8d",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "39"
+  },
+  "body": {
+    "camp_event_name": "water Camp 2025"
+  }
+}
+2025-05-13 10:22:46 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (id, camp_event_name) VALUES ($1, $2) RETURNING id, camp_event_name",
+  "params": [
+    "a71cfeb8-3cb7-4a86-9c4e-707d56125467",
+    "water Camp 2025"
+  ],
+  "error": "connect ECONNREFUSED 127.0.0.1:5432",
+  "duration": "95ms"
+}
+2025-05-13 10:25:51 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "59b9cd18-56ca-44d3-80bf-aae361b998d9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 10:25:52 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "832ms"
+}
+2025-05-13 10:26:01 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-events",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "89aac334-7806-4113-bc19-5791dc2203be",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "39"
+  },
+  "body": {
+    "camp_event_name": "water Camp 2025"
+  }
+}
+2025-05-13 10:26:01 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (id, camp_event_name) VALUES ($1, $2) RETURNING id, camp_event_name",
+  "params": [
+    "027c5dac-77ed-4408-989b-3097908c6856",
+    "water Camp 2025"
+  ],
+  "error": "connect ECONNREFUSED 127.0.0.1:5432",
+  "duration": "5ms"
+}
+2025-05-13 10:28:39 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-events",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "d3869abd-8627-46cd-b235-c26b685609a9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "39"
+  },
+  "body": {
+    "camp_event_name": "water Camp 2025"
+  }
+}
+2025-05-13 10:28:40 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (id, camp_event_name) VALUES ($1, $2) RETURNING id, camp_event_name",
+  "params": [
+    "bdb84b0c-f831-4109-b331-d496abca2fb8",
+    "water Camp 2025"
+  ],
+  "error": "connect ECONNREFUSED 127.0.0.1:5432",
+  "duration": "70ms"
+}
+2025-05-13 10:30:01 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-events",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "978fd66a-e029-4756-81f5-4981f47ddcfa",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "39"
+  },
+  "body": {
+    "camp_event_name": "water Camp 2025"
+  }
+}
+2025-05-13 10:30:01 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (id, camp_event_name) VALUES ($1, $2) RETURNING id, camp_event_name",
+  "params": [
+    "a818b0dc-9473-4751-8a9f-113afb5983cd",
+    "water Camp 2025"
+  ],
+  "error": "connect ECONNREFUSED 127.0.0.1:5432",
+  "duration": "51ms"
+}
+2025-05-13 10:32:36 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-events",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "1b8ee25e-592a-4012-a7d1-7b364bc991f4",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "39"
+  },
+  "body": {
+    "camp_event_name": "water Camp 2025"
+  }
+}
+2025-05-13 10:36:21 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-events",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "47c86135-8709-45b9-9ed9-924da4eb27e2",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "54"
+  },
+  "body": {
+    "camp_event_name": "water Camp 2025"
+  }
+}
+2025-05-13 10:36:22 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp_event (id, camp_event_name) VALUES ($1, $2) RETURNING id, camp_event_name",
+  "params": [
+    "a250fa34-0bcf-4292-9b78-fbf6b800d2b4",
+    "water Camp 2025"
+  ],
+  "rowCount": 1,
+  "duration": "375ms"
+}
+2025-05-13 10:40:42 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-events",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "c3712ce0-3582-45b4-b5d9-6dbfebdda449",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "41"
+  },
+  "body": {
+    "camp_event_name": "wa"
+  }
+}
+2025-05-13 10:40:42 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp_event (id, camp_event_name) VALUES ($1, $2) RETURNING id, camp_event_name",
+  "params": [
+    "acfbcb58-0d0c-40b6-9835-4d5fbd703583",
+    "wa"
+  ],
+  "rowCount": 1,
+  "duration": "397ms"
+}
+2025-05-13 13:33:50 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-events",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "02a83448-3e0d-4ab0-9643-e371a6d20d42",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "46"
+  },
+  "body": {
+    "camp_event_name": "water camp 2026"
+  }
+}
+2025-05-13 13:33:51 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp_event (id, camp_event_name) VALUES ($1, $2) RETURNING id, camp_event_name",
+  "params": [
+    "3a0637f9-9381-4969-9bc8-bc5e88fa6b60",
+    "water camp 2026"
+  ],
+  "rowCount": 1,
+  "duration": "365ms"
+}
+2025-05-13 13:35:26 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-events",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "0dad078f-8cf9-4253-898d-7f545d6a616f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "46"
+  },
+  "body": {
+    "camp_event_name": "water camp 2026"
+  }
+}
+2025-05-13 13:55:21 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "161e0325-b8ee-46f5-ac88-de5789128f26",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-13 13:55:35 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "c14b7644-ab51-4e0d-9d96-9d252bef170d",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-13 13:55:35 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_name FROM camp_event",
+  "params": [],
+  "rowCount": 3,
+  "duration": "406ms"
+}
+2025-05-13 15:13:00 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "39f11f72-f03c-47b5-87ca-c14ec25ce8fe",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-13 15:13:36 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "2c581dd0-0415-4570-9d51-98ffc7dc4a8f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-13 15:13:36 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_name FROM camp_event",
+  "params": [],
+  "rowCount": 3,
+  "duration": "366ms"
+}
+2025-05-13 15:16:13 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "b12efbbe-bd0e-4d78-88f9-7963759c6848",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "141"
+  },
+  "body": {
+    "camp_event_id": "a250fa34-0bcf-4292-9b78-fbf6b800d2b4",
+    "camp_name": "special Camp",
+    "location": "PSE - Pour un Sourire d'Enfant"
+  }
+}
+2025-05-13 15:16:13 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp (id, camp_event_id, camp_name, location) VALUES ($1, $2, $3, $4) RETURNING *",
+  "params": [
+    "2cb3cb50-e9d3-4d3a-87ee-d5dc0359017f",
+    "a250fa34-0bcf-4292-9b78-fbf6b800d2b4",
+    "special Camp",
+    "PSE - Pour un Sourire d'Enfant"
+  ],
+  "error": "column \"location\" of relation \"camp\" does not exist",
+  "duration": "301ms"
+}
