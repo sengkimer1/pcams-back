@@ -362,3 +362,732 @@
   "rowCount": 1,
   "duration": "297ms"
 }
+2025-05-13 08:27:59 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "a4714d7f-8dcc-4303-8777-db6cdae1550f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:28:00 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "301ms"
+}
+2025-05-13 08:28:44 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "613897ef-b463-481e-983a-fbc044ffc2a2",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:28:44 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "273ms"
+}
+2025-05-13 08:28:45 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "d9f1ba17-6378-4780-bc56-7020880467e0",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:28:46 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "127ms"
+}
+2025-05-13 08:31:23 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "ec281d3b-4ec9-4656-94f2-1c4acd6f26cc",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:31:23 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "327ms"
+}
+2025-05-13 08:31:42 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "b00d5a64-670d-478d-b055-3bc992c067d9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:31:42 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "453ms"
+}
+2025-05-13 08:32:31 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "a58ef185-2945-45a0-9739-e794e2409c10",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:32:31 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "347ms"
+}
+2025-05-13 08:44:10 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "dc1bb0a6-b36a-48ea-858c-599f1ea820cf",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:44:11 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "314ms"
+}
+2025-05-13 08:44:12 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "2a738709-6c29-4701-8ea3-9cc741616e5a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:44:12 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "49ms"
+}
+2025-05-13 08:46:06 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "4ad3a2fb-d368-45b3-afad-e1842e021ea9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:46:06 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "307ms"
+}
+2025-05-13 08:46:44 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "f8091447-6c3f-429f-91ed-03243245cd77",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:46:45 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "430ms"
+}
+2025-05-13 08:46:47 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "8d24fda2-185d-409f-8177-14c8017502dc",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:46:47 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "59ms"
+}
+2025-05-13 08:48:48 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "910557db-4bc7-479a-a1eb-7e5546c4bf2b",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:48:48 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "290ms"
+}
+2025-05-13 08:49:42 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "12dda34b-b6d2-4b62-8798-dd0917aa4aa8",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:49:42 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "279ms"
+}
+2025-05-13 08:50:25 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "d44ec730-003e-4ca0-84b2-43353b9a4136",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "112"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:50:25 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "278ms"
+}
+2025-05-13 08:51:31 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "8be049e7-5d58-41b7-ac46-3355a81ffe26",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "112"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 08:51:32 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "499ms"
+}
+2025-05-13 08:58:25 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "2c63c420-3a33-42df-a533-758c632076de",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "277"
+  },
+  "body": {
+    "role_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ab",
+    "khmer_name": "លឺម សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2000-01-01",
+    "national": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-13 08:58:38 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "b24a36b5-619d-40da-beba-0a5d3160eac4",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "277"
+  },
+  "body": {
+    "role_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ab",
+    "khmer_name": "លឺម សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2000-01-01",
+    "national": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-13 08:58:56 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "2212b701-c4e9-4007-88e3-0e6953c0685c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "242"
+  },
+  "body": {
+    "role_id": "1",
+    "khmer_name": "លឺម សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2000-01-01",
+    "national": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-13 08:59:00 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "1d1b614c-b5cd-457d-bf0f-5062a18cf248",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "240"
+  },
+  "body": {
+    "role_id": 1,
+    "khmer_name": "លឺម សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2000-01-01",
+    "national": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-13 08:59:35 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "555ba1af-7191-4e1c-b672-91245ec28f12",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "277"
+  },
+  "body": {
+    "role_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ab",
+    "khmer_name": "លឺម សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2000-01-01",
+    "national": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-13 09:01:41 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "4e5d09c0-f60e-4d02-8c22-35475f61c3c2",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "277"
+  },
+  "body": {
+    "role_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ab",
+    "khmer_name": "លឺម សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2000-01-01",
+    "national": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-13 09:01:53 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "0698864e-8c7d-413a-b254-3688f585bc60",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "288"
+  },
+  "body": {
+    "role_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ab",
+    "khmer_name": "ហេង សុខនាង",
+    "english_name": "Heng Sokna",
+    "password": "***",
+    "date_of_birth": "1990-01-01",
+    "national": "Cambodian",
+    "position": "Software Engineer",
+    "email": "***"
+  }
+}
+2025-05-13 09:13:43 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "e3ae866f-03d5-42cf-8578-2b6e86d09cf9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "277"
+  },
+  "body": {
+    "role_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ab",
+    "khmer_name": "លឺម សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2000-01-01",
+    "national": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-13 09:13:44 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "45b252df-2406-4313-a238-e37f0b6e390f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "277"
+  },
+  "body": {
+    "role_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ab",
+    "khmer_name": "លឺម សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2000-01-01",
+    "national": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-13 09:22:34 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "588376b1-28f6-48e9-afc8-adc1e2efe9b8",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "277"
+  },
+  "body": {
+    "role_id": "a1b2c3d4-e5f6-7890-abcd-1234567890ab",
+    "khmer_name": "លឺម សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2000-01-01",
+    "national": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-13 09:22:34 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "586ms"
+}
+2025-05-13 09:22:35 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "6a6a4c2d-3001-46eb-b6d1-2f071bba6b65",
+    "a1b2c3d4-e5f6-7890-abcd-1234567890ab",
+    "លឺម សុភ័ក្រ",
+    "Sopheak Lim",
+    "2000-01-01",
+    null,
+    "admin",
+    "admin@admin.com",
+    "$2b$10$a74QG7C9G68GjTwnaDOcuuLLl6YleCoi93GxFqk5d9GPJHElpOuZ."
+  ],
+  "rowCount": 1,
+  "duration": "151ms"
+}
+2025-05-13 09:23:28 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "6909f415-8069-4631-a46c-88c5e4a8409c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 09:23:29 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "314ms"
+}
+2025-05-13 09:28:42 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMDMwMDksImV4cCI6MTc0NzEwNjYwOX0.XcfSX7OKm7YdpVX4vHs3KNxGDycMMw7mTXI_grvnBEw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "ff044907-777d-45ba-8806-55b5193e9834",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "283"
+  },
+  "body": {
+    "role_id": "b2c3d4e5-f678-9012-bcde-2345678901bc",
+    "khmer_name": "ស៊ន​ មូនីកា",
+    "english_name": "Monika Sorn",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "national": "Khmer",
+    "position": "coordinator",
+    "email": "***"
+  }
+}
+2025-05-13 09:28:43 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "monika@gmail.com"
+  ],
+  "rowCount": 0,
+  "duration": "327ms"
+}
+2025-05-13 09:28:43 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "56720edb-b447-47d0-9311-682350961973",
+    "b2c3d4e5-f678-9012-bcde-2345678901bc",
+    "ស៊ន​ មូនីកា",
+    "Monika Sorn",
+    "2005-01-01",
+    null,
+    "coordinator",
+    "monika@gmail.com",
+    "$2b$10$RKjvmcHh/vOKalIp.GMf8OqXFhBvhFM4WVUrj5ljTf.s242JNUa5m"
+  ],
+  "rowCount": 1,
+  "duration": "55ms"
+}

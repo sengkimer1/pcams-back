@@ -10,7 +10,7 @@ export interface IUser {
   position: string;
 }
 
-export interface IUserWithoutPassword extends Omit<IUser, "password"> {}
+export interface IUserWithoutPassword extends Omit<IUser, "password"> { }
 
 export interface ILoginResponse {
   user: IUserWithoutPassword;
@@ -18,14 +18,14 @@ export interface ILoginResponse {
 }
 
 export interface IUserRepository {
-  create(userData: IUser): Promise<IUserWithoutPassword>;
+  create(user: Omit<IUser, "id">): Promise<IUserWithoutPassword>;
   findAll(): Promise<IUserWithoutPassword[]>;
   findById(id: string): Promise<IUserWithoutPassword | null>;
   findByEmail(email: string): Promise<IUser | null>;
 }
 
 export interface IUserService {
-  createUser(requesterRoleId: number, userData: IUser): Promise<IUserWithoutPassword>;
+  createUser(user: Omit<IUser, "id">): Promise<{ user: IUserWithoutPassword; token: string }>;
   getAllUsers(): Promise<IUserWithoutPassword[]>;
   getUserById(id: string): Promise<IUserWithoutPassword>;
   login(email: string, password: string): Promise<ILoginResponse>;
