@@ -43,7 +43,7 @@ CREATE TABLE Children (
     id UUID PRIMARY KEY,
     english_name VARCHAR(100) NOT NULL,
     khmer_name VARCHAR(100) NOT NULL,
-    family_id UUID,
+    family_id INTEGER, -- now integer
     age INT,
     gender VARCHAR(10),
     image_url TEXT, 
@@ -51,6 +51,7 @@ CREATE TABLE Children (
     description TEXT, 
     camp_id UUID REFERENCES Camp(id)
 );
+
 
 -- Table: Children_Attendance
 CREATE TABLE Children_Attendance (
