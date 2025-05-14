@@ -8,7 +8,7 @@ export default function childRoutes(controller: ChildController): Router {
 
   // Only allow authenticated users (e.g., admin) to create users
   // router.post("/", authMiddleware, controller.createUser.bind(controller));
-  router.post("/",authMiddleware, controller.createChild.bind(controller));
+  router.post("/", controller.createChild.bind(controller));
 
 
   return router;

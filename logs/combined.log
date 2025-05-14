@@ -1479,3 +1479,263 @@ man-token": "8280a2e9-fe4a-4464-9244-de61cc16af75",
   "rowCount": 1,
   "duration": "290ms"
 }
+2025-05-14 08:58:37 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMTg5ODksImV4cCI6MTc0NzEyMjU4OX0.rrLEfr2sAqifczCdteFyifNu6q2GHYmGLY1Fi-OSscA",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "7375cc67-4c27-4a83-9245-edee350112ca",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "323"
+  },
+  "body": {
+    "english_name": "kimer",
+    "khmer_name": "គីមអឺ",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "1"
+  }
+}
+2025-05-14 08:58:44 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "46d07551-b473-410d-ab8f-09a29c4bdd4a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-14 08:58:44 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "313ms"
+}
+2025-05-14 08:59:05 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxODc5MjQsImV4cCI6MTc0NzE5MTUyNH0.FOJwqGtCBM6_Vugfmo3Nreg8rD-sikTxHb4piZUNcj0",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "727f109e-1ed3-4223-9c72-0d63cd36c6de",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "323"
+  },
+  "body": {
+    "english_name": "kimer",
+    "khmer_name": "គីមអឺ",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "1"
+  }
+}
+2025-05-14 08:59:05 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "15f56ac4-0abd-4d7e-a470-d50e01eb64e5",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "1"
+  ],
+  "error": "invalid input syntax for type uuid: \"1\"",
+  "duration": "277ms"
+}
+2025-05-14 09:06:10 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "ad2b94f5-f455-467d-a29c-88640d4c8666",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-14 09:06:10 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_name FROM camp_event",
+  "params": [],
+  "rowCount": 3,
+  "duration": "281ms"
+}
+2025-05-14 09:09:22 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "aef703db-019a-4aa5-8800-649b86f66e8c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "122"
+  },
+  "body": {
+    "camp_event_id": "a250fa34-0bcf-4292-9b78-fbf6b800d2b4",
+    "camp_name": "Winter Camp 2025",
+    "location": "PSE-OBK"
+  }
+}
+2025-05-14 09:09:22 [ERROR]: Database query failed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "error": "column \"location\" does not exist",
+  "duration": "256ms"
+}
+2025-05-14 09:09:31 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "500e975e-ec1a-4161-9d66-e85d141208e2",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "122"
+  },
+  "body": {
+    "camp_event_id": "a250fa34-0bcf-4292-9b78-fbf6b800d2b4",
+    "camp_name": "Winter Camp 2025",
+    "location": "PSE-OBK"
+  }
+}
+2025-05-14 09:09:31 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp (id, camp_event_id, camp_name, location) VALUES ($1, $2, $3, $4) RETURNING *",
+  "params": [
+    "3a79e8a0-6d9f-4b2e-85fe-1f1b94ff1f12",
+    "a250fa34-0bcf-4292-9b78-fbf6b800d2b4",
+    "Winter Camp 2025",
+    "PSE-OBK"
+  ],
+  "error": "column \"location\" of relation \"camp\" does not exist",
+  "duration": "277ms"
+}
+2025-05-14 09:15:42 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "b4d2fe4a-d4b9-47cb-b4e0-b2d1a2a7172f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "122"
+  },
+  "body": {
+    "camp_event_id": "a250fa34-0bcf-4292-9b78-fbf6b800d2b4",
+    "camp_name": "Winter Camp 2025",
+    "location": "PSE-OBK"
+  }
+}
+2025-05-14 09:15:42 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp (id, camp_event_id, camp_name, location) VALUES ($1, $2, $3, $4) RETURNING *",
+  "params": [
+    "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+    "a250fa34-0bcf-4292-9b78-fbf6b800d2b4",
+    "Winter Camp 2025",
+    "PSE-OBK"
+  ],
+  "rowCount": 1,
+  "duration": "241ms"
+}
+2025-05-14 09:19:02 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "60043ba6-9627-43c0-9d48-98e0c95ec472",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-14 09:19:02 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "rowCount": 1,
+  "duration": "249ms"
+}
+2025-05-14 09:20:14 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "c4d297a0-cb34-4966-a256-12593bd0184f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "358"
+  },
+  "body": {
+    "english_name": "kimer",
+    "khmer_name": "គីមអឺ",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  }
+}
+2025-05-14 09:20:14 [INFO]: Database query executed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "0c8c7bdb-ed5c-4577-9c97-4cdd75c7c818",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  ],
+  "rowCount": 1,
+  "duration": "312ms"
+}

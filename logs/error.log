@@ -188,3 +188,37 @@
   "duration": "301ms"
 
 }
+2025-05-14 08:59:05 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "15f56ac4-0abd-4d7e-a470-d50e01eb64e5",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "1"
+  ],
+  "error": "invalid input syntax for type uuid: \"1\"",
+  "duration": "277ms"
+}
+2025-05-14 09:09:22 [ERROR]: Database query failed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "error": "column \"location\" does not exist",
+  "duration": "256ms"
+}
+2025-05-14 09:09:31 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp (id, camp_event_id, camp_name, location) VALUES ($1, $2, $3, $4) RETURNING *",
+  "params": [
+    "3a79e8a0-6d9f-4b2e-85fe-1f1b94ff1f12",
+    "a250fa34-0bcf-4292-9b78-fbf6b800d2b4",
+    "Winter Camp 2025",
+    "PSE-OBK"
+  ],
+  "error": "column \"location\" of relation \"camp\" does not exist",
+  "duration": "277ms"
+}
