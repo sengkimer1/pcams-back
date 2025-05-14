@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response ,NextFunction} from "express";
 import { CampService } from "../services/campServices";
 
 export class CampController {
@@ -22,10 +22,10 @@ export class CampController {
     }
   }
 
-  async getById(req: Request, res: Response) {
+  async getById(req: Request, res: Response,next: NextFunction) {
     try {
-      const camp = await this.service.findById(req.params.id);
-      if (!camp) return res.status(404).json({ message: "Camp not found" });
+      const { id } = req.params;
+      const camp = await this.service.findById(id);
       res.status(200).json(camp);
     } catch (err) {
       res.status(500).json({ message: "Server error", error: err });

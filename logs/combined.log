@@ -1739,3 +1739,117 @@ man-token": "8280a2e9-fe4a-4464-9244-de61cc16af75",
   "rowCount": 1,
   "duration": "312ms"
 }
+2025-05-14 09:27:42 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/child/",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "9adfb7f8-2f51-4919-842c-4b1a84623e57",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-14 09:28:36 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/child/",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "20dbe475-3700-4ade-ade9-baa45c89b11a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-14 09:28:36 [INFO]: Database query executed {
+  "sql": "SELECT * FROM children",
+  "params": [],
+  "rowCount": 1,
+  "duration": "263ms"
+}
+2025-05-14 09:28:49 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/child/0c8c7bdb-ed5c-4577-9c97-4cdd75c7c818",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "212e1e4c-aa49-4d49-af8a-e6e3a8041c8a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-14 09:28:49 [INFO]: Database query executed {
+  "sql": "SELECT * FROM children WHERE id = $1",
+  "params": [
+    "0c8c7bdb-ed5c-4577-9c97-4cdd75c7c818"
+  ],
+  "rowCount": 1,
+  "duration": "255ms"
+}
+2025-05-14 09:29:56 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/child/0c8c7bdb-ed5c-4577-9c97-4cdd75c7c818",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "b296f8c5-4a8e-43db-9b40-eeceaebccc59",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-14 09:29:56 [INFO]: Database query executed {
+  "sql": "SELECT * FROM children WHERE id = $1",
+  "params": [
+    "0c8c7bdb-ed5c-4577-9c97-4cdd75c7c818"
+  ],
+  "rowCount": 1,
+  "duration": "643ms"
+}
+2025-05-14 09:43:23 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "74dede17-e92e-40ab-a4d7-aec16202e492",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-14 09:43:24 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "rowCount": 1,
+  "duration": "288ms"
+}
+2025-05-14 09:43:31 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "28b0633d-1712-4d37-a550-90e4bd6f596e",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-14 09:43:31 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp WHERE id = $1",
+  "params": [
+    "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  ],
+  "rowCount": 1,
+  "duration": "48ms"
+}

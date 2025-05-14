@@ -8,6 +8,7 @@ export default function campRoute(controller: CampController): Router {
 
   router.post("/",  controller.create.bind(controller));
   router.get("/", controller.getAll.bind(controller));
+  router.get("/:id", controller.getById.bind(controller));
 //   router.get("/:id", (req, res) => controller.getById(req, res));
 //   router.put("/:id", authMiddleware, controller.update.bind(controller));
 //   router.delete("/:id", authMiddleware, controller.delete.bind(controller));
