@@ -38,6 +38,108 @@
   "error": "relation \"users\" does not exist",
   "duration": "11ms"
 }
+
+2025-05-13 14:03:12 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "edbe10c2-becd-4db5-97f3-d9b1cad7a117",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "a123f1ee-6c54-4b01-90e6-d701748f0900"
+  ],
+  "error": "invalid input syntax for type integer: \"21116-1\"",
+  "duration": "426ms"
+}
+2025-05-13 14:03:37 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "85e0b470-e83e-43c5-8cd8-d45388845f6c",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "a123f1ee-6c54-4b01-90e6-d701748f0900"
+  ],
+  "error": "invalid input syntax for type integer: \"21116-1\"",
+  "duration": "681ms"
+}
+2025-05-13 14:08:13 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "2700ef29-4bc2-4a5d-a688-358cdaa2a7af",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "a123f1ee-6c54-4b01-90e6-d701748f0900"
+  ],
+  "error": "insert or update on table \"children\" violates foreign key constraint \"children_camp_id_fkey\"",
+  "duration": "327ms"
+}
+2025-05-13 14:08:40 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "ddde5e33-55f6-47b4-bbf8-391ef921a98f",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "1"
+  ],
+  "error": "invalid input syntax for type uuid: \"1\"",
+  "duration": "296ms"
+}
+2025-05-13 14:23:22 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ETIMEDOUT 62.72.46.248:5432",
+  "duration": "133060ms"
+}
+2025-05-13 14:30:07 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ETIMEDOUT 62.72.46.248:5432",
+  "duration": "133655ms"
+}
+2025-05-13 14:46:53 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "3e1aad8b-e28b-46ae-9ff7-18790e6930b6",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "1"
+  ],
+  "error": "invalid input syntax for type uuid: \"1\"",
+  "duration": "250ms"
+
 2025-05-13 10:22:46 [ERROR]: Database query failed {
   "sql": "INSERT INTO camp_event (id, camp_event_name) VALUES ($1, $2) RETURNING id, camp_event_name",
   "params": [
@@ -84,4 +186,5 @@
   ],
   "error": "column \"location\" of relation \"camp\" does not exist",
   "duration": "301ms"
+
 }

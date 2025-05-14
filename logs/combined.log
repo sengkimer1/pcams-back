@@ -1102,3 +1102,380 @@ man-token": "8280a2e9-fe4a-4464-9244-de61cc16af75",
   "rowCount": 1,
   "duration": "55ms"
 }
+2025-05-13 13:49:48 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "5dc3f054-581e-4616-9d62-3846428d7f2d",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 13:49:49 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "273ms"
+}
+2025-05-13 13:50:04 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMTg5ODksImV4cCI6MTc0NzEyMjU4OX0.rrLEfr2sAqifczCdteFyifNu6q2GHYmGLY1Fi-OSscA",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "889c2bb3-1bbb-42c2-939b-41a5726f9220",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-13 14:03:12 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMTg5ODksImV4cCI6MTc0NzEyMjU4OX0.rrLEfr2sAqifczCdteFyifNu6q2GHYmGLY1Fi-OSscA",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "4c6786d4-0fae-493a-a667-0c7574108b85",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "358"
+  },
+  "body": {
+    "english_name": "kimer",
+    "khmer_name": "គីមអឺ",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "a123f1ee-6c54-4b01-90e6-d701748f0900"
+  }
+}
+2025-05-13 14:03:12 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "edbe10c2-becd-4db5-97f3-d9b1cad7a117",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "a123f1ee-6c54-4b01-90e6-d701748f0900"
+  ],
+  "error": "invalid input syntax for type integer: \"21116-1\"",
+  "duration": "426ms"
+}
+2025-05-13 14:03:36 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMTg5ODksImV4cCI6MTc0NzEyMjU4OX0.rrLEfr2sAqifczCdteFyifNu6q2GHYmGLY1Fi-OSscA",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "c23dda44-1f49-480a-9437-cfd52f232b7a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "358"
+  },
+  "body": {
+    "english_name": "kimer",
+    "khmer_name": "គីមអឺ",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "a123f1ee-6c54-4b01-90e6-d701748f0900"
+  }
+}
+2025-05-13 14:03:37 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "85e0b470-e83e-43c5-8cd8-d45388845f6c",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "a123f1ee-6c54-4b01-90e6-d701748f0900"
+  ],
+  "error": "invalid input syntax for type integer: \"21116-1\"",
+  "duration": "681ms"
+}
+2025-05-13 14:08:13 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMTg5ODksImV4cCI6MTc0NzEyMjU4OX0.rrLEfr2sAqifczCdteFyifNu6q2GHYmGLY1Fi-OSscA",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "a3464ea9-51a0-4efb-b7ea-b9dc4fca3ecd",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "358"
+  },
+  "body": {
+    "english_name": "kimer",
+    "khmer_name": "គីមអឺ",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "a123f1ee-6c54-4b01-90e6-d701748f0900"
+  }
+}
+2025-05-13 14:08:13 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "2700ef29-4bc2-4a5d-a688-358cdaa2a7af",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "a123f1ee-6c54-4b01-90e6-d701748f0900"
+  ],
+  "error": "insert or update on table \"children\" violates foreign key constraint \"children_camp_id_fkey\"",
+  "duration": "327ms"
+}
+2025-05-13 14:08:39 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMTg5ODksImV4cCI6MTc0NzEyMjU4OX0.rrLEfr2sAqifczCdteFyifNu6q2GHYmGLY1Fi-OSscA",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "273ab2dc-b7dd-464a-a5d9-b5f0fd7fa457",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "323"
+  },
+  "body": {
+    "english_name": "kimer",
+    "khmer_name": "គីមអឺ",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "1"
+  }
+}
+2025-05-13 14:08:40 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "ddde5e33-55f6-47b4-bbf8-391ef921a98f",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "1"
+  ],
+  "error": "invalid input syntax for type uuid: \"1\"",
+  "duration": "296ms"
+}
+2025-05-13 14:21:09 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "a4edeeba-d05e-4dc6-bdee-9facfb4a5a93",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 14:23:22 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ETIMEDOUT 62.72.46.248:5432",
+  "duration": "133060ms"
+}
+2025-05-13 14:27:53 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "1ab41a86-faab-4bce-af66-c0c6af1c8ada",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 14:30:07 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ETIMEDOUT 62.72.46.248:5432",
+  "duration": "133655ms"
+}
+2025-05-13 14:46:33 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "603bd7a7-7b05-4f17-bfd0-e5cc9f7fbc5e",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 14:46:33 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "274ms"
+}
+2025-05-13 14:46:43 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campevent/create",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "4832149e-5868-4c35-9ae2-a6b55c109160",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "44"
+  },
+  "body": {
+    "camp_event_name": "Winter Camp 2025"
+  }
+}
+2025-05-13 14:46:53 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMTg5ODksImV4cCI6MTc0NzEyMjU4OX0.rrLEfr2sAqifczCdteFyifNu6q2GHYmGLY1Fi-OSscA",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "ef6e9071-ae8c-4374-b820-1912dbcc78ae",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "323"
+  },
+  "body": {
+    "english_name": "kimer",
+    "khmer_name": "គីមអឺ",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "1"
+  }
+}
+2025-05-13 14:46:53 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "3e1aad8b-e28b-46ae-9ff7-18790e6930b6",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "1"
+  ],
+  "error": "invalid input syntax for type uuid: \"1\"",
+  "duration": "250ms"
+}
+2025-05-13 14:46:58 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "ad3ca370-1969-4d38-b735-c169b8187adc",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-13 14:46:58 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "290ms"
+}
