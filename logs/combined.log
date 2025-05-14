@@ -362,6 +362,7 @@
   "rowCount": 1,
   "duration": "297ms"
 }
+
 2025-05-13 08:27:59 [INFO]: Request received {
   "method": "POST",
   "url": "/api/auth/login",
@@ -406,12 +407,14 @@
     "password": "***"
   }
 }
+
 2025-05-13 08:28:44 [INFO]: Database query executed {
   "sql": "SELECT * FROM users WHERE email = $1",
   "params": [
     "admin@gmail.com"
   ],
   "rowCount": 1,
+
   "duration": "273ms"
 }
 2025-05-13 08:28:45 [INFO]: Request received {
@@ -419,6 +422,8 @@
   "url": "/api/auth/login",
   "headers": {
     "content-type": "application/json",
+man-token": "8280a2e9-fe4a-4464-9244-de61cc16af75",
+
     "user-agent": "PostmanRuntime/7.37.3",
     "accept": "*/*",
     "postman-token": "d9f1ba17-6378-4780-bc56-7020880467e0",
@@ -432,6 +437,7 @@
     "password": "***"
   }
 }
+
 2025-05-13 08:28:46 [INFO]: Database query executed {
   "sql": "SELECT * FROM users WHERE email = $1",
   "params": [
@@ -445,6 +451,7 @@
   "url": "/api/auth/login",
   "headers": {
     "content-type": "application/json",
+
     "user-agent": "PostmanRuntime/7.37.3",
     "accept": "*/*",
     "postman-token": "ec281d3b-4ec9-4656-94f2-1c4acd6f26cc",
@@ -458,6 +465,7 @@
     "password": "***"
   }
 }
+
 2025-05-13 08:31:23 [INFO]: Database query executed {
   "sql": "SELECT * FROM users WHERE email = $1",
   "params": [
@@ -497,6 +505,7 @@
   "url": "/api/auth/login",
   "headers": {
     "content-type": "application/json",
+
     "user-agent": "PostmanRuntime/7.37.3",
     "accept": "*/*",
     "postman-token": "a58ef185-2945-45a0-9739-e794e2409c10",
@@ -510,6 +519,7 @@
     "password": "***"
   }
 }
+
 2025-05-13 08:32:31 [INFO]: Database query executed {
   "sql": "SELECT * FROM users WHERE email = $1",
   "params": [
@@ -542,6 +552,7 @@
     "admin@admin.com"
   ],
   "rowCount": 1,
+
   "duration": "314ms"
 }
 2025-05-13 08:44:12 [INFO]: Request received {
