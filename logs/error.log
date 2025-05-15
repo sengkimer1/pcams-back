@@ -222,3 +222,69 @@
   "error": "column \"location\" of relation \"camp\" does not exist",
   "duration": "277ms"
 }
+2025-05-15 09:46:06 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "fc60c104-e890-4d25-af1f-0c59cc9248f4",
+    "kimIn",
+    "គីមអីន",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  ],
+  "error": "invalid input syntax for type integer: \"21116-1\"",
+  "duration": "16ms"
+}
+2025-05-15 09:46:46 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "65af159b-5bb4-4ec7-9d17-884ca5197dab",
+    "kimIn",
+    "គីមអីន",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "error": "invalid input syntax for type integer: \"21116-1\"",
+  "duration": "15ms"
+}
+2025-05-15 15:00:10 [ERROR]: Database query failed {
+  "sql": "DELETE FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "error": "update or delete on table \"camp\" violates foreign key constraint \"children_camp_id_fkey\" on table \"children\"",
+  "duration": "79ms"
+}
+2025-05-15 15:01:04 [ERROR]: Database query failed {
+  "sql": "DELETE FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "error": "update or delete on table \"camp\" violates foreign key constraint \"children_camp_id_fkey\" on table \"children\"",
+  "duration": "3ms"
+}
+2025-05-15 15:01:21 [ERROR]: Database query failed {
+  "sql": "DELETE FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "error": "update or delete on table \"camp\" violates foreign key constraint \"children_camp_id_fkey\" on table \"children\"",
+  "duration": "39ms"
+}
+2025-05-15 15:04:05 [ERROR]: Database query failed {
+  "sql": "DELETE FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "error": "update or delete on table \"camp\" violates foreign key constraint \"children_camp_id_fkey\" on table \"children\"",
+  "duration": "21ms"
+}

@@ -15,11 +15,11 @@ export class CampEventService implements ICampEventService {
     return this.campEventRepository.create(data);
   }
 
-//   async update(id: string, data: ICampEvan): Promise<ICampEvan | null> {
-//     return this.campEventRepository.update(id, data);
-//   }
+  async update(id: string, data: ICampEvan): Promise<ICampEvan | null> {
+    return this.campEventRepository.update(id, data);
+  }
 
-//   async delete(id: string): Promise<boolean> {
-//     return this.campEventRepository.delete(id);
-//   }
+  async delete(id: string): Promise<boolean> {
+    return this.campEventRepository.delete(id);
+  }
 }

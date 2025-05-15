@@ -1853,3 +1853,1523 @@ man-token": "8280a2e9-fe4a-4464-9244-de61cc16af75",
   "rowCount": 1,
   "duration": "48ms"
 }
+2025-05-15 09:20:04 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "c4ef6d2e-0053-4ab7-82b4-33e01bf5abbc",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "281"
+  },
+  "body": {
+    "role_id": "3959dc72-61a3-41bc-9b4f-918741b89c06",
+    "khmer_name": "លឹម​ សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-15 09:30:04 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "1ba188e6-8a5e-40c2-a627-4f84fe9e0c8f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "70"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-15 09:30:05 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@institute.pse.ngo"
+  ],
+  "rowCount": 1,
+  "duration": "48ms"
+}
+2025-05-15 09:30:18 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "7dc801bf-6934-4c59-857d-cc22a15d6a62",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "69"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-15 09:30:18 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@institute.pse.ngo"
+  ],
+  "rowCount": 1,
+  "duration": "17ms"
+}
+2025-05-15 09:31:19 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "797df896-534a-4ab4-a56f-80f689a37849",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "281"
+  },
+  "body": {
+    "role_id": "3959dc72-61a3-41bc-9b4f-918741b89c06",
+    "khmer_name": "លឹម​ សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-15 09:31:19 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "39ms"
+}
+2025-05-15 09:31:20 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "01ea213e-12df-4c1d-9209-d73405cdd09e",
+    "3959dc72-61a3-41bc-9b4f-918741b89c06",
+    "លឹម​ សុភ័ក្រ",
+    "Sopheak Lim",
+    "2005-01-01",
+    "Khmer",
+    "admin",
+    "admin@admin.com",
+    "$2b$10$53l5sfNhReVUrPfpUAVHKOtyhAIguw6fmcet38/AghRxGlRsEoS2m"
+  ],
+  "rowCount": 1,
+  "duration": "65ms"
+}
+2025-05-15 09:31:24 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "1ec7eeae-3da2-402a-8a15-c14e44dc8072",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "69"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-15 09:31:24 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@institute.pse.ngo"
+  ],
+  "rowCount": 1,
+  "duration": "2ms"
+}
+2025-05-15 09:31:25 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "91c5903c-c733-4b27-b563-7352767882a8",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "69"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-15 09:31:25 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@institute.pse.ngo"
+  ],
+  "rowCount": 1,
+  "duration": "1ms"
+}
+2025-05-15 09:32:25 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "cdbe9dcd-4949-485f-9fc4-7964fd98aac9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "60"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-15 09:32:25 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@amin.com"
+  ],
+  "rowCount": 0,
+  "duration": "18ms"
+}
+2025-05-15 09:32:35 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "34fa6258-a646-4af4-bac2-20d9f03123eb",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-15 09:32:35 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "2ms"
+}
+2025-05-15 09:38:30 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxZWEyMTNlLTEyZGYtNGMxZC05MjA5LWQ3MzQwNWNkZDA5ZSIsInJvbGVfaWQiOiIzOTU5ZGM3Mi02MWEzLTQxYmMtOWI0Zi05MTg3NDFiODljMDYiLCJpYXQiOjE3NDcyNzYzNTUsImV4cCI6MTc0NzI3OTk1NX0.6sWcTRYXdgijjiwPMtAnXeBkpbaLKT_C-kbQFYxtp54",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "b2b8eca8-9321-428c-9c25-539fd5d52722",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "274"
+  },
+  "body": {
+    "role_id": "e8886388-ade6-4f86-89df-6673392df241",
+    "khmer_name": "Kim Er",
+    "english_name": "អ័រ",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "student pse volunteer coordinator",
+    "email": "***"
+  }
+}
+2025-05-15 09:38:30 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "er@gmail.com"
+  ],
+  "rowCount": 0,
+  "duration": "44ms"
+}
+2025-05-15 09:38:30 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "28903d9a-7b2e-4fca-a50d-4fa2d0230ac0",
+    "e8886388-ade6-4f86-89df-6673392df241",
+    "Kim Er",
+    "អ័រ",
+    "2005-01-01",
+    "Khmer",
+    "student pse volunteer coordinator",
+    "er@gmail.com",
+    "$2b$10$lWSjhG03j0yH.EcNp7GNaeDTyjK.IWKqc2buIgBz2mcUtMoGzwTnC"
+  ],
+  "rowCount": 1,
+  "duration": "63ms"
+}
+2025-05-15 09:39:38 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-events",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer e8886388-ade6-4f86-89df-6673392df241",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "655c0144-c299-47ed-990d-3a11b5a63e3a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "45"
+  },
+  "body": {
+    "camp_event_name": "water camp 2026"
+  }
+}
+2025-05-15 09:39:38 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp_event (id, camp_event_name) VALUES ($1, $2) RETURNING id, camp_event_name",
+  "params": [
+    "4bba4eda-3153-4309-9b88-beeb8f37609a",
+    "water camp 2026"
+  ],
+  "rowCount": 1,
+  "duration": "51ms"
+}
+2025-05-15 09:39:57 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "authorization": "Bearer e8886388-ade6-4f86-89df-6673392df241",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "35b97a64-df3d-4ecb-b3d5-a3a226394cbe",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 09:39:57 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_name FROM camp_event",
+  "params": [],
+  "rowCount": 1,
+  "duration": "12ms"
+}
+2025-05-15 09:40:18 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-events",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer e8886388-ade6-4f86-89df-6673392df241",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "9c81c766-8bbc-4da7-b561-b117c0d36f60",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "45"
+  },
+  "body": {
+    "camp_event_name": "water camp 2025"
+  }
+}
+2025-05-15 09:40:18 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp_event (id, camp_event_name) VALUES ($1, $2) RETURNING id, camp_event_name",
+  "params": [
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "water camp 2025"
+  ],
+  "rowCount": 1,
+  "duration": "20ms"
+}
+2025-05-15 09:40:27 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "authorization": "Bearer e8886388-ade6-4f86-89df-6673392df241",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "30836dab-be6e-4d5e-bbf0-27777c765075",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 09:40:27 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_name FROM camp_event",
+  "params": [],
+  "rowCount": 2,
+  "duration": "1ms"
+}
+2025-05-15 09:40:55 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "30f6993b-ce77-4df6-b1a2-4fbe3d40184e",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "141"
+  },
+  "body": {
+    "camp_event_id": "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "camp_name": "special Camp",
+    "location": "PSE - Pour un Sourire d'Enfant"
+  }
+}
+2025-05-15 09:40:55 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp (id, camp_event_id, camp_name, location) VALUES ($1, $2, $3, $4) RETURNING *",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "special Camp",
+    "PSE - Pour un Sourire d'Enfant"
+  ],
+  "rowCount": 1,
+  "duration": "31ms"
+}
+2025-05-15 09:46:06 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "e2c6b9e7-d1e7-46a2-9f0f-4c8c5613d8d4",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "360"
+  },
+  "body": {
+    "english_name": "kimIn",
+    "khmer_name": "គីមអីន",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  }
+}
+2025-05-15 09:46:06 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "fc60c104-e890-4d25-af1f-0c59cc9248f4",
+    "kimIn",
+    "គីមអីន",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  ],
+  "error": "invalid input syntax for type integer: \"21116-1\"",
+  "duration": "16ms"
+}
+2025-05-15 09:46:46 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "c5ea5a94-2c9a-48b6-8549-dd1c182898c1",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "360"
+  },
+  "body": {
+    "english_name": "kimIn",
+    "khmer_name": "គីមអីន",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  }
+}
+2025-05-15 09:46:46 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "65af159b-5bb4-4ec7-9d17-884ca5197dab",
+    "kimIn",
+    "គីមអីន",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "error": "invalid input syntax for type integer: \"21116-1\"",
+  "duration": "15ms"
+}
+2025-05-15 09:52:05 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "96337cf0-7e25-4bd9-b572-b4b91474bb91",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "360"
+  },
+  "body": {
+    "english_name": "kimIn",
+    "khmer_name": "គីមអីន",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  }
+}
+2025-05-15 09:52:05 [INFO]: Database query executed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "f78ae7c0-8f82-44b9-ad5b-95461563529a",
+    "kimIn",
+    "គីមអីន",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "rowCount": 1,
+  "duration": "109ms"
+}
+2025-05-15 09:59:01 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "5ba8c73d-565a-434e-b27a-0331ff9655cf",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 09:59:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxZWEyMTNlLTEyZGYtNGMxZC05MjA5LWQ3MzQwNWNkZDA5ZSIsInJvbGVfaWQiOiIzOTU5ZGM3Mi02MWEzLTQxYmMtOWI0Zi05MTg3NDFiODljMDYiLCJpYXQiOjE3NDcyNzYzNTUsImV4cCI6MTc0NzI3OTk1NX0.6sWcTRYXdgijjiwPMtAnXeBkpbaLKT_C-kbQFYxtp54",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "a0a541f4-c0a7-4a89-9a0c-fcfe2303713e",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 09:59:48 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "6464222a-ad9d-4bf7-99b9-5487fe768ad5",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 10:00:20 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "c976dc11-b4dc-4ee7-a415-263a0a5d5251",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 10:03:15 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "authorization": "Bearer e8886388-ade6-4f86-89df-6673392df241",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "e20a6668-66d2-4f94-a976-469de907fb43",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 10:03:15 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_name FROM camp_event",
+  "params": [],
+  "rowCount": 2,
+  "duration": "54ms"
+}
+2025-05-15 11:12:00 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "c4b74c3b-04f0-4da4-a930-5108f8d76235",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-15 11:12:00 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "46ms"
+}
+2025-05-15 11:12:15 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "authorization": "Bearer e8886388-ade6-4f86-89df-6673392df241",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "3ae09e52-2b93-4c22-8a75-e22918cffbd4",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 11:12:44 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "ce87b4af-4657-43c8-98b8-9b8cc25784a2",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 11:13:22 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "654f82f0-527e-4caf-94ee-cab19fdca98b",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 11:13:22 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_name FROM camp_event",
+  "params": [],
+  "rowCount": 2,
+  "duration": "42ms"
+}
+2025-05-15 11:13:39 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "6481c4ea-1370-4dea-9296-95ef152ae737",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 11:13:39 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_name FROM camp_event WHERE id = $1",
+  "params": [
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7"
+  ],
+  "rowCount": 1,
+  "duration": "20ms"
+}
+2025-05-15 11:15:09 [INFO]: Request received {
+  "method": "PUT",
+  "url": "/api/camp-events/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "d9107197-2f4c-44af-a3f1-9f6e1336e601",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "45"
+  },
+  "body": {
+    "camp_event_name": "water camp 2027 "
+  }
+}
+2025-05-15 11:15:09 [INFO]: Database query executed {
+  "sql": "UPDATE camp_event SET camp_event_name = $1 WHERE id = $2 RETURNING id, camp_event_name",
+  "params": [
+    "water camp 2027 ",
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7"
+  ],
+  "rowCount": 1,
+  "duration": "20ms"
+}
+2025-05-15 11:15:14 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "a22f1149-f46e-4bf0-ac55-399bcc5d98c3",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 11:15:14 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_name FROM camp_event WHERE id = $1",
+  "params": [
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7"
+  ],
+  "rowCount": 1,
+  "duration": "2ms"
+}
+2025-05-15 11:15:21 [INFO]: Request received {
+  "method": "PUT",
+  "url": "/api/camp-events/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "13111ae0-c92a-49d0-8ebb-8bddf246eb3d",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "45"
+  },
+  "body": {
+    "camp_event_name": "water camp 2025 "
+  }
+}
+2025-05-15 11:15:21 [INFO]: Database query executed {
+  "sql": "UPDATE camp_event SET camp_event_name = $1 WHERE id = $2 RETURNING id, camp_event_name",
+  "params": [
+    "water camp 2025 ",
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7"
+  ],
+  "rowCount": 1,
+  "duration": "61ms"
+}
+2025-05-15 11:15:25 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "90edc54e-e03c-4fe7-852c-64f482fd4306",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 11:15:25 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_name FROM camp_event WHERE id = $1",
+  "params": [
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7"
+  ],
+  "rowCount": 1,
+  "duration": "2ms"
+}
+2025-05-15 11:16:26 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/camp-events/4bba4eda-3153-4309-9b88-beeb8f37609a",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "f0497aff-5cc8-40e6-ba58-0656ccffe45b",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 11:16:26 [INFO]: Database query executed {
+  "sql": "DELETE FROM camp_event WHERE id = $1",
+  "params": [
+    "4bba4eda-3153-4309-9b88-beeb8f37609a"
+  ],
+  "rowCount": 1,
+  "duration": "77ms"
+}
+2025-05-15 11:16:31 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camp-events",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "8ff7132a-5ffc-426c-89d7-ae4c5241add6",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 11:16:31 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_name FROM camp_event",
+  "params": [],
+  "rowCount": 1,
+  "duration": "1ms"
+}
+2025-05-15 14:41:56 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "3a6ddbd2-eab4-4fa5-9fe6-3e8ec76d3d74",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "141"
+  },
+  "body": {
+    "camp_event_id": "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "camp_name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant"
+  }
+}
+2025-05-15 14:41:56 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp (id, camp_event_id, camp_name, location) VALUES ($1, $2, $3, $4) RETURNING *",
+  "params": [
+    "c33a3897-613e-43d8-ac50-d1a791265667",
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant"
+  ],
+  "rowCount": 1,
+  "duration": "77ms"
+}
+2025-05-15 14:43:00 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "93124597-bf11-4242-9e50-ed6b5ba3496a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "119"
+  },
+  "body": {
+    "camp_event_id": "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "camp_name": "KeanSvay Camp",
+    "location": "sen sok"
+  }
+}
+2025-05-15 14:43:00 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp (id, camp_event_id, camp_name, location) VALUES ($1, $2, $3, $4) RETURNING *",
+  "params": [
+    "11708b68-847f-4bf7-8c15-877c3203d1c1",
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "KeanSvay Camp",
+    "sen sok"
+  ],
+  "rowCount": 1,
+  "duration": "75ms"
+}
+2025-05-15 14:44:01 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "e4dfb111-4896-42e1-84b5-2af13252ccb6",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:44:01 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "rowCount": 3,
+  "duration": "18ms"
+}
+2025-05-15 14:44:56 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "abd7f053-fe9b-47c4-a869-3536f2463be9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:44:56 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "rowCount": 3,
+  "duration": "12ms"
+}
+2025-05-15 14:45:35 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "9da214c7-3091-4f18-bca6-3d9a7c035540",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:45:35 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "rowCount": 1,
+  "duration": "16ms"
+}
+2025-05-15 14:46:06 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "bb352ae7-af01-4c21-9afe-aba7642c4503",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:46:06 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp WHERE id = $1",
+  "params": [
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7"
+  ],
+  "rowCount": 0,
+  "duration": "15ms"
+}
+2025-05-15 14:46:31 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "191f36fe-4c01-4b56-9022-cd44bd205195",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:46:31 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp WHERE id = $1",
+  "params": [
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7"
+  ],
+  "rowCount": 0,
+  "duration": "16ms"
+}
+2025-05-15 14:46:33 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "6ea01ca6-8de7-4bef-afb3-6cbe1d8f37e6",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:46:33 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp WHERE id = $1",
+  "params": [
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7"
+  ],
+  "rowCount": 0,
+  "duration": "1ms"
+}
+2025-05-15 14:46:48 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "1674ffc2-7f45-4dcb-a88c-ed681471c2d0",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:46:48 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "rowCount": 1,
+  "duration": "18ms"
+}
+2025-05-15 14:47:03 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/c33a3897-613e-43d8-ac50-d1a791265667",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "b6de99a1-76a1-4e0a-8d64-35e6823ca44d",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:47:03 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp WHERE id = $1",
+  "params": [
+    "c33a3897-613e-43d8-ac50-d1a791265667"
+  ],
+  "rowCount": 1,
+  "duration": "16ms"
+}
+2025-05-15 14:54:03 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/c33a3897-613e-43d8-ac50-d1a791265667",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "11d46128-95eb-4743-ac98-369a5e83bc91",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:54:03 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "rowCount": 3,
+  "duration": "39ms"
+}
+2025-05-15 14:54:12 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "9419765f-3cd3-4c6e-8415-bdcc9a8af0b0",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:54:12 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "rowCount": 3,
+  "duration": "1ms"
+}
+2025-05-15 14:54:18 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/c33a3897-613e-43d8-ac50-d1a791265667",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "39b48841-6d79-4761-8f22-6684b137c0dd",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:54:18 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "rowCount": 3,
+  "duration": "1ms"
+}
+2025-05-15 14:54:54 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "5dc36d91-2db8-4700-8b4e-a1c88d614b7b",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:54:54 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "rowCount": 3,
+  "duration": "20ms"
+}
+2025-05-15 14:55:35 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "afc472e4-5535-4843-a996-7d532b30cf59",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:55:35 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "rowCount": 1,
+  "duration": "43ms"
+}
+2025-05-15 14:57:55 [INFO]: Request received {
+  "method": "PUT",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "c9a7b825-bb67-4c90-99e7-e78936e2f24d",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "109"
+  },
+  "body": {
+    "camp_event_id": "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "camp_name": "SOB Camp",
+    "location": "OBK"
+  }
+}
+2025-05-15 14:58:06 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "8ab90c99-b8f1-4111-b4f5-a7cee4515e5d",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-15 14:58:06 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "24ms"
+}
+2025-05-15 14:58:25 [INFO]: Request received {
+  "method": "PUT",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxZWEyMTNlLTEyZGYtNGMxZC05MjA5LWQ3MzQwNWNkZDA5ZSIsInJvbGVfaWQiOiIzOTU5ZGM3Mi02MWEzLTQxYmMtOWI0Zi05MTg3NDFiODljMDYiLCJpYXQiOjE3NDcyOTU4ODYsImV4cCI6MTc0NzI5OTQ4Nn0.meZSow2-rVIOzSbUvCp3mmolG2zl0aFgdXIn8v3diFA",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "f5a52139-0aca-4e44-af51-0e065a229e2f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "109"
+  },
+  "body": {
+    "camp_event_id": "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "camp_name": "SOB Camp",
+    "location": "OBK"
+  }
+}
+2025-05-15 14:58:25 [INFO]: Database query executed {
+  "sql": "UPDATE camp SET camp_event_id = $1, camp_name = $2, location = $3 WHERE id = $4 RETURNING *",
+  "params": [
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "SOB Camp",
+    "OBK",
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "rowCount": 1,
+  "duration": "79ms"
+}
+2025-05-15 14:58:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "a0b098eb-6b4f-4117-91d5-4d1304d74b13",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:58:34 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "rowCount": 1,
+  "duration": "2ms"
+}
+2025-05-15 14:58:39 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "666ab8d7-faf1-4c44-be81-63d907d16392",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:58:39 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "rowCount": 3,
+  "duration": "1ms"
+}
+2025-05-15 14:59:40 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "authorization": "Bearer http://localhost:3000/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "f54c8262-91fe-4899-bddb-2d0b345d82d0",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:59:48 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "authorization": "Bearer http://localhost:3000/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "edbc5573-9f3b-4d0f-b98e-ad0251c0c43c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 14:59:53 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "73768bc4-76be-4e70-adfd-6dd170cf802f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-15 14:59:53 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "20ms"
+}
+2025-05-15 15:00:10 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxZWEyMTNlLTEyZGYtNGMxZC05MjA5LWQ3MzQwNWNkZDA5ZSIsInJvbGVfaWQiOiIzOTU5ZGM3Mi02MWEzLTQxYmMtOWI0Zi05MTg3NDFiODljMDYiLCJpYXQiOjE3NDcyOTU5OTMsImV4cCI6MTc0NzI5OTU5M30.XZhKi0efKeP4XDvLA-EecaydEz3irTaBO-kHxyQD-nQ",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "da2af4f4-bfa3-466a-b416-0db2c26e82fd",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 15:00:10 [ERROR]: Database query failed {
+  "sql": "DELETE FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "error": "update or delete on table \"camp\" violates foreign key constraint \"children_camp_id_fkey\" on table \"children\"",
+  "duration": "79ms"
+}
+2025-05-15 15:00:57 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "42b4ad6e-9f45-43ba-87ef-0342dfb66ffa",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 15:00:57 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "rowCount": 1,
+  "duration": "13ms"
+}
+2025-05-15 15:01:04 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxZWEyMTNlLTEyZGYtNGMxZC05MjA5LWQ3MzQwNWNkZDA5ZSIsInJvbGVfaWQiOiIzOTU5ZGM3Mi02MWEzLTQxYmMtOWI0Zi05MTg3NDFiODljMDYiLCJpYXQiOjE3NDcyOTU5OTMsImV4cCI6MTc0NzI5OTU5M30.XZhKi0efKeP4XDvLA-EecaydEz3irTaBO-kHxyQD-nQ",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "dee92fa2-450b-4722-8291-9b774d6344c9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 15:01:04 [ERROR]: Database query failed {
+  "sql": "DELETE FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "error": "update or delete on table \"camp\" violates foreign key constraint \"children_camp_id_fkey\" on table \"children\"",
+  "duration": "3ms"
+}
+2025-05-15 15:01:21 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxZWEyMTNlLTEyZGYtNGMxZC05MjA5LWQ3MzQwNWNkZDA5ZSIsInJvbGVfaWQiOiIzOTU5ZGM3Mi02MWEzLTQxYmMtOWI0Zi05MTg3NDFiODljMDYiLCJpYXQiOjE3NDcyOTU5OTMsImV4cCI6MTc0NzI5OTU5M30.XZhKi0efKeP4XDvLA-EecaydEz3irTaBO-kHxyQD-nQ",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "d00ea2b6-188a-4149-81a6-6a9c478633b5",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 15:01:21 [ERROR]: Database query failed {
+  "sql": "DELETE FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "error": "update or delete on table \"camp\" violates foreign key constraint \"children_camp_id_fkey\" on table \"children\"",
+  "duration": "39ms"
+}
+2025-05-15 15:03:59 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "b459dcb2-cfa5-4ed8-bef5-5625d6b01255",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 15:04:05 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxZWEyMTNlLTEyZGYtNGMxZC05MjA5LWQ3MzQwNWNkZDA5ZSIsInJvbGVfaWQiOiIzOTU5ZGM3Mi02MWEzLTQxYmMtOWI0Zi05MTg3NDFiODljMDYiLCJpYXQiOjE3NDcyOTU5OTMsImV4cCI6MTc0NzI5OTU5M30.XZhKi0efKeP4XDvLA-EecaydEz3irTaBO-kHxyQD-nQ",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "da76084e-7da3-4c3b-80d6-c73d97452601",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 15:04:05 [ERROR]: Database query failed {
+  "sql": "DELETE FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "error": "update or delete on table \"camp\" violates foreign key constraint \"children_camp_id_fkey\" on table \"children\"",
+  "duration": "21ms"
+}
+2025-05-15 15:17:56 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxZWEyMTNlLTEyZGYtNGMxZC05MjA5LWQ3MzQwNWNkZDA5ZSIsInJvbGVfaWQiOiIzOTU5ZGM3Mi02MWEzLTQxYmMtOWI0Zi05MTg3NDFiODljMDYiLCJpYXQiOjE3NDcyOTU5OTMsImV4cCI6MTc0NzI5OTU5M30.XZhKi0efKeP4XDvLA-EecaydEz3irTaBO-kHxyQD-nQ",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "a4d824c1-f615-4316-95e3-71f174ccf10a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 15:18:32 [INFO]: Request received {
+  "method": "PUT",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxZWEyMTNlLTEyZGYtNGMxZC05MjA5LWQ3MzQwNWNkZDA5ZSIsInJvbGVfaWQiOiIzOTU5ZGM3Mi02MWEzLTQxYmMtOWI0Zi05MTg3NDFiODljMDYiLCJpYXQiOjE3NDcyOTU4ODYsImV4cCI6MTc0NzI5OTQ4Nn0.meZSow2-rVIOzSbUvCp3mmolG2zl0aFgdXIn8v3diFA",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "ad1abe63-4307-43b0-9bd9-15b3944b7550",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "116"
+  },
+  "body": {
+    "camp_event_id": "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "camp_name": "SOB Camp",
+    "location": "Pnhom Penh"
+  }
+}
+2025-05-15 15:18:32 [INFO]: Database query executed {
+  "sql": "UPDATE camp SET camp_event_id = $1, camp_name = $2, location = $3 WHERE id = $4 RETURNING *",
+  "params": [
+    "81ab5fbe-37d3-4cd0-88ff-ae8915d044b7",
+    "SOB Camp",
+    "Pnhom Penh",
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "rowCount": 1,
+  "duration": "103ms"
+}
+2025-05-15 15:18:38 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "132f7298-c6c5-4ce6-ab88-79751c7ab06d",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 15:18:38 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp WHERE id = $1",
+  "params": [
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8"
+  ],
+  "rowCount": 1,
+  "duration": "1ms"
+}
+2025-05-15 15:18:54 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/camps/c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxZWEyMTNlLTEyZGYtNGMxZC05MjA5LWQ3MzQwNWNkZDA5ZSIsInJvbGVfaWQiOiIzOTU5ZGM3Mi02MWEzLTQxYmMtOWI0Zi05MTg3NDFiODljMDYiLCJpYXQiOjE3NDcyOTU5OTMsImV4cCI6MTc0NzI5OTU5M30.XZhKi0efKeP4XDvLA-EecaydEz3irTaBO-kHxyQD-nQ",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "579ef51e-8c07-41c2-8f74-81014ff2d6af",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
