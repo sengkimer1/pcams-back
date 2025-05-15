@@ -27,8 +27,10 @@ CREATE TABLE Camp_event (
 CREATE TABLE Camp (
     id UUID PRIMARY KEY,
     camp_event_id UUID REFERENCES Camp_event(id),
-    camp_name VARCHAR(100) NOT NULL
+    camp_name VARCHAR(100) NOT NULL,
+    location VARCHAR(255)  
 );
+
 
 -- Table: Camp_Character
 CREATE TABLE Camp_Character (
@@ -43,7 +45,7 @@ CREATE TABLE Children (
     id UUID PRIMARY KEY,
     english_name VARCHAR(100) NOT NULL,
     khmer_name VARCHAR(100) NOT NULL,
-    family_id INTEGER, -- now integer
+    family_id VARCHAR(50), -- now integer
     age INT,
     gender VARCHAR(10),
     image_url TEXT, 

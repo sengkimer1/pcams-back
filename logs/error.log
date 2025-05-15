@@ -222,3 +222,51 @@
   "error": "column \"location\" of relation \"camp\" does not exist",
   "duration": "277ms"
 }
+2025-05-14 15:39:16 [ERROR]: Database query failed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "6158892e-822d-4610-9eb2-2ba177d006f6",
+    "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "លឹម​ សុភ័ក្រ",
+    "Sopheak Lim",
+    "2005-01-01",
+    "Khmer",
+    "admin",
+    "admin@admin.com",
+    "$2b$10$nY.iqVbUQNt6MGt0S1TvguTKqonFVjQ6LcOWCy5VjeOo1yhtuT/KW"
+  ],
+  "error": "column \"nationality\" of relation \"users\" does not exist",
+  "duration": "2ms"
+}
+2025-05-14 15:39:56 [ERROR]: Database query failed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "17031128-cdfe-4da2-93bb-5e35a92048bc",
+    "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "លឹម​ សុភ័ក្រ",
+    "Sopheak Lim",
+    "2005-01-01",
+    "Khmer",
+    "admin",
+    "admin@admin.com",
+    "$2b$10$h1oqJ6NrwXRqpqrYIhiAnuxAGUhfcWo0KDbYZanI/.UvNsXPZp/2e"
+  ],
+  "error": "column \"nationality\" of relation \"users\" does not exist",
+  "duration": "1ms"
+}
+2025-05-14 15:40:27 [ERROR]: Database query failed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "a95e183a-5eec-47be-83d1-d1606e9dcd9b",
+    "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "លឹម​ សុភ័ក្រ",
+    "Sopheak Lim",
+    "2005-01-01",
+    null,
+    "admin",
+    "admin@admin.com",
+    "$2b$10$JZ0mmQ7r.B6CabGIDniCEuyuWd1sUVmljVIllczkhpWgPEmrozlNK"
+  ],
+  "error": "column \"nationality\" of relation \"users\" does not exist",
+  "duration": "1ms"
+}

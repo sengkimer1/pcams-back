@@ -8,7 +8,7 @@ export default function userRoutes(controller: UserController): Router {
 
   // Only allow authenticated users (e.g., admin) to create users
   // router.post("/", authMiddleware, controller.createUser.bind(controller));
-  router.post("/",authMiddleware, controller.createUser.bind(controller));
+  router.post("/", controller.createUser.bind(controller));
 
 
   return router;

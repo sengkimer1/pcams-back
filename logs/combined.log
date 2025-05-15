@@ -1853,3 +1853,311 @@ man-token": "8280a2e9-fe4a-4464-9244-de61cc16af75",
   "rowCount": 1,
   "duration": "48ms"
 }
+2025-05-14 15:26:19 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMDMwMDksImV4cCI6MTc0NzEwNjYwOX0.XcfSX7OKm7YdpVX4vHs3KNxGDycMMw7mTXI_grvnBEw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "9c2e662b-c0e8-4685-8933-3442dd22c68f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "286"
+  },
+  "body": {
+    "role_id": "b2c3d4e5-f678-9012-bcde-2345678901bc",
+    "khmer_name": "ស៊ន​ មូនីកា",
+    "english_name": "Monika Sorn",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "coordinator",
+    "email": "***"
+  }
+}
+2025-05-14 15:39:16 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMDMwMDksImV4cCI6MTc0NzEwNjYwOX0.XcfSX7OKm7YdpVX4vHs3KNxGDycMMw7mTXI_grvnBEw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "a060a37f-a956-4328-b968-ae23b3dd4e30",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "282"
+  },
+  "body": {
+    "role_id": "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "khmer_name": "លឹម​ សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-14 15:39:16 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "37ms"
+}
+2025-05-14 15:39:16 [ERROR]: Database query failed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "6158892e-822d-4610-9eb2-2ba177d006f6",
+    "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "លឹម​ សុភ័ក្រ",
+    "Sopheak Lim",
+    "2005-01-01",
+    "Khmer",
+    "admin",
+    "admin@admin.com",
+    "$2b$10$nY.iqVbUQNt6MGt0S1TvguTKqonFVjQ6LcOWCy5VjeOo1yhtuT/KW"
+  ],
+  "error": "column \"nationality\" of relation \"users\" does not exist",
+  "duration": "2ms"
+}
+2025-05-14 15:39:56 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMDMwMDksImV4cCI6MTc0NzEwNjYwOX0.XcfSX7OKm7YdpVX4vHs3KNxGDycMMw7mTXI_grvnBEw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "2f5972f9-7db4-4162-9363-859c1b872da7",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "282"
+  },
+  "body": {
+    "role_id": "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "khmer_name": "លឹម​ សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-14 15:39:56 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "12ms"
+}
+2025-05-14 15:39:56 [ERROR]: Database query failed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "17031128-cdfe-4da2-93bb-5e35a92048bc",
+    "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "លឹម​ សុភ័ក្រ",
+    "Sopheak Lim",
+    "2005-01-01",
+    "Khmer",
+    "admin",
+    "admin@admin.com",
+    "$2b$10$h1oqJ6NrwXRqpqrYIhiAnuxAGUhfcWo0KDbYZanI/.UvNsXPZp/2e"
+  ],
+  "error": "column \"nationality\" of relation \"users\" does not exist",
+  "duration": "1ms"
+}
+2025-05-14 15:40:27 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMDMwMDksImV4cCI6MTc0NzEwNjYwOX0.XcfSX7OKm7YdpVX4vHs3KNxGDycMMw7mTXI_grvnBEw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "95a7981f-743c-4632-b354-7c59c7602f57",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "279"
+  },
+  "body": {
+    "role_id": "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "khmer_name": "លឹម​ សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "national": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-14 15:40:27 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "11ms"
+}
+2025-05-14 15:40:27 [ERROR]: Database query failed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "a95e183a-5eec-47be-83d1-d1606e9dcd9b",
+    "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "លឹម​ សុភ័ក្រ",
+    "Sopheak Lim",
+    "2005-01-01",
+    null,
+    "admin",
+    "admin@admin.com",
+    "$2b$10$JZ0mmQ7r.B6CabGIDniCEuyuWd1sUVmljVIllczkhpWgPEmrozlNK"
+  ],
+  "error": "column \"nationality\" of relation \"users\" does not exist",
+  "duration": "1ms"
+}
+2025-05-14 15:42:00 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDcxMDMwMDksImV4cCI6MTc0NzEwNjYwOX0.XcfSX7OKm7YdpVX4vHs3KNxGDycMMw7mTXI_grvnBEw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "6e67d407-3220-4440-93d7-b7e205c8192b",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "282"
+  },
+  "body": {
+    "role_id": "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "khmer_name": "លឹម​ សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-14 15:42:00 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "18ms"
+}
+2025-05-14 15:42:00 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "d8c5258b-7be1-4ce4-8ad5-3a3d1fdcdf89",
+    "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "លឹម​ សុភ័ក្រ",
+    "Sopheak Lim",
+    "2005-01-01",
+    "Khmer",
+    "admin",
+    "admin@admin.com",
+    "$2b$10$fGsnzoWG1p3H5MFMjfK22.tqbcSLWfbiGFG.vFBGgnXjWTV/HeNEa"
+  ],
+  "rowCount": 1,
+  "duration": "7ms"
+}
+2025-05-14 16:31:41 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "7b90a321-28af-4e6c-ad6d-45b116bde3f1",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-15 09:05:16 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "189605b0-eb24-4f41-8643-63b505256f0e",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "282"
+  },
+  "body": {
+    "role_id": "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "khmer_name": "លឹម​ សុភ័ក្រ",
+    "english_name": "Sopheak Lim",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "admin",
+    "email": "***"
+  }
+}
+2025-05-15 09:05:16 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "28ms"
+}
+2025-05-15 09:05:16 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "9f7d3e5f-2b85-4629-9119-9a0c78ce28b5",
+    "54f3e833-0b4f-4b2e-850e-9f6d30e011b7",
+    "លឹម​ សុភ័ក្រ",
+    "Sopheak Lim",
+    "2005-01-01",
+    "Khmer",
+    "admin",
+    "admin@admin.com",
+    "$2b$10$w3QcLt6XGgQMDFdeZOMWE.3djVjGJ7O0i8MaIzUDm5n0R6SQ36G5C"
+  ],
+  "rowCount": 1,
+  "duration": "8ms"
+}
+2025-05-15 09:05:26 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "34d9ba1d-8216-4ba1-b2f9-3931fdea8421",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-15 09:05:26 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "1ms"
+}
