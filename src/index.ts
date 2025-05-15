@@ -16,7 +16,7 @@ import dotenv from "dotenv";
 import { authMiddleware } from "./middlewares/authMiddleware";
 import { PostgresCampEventRepository } from "./repositories/PostgresCampEventRepository";
 import { CampEventService } from "./services/campsEventsSerivce";
-import { CampEventController } from "./controller/campEventController";
+import { EventcampController } from "./controller/campEventController";
 import campEventRoutes from "./routes/campEvetnRoutes"; 
 import {PostgresCampRepository} from "./repositories/campRepository";
 import {CampService} from "./services/campServices";
@@ -45,7 +45,7 @@ const campService = new CampService(campRepository);
 const authController = new AuthController(userService);
 const userController = new UserController(userService);
 const childController = new ChildController(childrenService)
-const campEventController = new CampEventController(campEventService);
+const campEventController = new EventcampController(campEventService);
 const campController = new CampController(campService);
 
 
