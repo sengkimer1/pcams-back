@@ -1,6 +1,7 @@
 import { ICamp, ICampRepository, ICampService } from "../interfaces/campsInterface";
 
 export class CampService implements ICampService {
+  campEventRepository: any;
   constructor(private repository: ICampRepository) {}
 
   async findAll(): Promise<ICamp[]> {
@@ -20,6 +21,6 @@ export class CampService implements ICampService {
   }
 
   async delete(id: string): Promise<boolean> {
-    return this.repository.delete(id);
+    return this.campEventRepository.delete(id);
   }
 }

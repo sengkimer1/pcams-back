@@ -52,4 +52,13 @@ export class PostgresCampRepository implements ICampRepository {
     );
     return (rowCount ?? 0) > 0;
   }
+
+  async hasChildrenReferences(id: string): Promise<boolean> {
+    const { rows } = await queryWithLogging(
+      this.pool,
+      `SELECT EXISTS (SELECT 1 FROM children WHERE camp_id = $1) AS has_references`,
+      [id]
+    );
+    return rows[0].has_references;
+  }
 }
