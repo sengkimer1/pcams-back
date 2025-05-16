@@ -6,11 +6,11 @@ import { UserController } from "../controller/UserController";
 export default function userRoutes(controller: UserController): Router {
   const router = Router();
 
-  router.post("/", controller.createUser.bind(controller));
-  router.get("/",controller.getAllUser.bind(controller));
-  router.get("/:id",controller.getUserById.bind(controller));
-  router.put("/:id", controller.updateUser.bind(controller));
-  router.delete("/:id", controller.deleteUser.bind(controller));
+  router.post("/",authMiddleware, controller.createUser.bind(controller));
+  router.get("/",authMiddleware,controller.getAllUser.bind(controller));
+  router.get("/:id",authMiddleware,controller.getUserById.bind(controller));
+  router.put("/:id",authMiddleware, controller.updateUser.bind(controller));
+  router.delete("/:id",authMiddleware, controller.deleteUser.bind(controller));
 
   return router;
 }

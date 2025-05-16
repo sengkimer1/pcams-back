@@ -7,19 +7,19 @@ export default function campEventRoutes(controller: EventcampController): Router
   const router = Router();
 
   // Create new camp event
-  router.post("/",  validateCampEvent, controller.create.bind(controller));
+  router.post("/",authMiddleware,  validateCampEvent, controller.create.bind(controller));
 
   // Get all camp events
-  router.get("/", controller.getAll.bind(controller));
+  router.get("/",authMiddleware, controller.getAll.bind(controller));
 
   // Get camp event by ID
-  router.get("/:id",  controller.getById.bind(controller));
+  router.get("/:id",authMiddleware,  controller.getById.bind(controller));
 
   // Update camp event by ID
-  router.put("/:id",  validateCampEvent, controller.update.bind(controller));
+  router.put("/:id",authMiddleware,  validateCampEvent, controller.update.bind(controller));
 
   // Delete camp event by ID
-  router.delete("/:id",  controller.delete.bind(controller));
+  router.delete("/:id",authMiddleware,  controller.delete.bind(controller));
 
   return router;
 }
