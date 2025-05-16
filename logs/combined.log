@@ -3943,3 +3943,632 @@ man-token": "8280a2e9-fe4a-4464-9244-de61cc16af75",
   "rowCount": 1,
   "duration": "34ms"
 }
+2025-05-16 07:34:05 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "69302b2f-66e9-4268-86fa-f1adaa615c3f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "122"
+  },
+  "body": {
+    "camp_event_id": "b6a1303e-9ab4-42fb-8c99-ea0f52921977",
+    "camp_name": "Winter Camp 2025",
+    "location": "PSE-OBK"
+  }
+}
+2025-05-16 07:34:05 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp (id, camp_event_id, camp_name, location) VALUES ($1, $2, $3, $4) RETURNING *",
+  "params": [
+    "dd810652-6425-455b-853d-d016ad0b99cc",
+    "b6a1303e-9ab4-42fb-8c99-ea0f52921977",
+    "Winter Camp 2025",
+    "PSE-OBK"
+  ],
+  "rowCount": 1,
+  "duration": "195ms"
+}
+2025-05-16 07:34:24 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "6d58288e-3d7b-4e7f-9ec3-fbe0c07b8ba8",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-16 07:34:24 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "30ms"
+}
+2025-05-16 07:34:40 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/camps/dd810652-6425-455b-853d-d016ad0b99cc",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDczNTU2NjQsImV4cCI6MTc0NzM1OTI2NH0.atSFSOpmT2FT24LWmu0zDjV4KDghzwqsz3cKfvgYM8k",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "1a1dae57-423d-4f08-845c-2976d7064856",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-16 07:34:40 [INFO]: Database query executed {
+  "sql": "DELETE FROM camp WHERE id = $1",
+  "params": [
+    "dd810652-6425-455b-853d-d016ad0b99cc"
+  ],
+  "rowCount": 1,
+  "duration": "16ms"
+}
+2025-05-16 09:31:16 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "e5641787-e253-4550-917d-7f68fde71833",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "358"
+  },
+  "body": {
+    "english_name": "kimer",
+    "khmer_name": "គីមអឺ",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  }
+}
+2025-05-16 09:31:16 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "6b80a500-ea11-4afe-bf80-e25917341c5b",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  ],
+  "error": "invalid input syntax for type integer: \"21116-1\"",
+  "duration": "31ms"
+}
+2025-05-16 09:33:50 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "7f588e05-eb4f-4a57-86d4-39fee5bf0442",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "358"
+  },
+  "body": {
+    "english_name": "kimer",
+    "khmer_name": "គីមអឺ",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  }
+}
+2025-05-16 09:33:50 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "3b46da9a-bbbc-41b2-b72d-12204f5d9b63",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  ],
+  "error": "insert or update on table \"children\" violates foreign key constraint \"children_camp_id_fkey\"",
+  "duration": "33ms"
+}
+2025-05-16 09:34:05 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "d525d76f-465b-43b0-bcb8-63e82399d1e7",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "122"
+  },
+  "body": {
+    "camp_event_id": "b6a1303e-9ab4-42fb-8c99-ea0f52921977",
+    "camp_name": "Winter Camp 2025",
+    "location": "PSE-OBK"
+  }
+}
+2025-05-16 09:34:05 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp (id, camp_event_id, camp_name, location) VALUES ($1, $2, $3, $4) RETURNING *",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "b6a1303e-9ab4-42fb-8c99-ea0f52921977",
+    "Winter Camp 2025",
+    "PSE-OBK"
+  ],
+  "rowCount": 1,
+  "duration": "17ms"
+}
+2025-05-16 09:34:18 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "081a4ccd-91f1-4e92-a0dc-9cf343c7900e",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "358"
+  },
+  "body": {
+    "english_name": "kimer",
+    "khmer_name": "គីមអឺ",
+    "family_id": "21116-1",
+    "age": 10,
+    "gender": "Female",
+    "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "registered_date": "2025-05-13",
+    "description": "Loves puppy.",
+    "camp_id": "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  }
+}
+2025-05-16 09:34:18 [INFO]: Database query executed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "a8ccf05f-3086-488e-87ad-150c4994742e",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "rowCount": 1,
+  "duration": "18ms"
+}
+2025-05-16 09:35:56 [INFO]: Request received {
+  "method": "PUT",
+  "url": "/api/child/a8ccf05f-3086-488e-87ad-150c4994742e",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "88396dbb-02d1-4aff-b7f5-464cdbcd09cc",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "239"
+  },
+  "body": {
+    "english_name": "Updated English Name",
+    "khmer_name": "Updated Khmer Name",
+    "age": 10,
+    "gender": "Male",
+    "image_url": "https://example.com/image.jpg",
+    "registered_date": "2024-05-16",
+    "description": "Updated description"
+  }
+}
+2025-05-16 09:35:56 [INFO]: Database query executed {
+  "sql": "SELECT * FROM children WHERE id = $1",
+  "params": [
+    "a8ccf05f-3086-488e-87ad-150c4994742e"
+  ],
+  "rowCount": 1,
+  "duration": "11ms"
+}
+2025-05-16 09:35:56 [INFO]: Database query executed {
+  "sql": "UPDATE children\n       SET english_name = $1,\n           khmer_name = $2,\n           age = $3,\n           gender = $4,\n           image_url = $5,\n           registered_date = $6,\n           description = $7\n       WHERE id = $8\n       RETURNING *",
+  "params": [
+    "Updated English Name",
+    "Updated Khmer Name",
+    10,
+    "Male",
+    "https://example.com/image.jpg",
+    "2024-05-16",
+    "Updated description",
+    "a8ccf05f-3086-488e-87ad-150c4994742e"
+  ],
+  "rowCount": 1,
+  "duration": "3ms"
+}
+2025-05-16 09:36:20 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/child/a8ccf05f-3086-488e-87ad-150c4994742e",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "b8058cec-9fc3-469b-a39e-7af113f884a5",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-16 09:36:20 [INFO]: Database query executed {
+  "sql": "SELECT * FROM children WHERE id = $1",
+  "params": [
+    "a8ccf05f-3086-488e-87ad-150c4994742e"
+  ],
+  "rowCount": 1,
+  "duration": "13ms"
+}
+2025-05-16 09:36:20 [INFO]: Database query executed {
+  "sql": "DELETE FROM camp WHERE id = $1",
+  "params": [
+    "a8ccf05f-3086-488e-87ad-150c4994742e"
+  ],
+  "rowCount": 0,
+  "duration": "1ms"
+}
+2025-05-16 10:21:35 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "03bf48c1-8c89-4d71-b8b4-3941d4083186",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "243"
+  },
+  "body": {
+    "role_id": "e847e878-9e4d-4cad-8e41-08e8c5fde7fb",
+    "khmer_name": "test",
+    "english_name": "test",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "monitor",
+    "email": "***"
+  }
+}
+2025-05-16 10:21:35 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "test@test.com"
+  ],
+  "rowCount": 0,
+  "duration": "30ms"
+}
+2025-05-16 10:21:35 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "d88aee95-62a5-4b66-9539-18b5f904090e",
+    "e847e878-9e4d-4cad-8e41-08e8c5fde7fb",
+    "test",
+    "test",
+    "2005-01-01",
+    "Khmer",
+    "monitor",
+    "test@test.com",
+    "$2b$10$MqC.LVkLStE46.zRQo6CD.bkS2spI31Su5S9bklWDt6zWVO8Zp676"
+  ],
+  "rowCount": 1,
+  "duration": "5ms"
+}
+2025-05-16 10:23:10 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/d88aee95-62a5-4b66-9539-18b5f904090e",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "0e3c8b19-0a04-4d85-8ae1-c6c9dc314393",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-16 10:23:10 [INFO]: Database query executed {
+  "sql": "SELECT id, email, role_id, khmer_name, english_name, date_of_birth, nationality, position FROM users WHERE id = $1",
+  "params": [
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "rowCount": 1,
+  "duration": "12ms"
+}
+2025-05-16 10:23:22 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "c665e89d-d7ca-4280-bd13-1c966d61d633",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-16 10:23:22 [INFO]: Database query executed {
+  "sql": "SELECT id, email, role_id, khmer_name, english_name, date_of_birth, nationality, position FROM users",
+  "params": [],
+  "rowCount": 2,
+  "duration": "14ms"
+}
+2025-05-16 10:23:52 [INFO]: Request received {
+  "method": "PUT",
+  "url": "/api/users/d88aee95-62a5-4b66-9539-18b5f904090e",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "dea94379-a5cd-4b55-af30-42078960307a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "215"
+  },
+  "body": {
+    "khmer_name": "សុខ ចាន់",
+    "english_name": "Sok Chan",
+    "date_of_birth": "2000-01-01",
+    "nationality": "Cambodian",
+    "position": "Developer",
+    "email": "***",
+    "role_id": 2
+  }
+}
+2025-05-16 10:23:52 [INFO]: Database query executed {
+  "sql": "SELECT id, email, role_id, khmer_name, english_name, date_of_birth, nationality, position FROM users WHERE id = $1",
+  "params": [
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "rowCount": 1,
+  "duration": "10ms"
+}
+2025-05-16 10:23:52 [ERROR]: Database query failed {
+  "sql": "UPDATE users \n       SET khmer_name = $1,\n           english_name = $2,\n           date_of_birth = $3,\n           nationality = $4,\n           position = $5,\n           email = $6,\n           role_id = $7\n       WHERE id = $8 \n       RETURNING *",
+  "params": [
+    "សុខ ចាន់",
+    "Sok Chan",
+    "2000-01-01",
+    "Cambodian",
+    "Developer",
+    "sokchan@example.com",
+    2,
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "error": "invalid input syntax for type uuid: \"2\"",
+  "duration": "1ms"
+}
+2025-05-16 10:23:57 [INFO]: Request received {
+  "method": "PUT",
+  "url": "/api/users/d88aee95-62a5-4b66-9539-18b5f904090e",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "79717d74-a2d5-4917-a8e4-e9ece6f1cc24",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "215"
+  },
+  "body": {
+    "khmer_name": "សុខ ចាន់",
+    "english_name": "Sok Chan",
+    "date_of_birth": "2000-01-01",
+    "nationality": "Cambodian",
+    "position": "Developer",
+    "email": "***",
+    "role_id": 2
+  }
+}
+2025-05-16 10:23:57 [INFO]: Database query executed {
+  "sql": "SELECT id, email, role_id, khmer_name, english_name, date_of_birth, nationality, position FROM users WHERE id = $1",
+  "params": [
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "rowCount": 1,
+  "duration": "13ms"
+}
+2025-05-16 10:23:57 [ERROR]: Database query failed {
+  "sql": "UPDATE users \n       SET khmer_name = $1,\n           english_name = $2,\n           date_of_birth = $3,\n           nationality = $4,\n           position = $5,\n           email = $6,\n           role_id = $7\n       WHERE id = $8 \n       RETURNING *",
+  "params": [
+    "សុខ ចាន់",
+    "Sok Chan",
+    "2000-01-01",
+    "Cambodian",
+    "Developer",
+    "sokchan@example.com",
+    2,
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "error": "invalid input syntax for type uuid: \"2\"",
+  "duration": "1ms"
+}
+2025-05-16 10:24:33 [INFO]: Request received {
+  "method": "PUT",
+  "url": "/api/users/d88aee95-62a5-4b66-9539-18b5f904090e",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "a100ce6a-89c4-4a9d-bfa9-e2db68c579d1",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "199"
+  },
+  "body": {
+    "khmer_name": "សុខ ចាន់",
+    "english_name": "Sok Chan",
+    "date_of_birth": "2000-01-01",
+    "nationality": "Cambodian",
+    "position": "Developer",
+    "email": "***"
+  }
+}
+2025-05-16 10:24:33 [INFO]: Database query executed {
+  "sql": "SELECT id, email, role_id, khmer_name, english_name, date_of_birth, nationality, position FROM users WHERE id = $1",
+  "params": [
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "rowCount": 1,
+  "duration": "30ms"
+}
+2025-05-16 10:24:33 [ERROR]: Database query failed {
+  "sql": "UPDATE users \n       SET khmer_name = $1,\n           english_name = $2,\n           date_of_birth = $3,\n           nationality = $4,\n           position = $5,\n           email = $6,\n         \n       WHERE id = $8 \n       RETURNING *",
+  "params": [
+    "សុខ ចាន់",
+    "Sok Chan",
+    "2000-01-01",
+    "Cambodian",
+    "Developer",
+    "sokchan@example.com",
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "error": "syntax error at or near \"WHERE\"",
+  "duration": "5ms"
+}
+2025-05-16 10:25:19 [INFO]: Request received {
+  "method": "PUT",
+  "url": "/api/users/d88aee95-62a5-4b66-9539-18b5f904090e",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "91a138e4-cd93-4afa-85cd-6db9328cc801",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "252"
+  },
+  "body": {
+    "khmer_name": "សុខ ចាន់",
+    "english_name": "Sok Chan",
+    "date_of_birth": "2000-01-01",
+    "nationality": "Cambodian",
+    "position": "Developer",
+    "email": "***",
+    "role_id": "c203e86d-c907-435f-920d-1c9f9a1e4c9b"
+  }
+}
+2025-05-16 10:25:19 [INFO]: Database query executed {
+  "sql": "SELECT id, email, role_id, khmer_name, english_name, date_of_birth, nationality, position FROM users WHERE id = $1",
+  "params": [
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "rowCount": 1,
+  "duration": "33ms"
+}
+2025-05-16 10:25:19 [INFO]: Database query executed {
+  "sql": "UPDATE users \n       SET khmer_name = $1,\n           english_name = $2,\n           date_of_birth = $3,\n           nationality = $4,\n           position = $5,\n           email = $6,\n           role_id = $7\n       WHERE id = $8 \n       RETURNING *",
+  "params": [
+    "សុខ ចាន់",
+    "Sok Chan",
+    "2000-01-01",
+    "Cambodian",
+    "Developer",
+    "sokchan@example.com",
+    "c203e86d-c907-435f-920d-1c9f9a1e4c9b",
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "rowCount": 1,
+  "duration": "4ms"
+}
+2025-05-16 10:26:07 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/d88aee95-62a5-4b66-9539-18b5f904090e",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "d6874429-0a4a-4f13-9b4d-21e34809b57f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-16 10:26:07 [INFO]: Database query executed {
+  "sql": "SELECT id, email, role_id, khmer_name, english_name, date_of_birth, nationality, position FROM users WHERE id = $1",
+  "params": [
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "rowCount": 1,
+  "duration": "14ms"
+}
+2025-05-16 10:26:31 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/users/d88aee95-62a5-4b66-9539-18b5f904090e",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "7d515c1a-083f-4935-9c65-8e7afb71e8af",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-16 10:26:31 [INFO]: Database query executed {
+  "sql": "SELECT id, email, role_id, khmer_name, english_name, date_of_birth, nationality, position FROM users WHERE id = $1",
+  "params": [
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "rowCount": 1,
+  "duration": "11ms"
+}
+2025-05-16 10:26:31 [INFO]: Database query executed {
+  "sql": "DELETE FROM users WHERE id = $1",
+  "params": [
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "rowCount": 1,
+  "duration": "5ms"
+}

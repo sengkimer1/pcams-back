@@ -60,4 +60,35 @@ export class PostgresUserRepository implements IUserRepository {
 
     return rows[0];
   }
+  async update(
+    id: string,
+    user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>
+  ): Promise<IUserWithoutPassword | null> {
+    const { khmer_name, english_name, date_of_birth, nationality, position, email, role_id } = user;
+  
+    const { rows } = await queryWithLogging( this.pool,
+      `UPDATE users 
+       SET khmer_name = $1,
+           english_name = $2,
+           date_of_birth = $3,
+           nationality = $4,
+           position = $5,
+           email = $6,
+           role_id = $7
+       WHERE id = $8 
+       RETURNING *`,
+      [khmer_name, english_name, date_of_birth, nationality, position, email, role_id, id]
+    );
+  
+    return rows[0] || null;
+  }
+  
+  async delete(id: string): Promise<boolean> {
+    const { rowCount } = await queryWithLogging(
+      this.pool,
+      `DELETE FROM users WHERE id = $1`,
+      [id]
+    );
+    return (rowCount ?? 0) > 0;
+  }
 }

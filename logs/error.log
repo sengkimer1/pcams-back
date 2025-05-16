@@ -357,3 +357,81 @@
   "error": "insert or update on table \"camp\" violates foreign key constraint \"camp_camp_event_id_fkey\"",
   "duration": "9ms"
 }
+2025-05-16 09:31:16 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "6b80a500-ea11-4afe-bf80-e25917341c5b",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  ],
+  "error": "invalid input syntax for type integer: \"21116-1\"",
+  "duration": "31ms"
+}
+2025-05-16 09:33:50 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10\n      )\n      RETURNING *",
+  "params": [
+    "3b46da9a-bbbc-41b2-b72d-12204f5d9b63",
+    "kimer",
+    "គីមអឺ",
+    "21116-1",
+    10,
+    "Female",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-13",
+    "Loves puppy.",
+    "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37"
+  ],
+  "error": "insert or update on table \"children\" violates foreign key constraint \"children_camp_id_fkey\"",
+  "duration": "33ms"
+}
+2025-05-16 10:23:52 [ERROR]: Database query failed {
+  "sql": "UPDATE users \n       SET khmer_name = $1,\n           english_name = $2,\n           date_of_birth = $3,\n           nationality = $4,\n           position = $5,\n           email = $6,\n           role_id = $7\n       WHERE id = $8 \n       RETURNING *",
+  "params": [
+    "សុខ ចាន់",
+    "Sok Chan",
+    "2000-01-01",
+    "Cambodian",
+    "Developer",
+    "sokchan@example.com",
+    2,
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "error": "invalid input syntax for type uuid: \"2\"",
+  "duration": "1ms"
+}
+2025-05-16 10:23:57 [ERROR]: Database query failed {
+  "sql": "UPDATE users \n       SET khmer_name = $1,\n           english_name = $2,\n           date_of_birth = $3,\n           nationality = $4,\n           position = $5,\n           email = $6,\n           role_id = $7\n       WHERE id = $8 \n       RETURNING *",
+  "params": [
+    "សុខ ចាន់",
+    "Sok Chan",
+    "2000-01-01",
+    "Cambodian",
+    "Developer",
+    "sokchan@example.com",
+    2,
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "error": "invalid input syntax for type uuid: \"2\"",
+  "duration": "1ms"
+}
+2025-05-16 10:24:33 [ERROR]: Database query failed {
+  "sql": "UPDATE users \n       SET khmer_name = $1,\n           english_name = $2,\n           date_of_birth = $3,\n           nationality = $4,\n           position = $5,\n           email = $6,\n         \n       WHERE id = $8 \n       RETURNING *",
+  "params": [
+    "សុខ ចាន់",
+    "Sok Chan",
+    "2000-01-01",
+    "Cambodian",
+    "Developer",
+    "sokchan@example.com",
+    "d88aee95-62a5-4b66-9539-18b5f904090e"
+  ],
+  "error": "syntax error at or near \"WHERE\"",
+  "duration": "5ms"
+}

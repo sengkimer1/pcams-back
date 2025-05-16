@@ -55,4 +55,32 @@ export class UserService implements IUserService {
       token,
     };
   }
+  async updateUser(
+    id: string,
+    user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>
+  ): Promise<IUserWithoutPassword> {
+    const existingUser = await this.userRepository.findById(id);
+    if (!existingUser) {
+      throw Object.assign(new Error("User not found"), { status: 404 });
+    }
+  
+    const updatedUser = await this.userRepository.update(id, user);
+    if (!updatedUser) {
+      throw Object.assign(new Error("Failed to update user"), { status: 500 });
+    }
+  
+    return updatedUser;
+  }
+  
+  async deleteUser(id: string): Promise<void> {
+    const existingUser = await this.userRepository.findById(id);
+    if (!existingUser) {
+      throw Object.assign(new Error("User not found"), { status: 404 });
+    }
+
+    const deleted = await this.userRepository.delete(id);
+    if (!deleted) {
+      throw Object.assign(new Error("Failed to delete user"), { status: 500 });
+    }
+  }
 }

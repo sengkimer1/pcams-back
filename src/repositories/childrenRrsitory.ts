@@ -65,4 +65,43 @@ export class PostgresChildRepository implements IChildRepository {
     );
     return rows;
   }
+
+  async update(id: string, data: Partial<Omit<IChild, "id">>): Promise<IChild> {
+    const {
+      english_name,
+      khmer_name,
+      age,
+      gender,
+      image_url,
+      registered_date,
+      description,
+    } = data;
+  
+    const { rows } = await queryWithLogging(
+      this.pool,
+      `UPDATE children
+       SET english_name = $1,
+           khmer_name = $2,
+           age = $3,
+           gender = $4,
+           image_url = $5,
+           registered_date = $6,
+           description = $7
+       WHERE id = $8
+       RETURNING *`,
+      [english_name, khmer_name, age, gender, image_url, registered_date, description, id]
+    );
+  
+    return rows[0] || null;
+  }
+  
+  
+  async delete(id: string): Promise<boolean> {
+    const { rowCount } = await queryWithLogging(
+      this.pool,
+      `DELETE FROM camp WHERE id = $1`,
+      [id]
+    );
+    return (rowCount ?? 0) > 0;
+  }
 }

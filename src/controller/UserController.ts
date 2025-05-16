@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { UserService } from "../services/userService";
 
 export class UserController {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) { }
 
   async createUser(req: Request, res: Response, next: NextFunction) {
     try {
@@ -34,4 +34,46 @@ export class UserController {
       next(err);
     }
   }
+  async getAllUser(req: Request, res: Response, next: NextFunction) {
+    try {
+      const user = await this.userService.getAllUsers();
+      res.status(200).json(user);
+    } catch (err) {
+      console.error(err);
+      next(err);
+    }
+  }
+  async getUserById(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { id } = req.params;
+      const user = await this.userService.getUserById(id);
+      res.status(200).json(user);
+    } catch (error) {
+      next(error);
+    }
+  }
+  async updateUser(req: Request, res: Response, next: NextFunction) {
+    try {
+      const id = req.params.id;
+      const updateData = req.body;
+      const updatedUser = await this.userService.updateUser(id, updateData);
+
+      res.status(200).json({ message: "User updated", data: updatedUser });
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  async deleteUser(req: Request, res: Response, next: NextFunction) {
+    try {
+      const id = req.params.id;
+      await this.userService.deleteUser(id);
+
+      res.status(200).json({ message: "User deleted successfully." });
+    } catch (err) {
+      console.error(err);
+      next(err);
+    }
+  }
+
 }
