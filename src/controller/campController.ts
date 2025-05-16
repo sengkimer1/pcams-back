@@ -53,18 +53,14 @@ export class CampController {
   delete: RequestHandler = async (req: Request, res: Response): Promise<void> => {
     try {
       const { id } = req.params;
-      const success = await this.service.delete(id);
-      if (!success) {
-        res.status(404).json({ message: "Camp not found" });
+      const deleted = await this.service.delete(id);
+      if (!deleted) {
+        res.status(404).json({ message: "camp not found" });
         return;
       }
-      res.status(200).json({ message: "Camp deleted" });
-    } catch (err: any) {
-      if (err.message === "Cannot delete camp because it is referenced by children") {
-        res.status(400).json({ message: err.message });
-        return;
-      }
-      res.status(500).json({ message: "Failed to delete camp", error: err });
+      res.status(200).json({ message: "Deleted successfully" });
+    } catch (err) {
+      res.status(500).json({ message: "Failed to delete camp", err });
     }
   };
 }

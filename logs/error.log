@@ -338,3 +338,22 @@
   "duration": "21ms"
 >>>>>>> 6af490b1f4b2467854f33184dc9513d43e79b135
 }
+2025-05-15 16:37:49 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ECONNREFUSED 127.0.0.1:5436",
+  "duration": "15ms"
+}
+2025-05-15 16:40:54 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp (id, camp_event_id, camp_name, location) VALUES ($1, $2, $3, $4) RETURNING *",
+  "params": [
+    "e55c2866-6f69-4855-937b-809178c99c1b",
+    "a250fa34-0bcf-4292-9b78-fbf6b800d2b4",
+    "Winter Camp 2025",
+    "PSE-OBK"
+  ],
+  "error": "insert or update on table \"camp\" violates foreign key constraint \"camp_camp_event_id_fkey\"",
+  "duration": "9ms"
+}

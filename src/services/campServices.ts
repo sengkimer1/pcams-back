@@ -21,6 +21,6 @@ export class CampService implements ICampService {
   }
 
   async delete(id: string): Promise<boolean> {
-    return this.campEventRepository.delete(id);
+    return this.repository.delete(id);
   }
 }
