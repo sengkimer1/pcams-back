@@ -9,8 +9,10 @@ export interface AttendanceTracking {
   
   export interface AttendanceTrackingRepository {
     updateStatus(id: string, status: "present" | "absent" | "late"): Promise<AttendanceTracking | null>;
+    create(data: AttendanceTracking): Promise<AttendanceTracking>;
   }
   
   export interface AttendanceTrackingService {
     updateStatus(id: string, status: "present" | "absent" | "late"): Promise<AttendanceTracking | null>;
+    create(data: AttendanceTracking): Promise<AttendanceTracking>;
   }

@@ -6,4 +6,8 @@ export class PostgresAttendanceTrackingService implements AttendanceTrackingServ
   async updateStatus(id: string, status: "present" | "absent" | "late"): Promise<AttendanceTracking | null> {
     return this.repository.updateStatus(id, status);
   }
+
+  async create(data: AttendanceTracking): Promise<AttendanceTracking> {
+    return this.repository.create(data);
+  }
 }

@@ -461,3 +461,39 @@
   "error": "syntax error at or near \"$\"",
   "duration": "28ms"
 }
+2025-05-19 10:32:11 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id, status\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10, $11\n      )\n      RETURNING *",
+  "params": [
+    "789f57d7-5580-48cb-ac80-d1f3b583ea30",
+    "Vann Teong",
+    "វ៉ាន​ តឹង",
+    "2136-6",
+    10,
+    "Male",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-16",
+    "Loves Baskeball.",
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+    "Present"
+  ],
+  "error": "insert or update on table \"children\" violates foreign key constraint \"children_camp_id_fkey\"",
+  "duration": "407ms"
+}
+2025-05-19 10:33:58 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id, status\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10, $11\n      )\n      RETURNING *",
+  "params": [
+    "2f76cd70-20cb-413b-8d3b-d2090a8e0ce9",
+    "Vann Teong",
+    "វ៉ាន​ តឹង",
+    "2136-6",
+    10,
+    "Male",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCZpHde-s7QUVPZfkfq609lPCl6RVzFkxRfQ&s",
+    "2025-05-16",
+    "Loves Baskeball.",
+    "c4ba543e-be21-4ad6-9a58-355bc5f69cb8",
+    "Present"
+  ],
+  "error": "insert or update on table \"children\" violates foreign key constraint \"children_camp_id_fkey\"",
+  "duration": "243ms"
+}
