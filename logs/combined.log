@@ -4572,3 +4572,55 @@ man-token": "8280a2e9-fe4a-4464-9244-de61cc16af75",
   "rowCount": 1,
   "duration": "5ms"
 }
+2025-05-19 07:24:58 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "fb294948-f970-49eb-aa56-bb113d875343",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-19 07:24:58 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "302ms"
+}
+2025-05-19 07:25:58 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "2b577ab1-e701-4e74-a2ae-e2c759cb612b",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-19 07:25:59 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "257ms"
+}
