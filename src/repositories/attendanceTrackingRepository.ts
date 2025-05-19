@@ -17,11 +17,11 @@ export class PostgresAttendanceTrackingRepository implements AttendanceTrackingR
 
   async create(data: AttendanceTracking): Promise<AttendanceTracking> {
     const id = uuidv4();
-    const { children_id, monitor_user_id, attendance_date, description, status } = data;
+    const { children_id, tracker_id, attendance_date, description, status } = data;
     const { rows } = await this.pool.query(
-      `INSERT INTO children_attendance (id, children_id, monitor_user_id, attendance_date, description, status) 
+      `INSERT INTO children_attendance (id, children_id, tracker_id, attendance_date, description, status) 
        VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`,
-      [id, children_id, monitor_user_id, attendance_date, description, status || "present"]
+      [id, children_id, tracker_id, attendance_date, description, status || "present"]
     );
     return rows[0];
   }

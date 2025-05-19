@@ -26,6 +26,11 @@ import {PostgresAttendanceTrackingRepository} from "./repositories/attendanceTra
 import {PostgresAttendanceTrackingService} from "./services/attendanceTrackingService";
 import {AttendanceTrackingController} from "./controller/attendanceTrackingController";
 import attendanceRoutes from "./routes/attedanceTrackingRoute";
+import {PostgresCampUserRepository} from "./repositories/campUserRepository";
+import {PostgresCampUserService} from "./services/campUserServices";
+import {CampUserController} from "./controller/campUserController";
+import campUserRoutes from "./routes/campUserRoute";
+
 
 dotenv.config(); 
 
@@ -39,6 +44,7 @@ const campEventRepository = new PostgresCampEventRepository(pgPool);
 const campRepository = new PostgresCampRepository(pgPool);
 const childRepository = new PostgresChildRepository(pgPool);
 const attendanceTrackingRepository = new PostgresAttendanceTrackingRepository(pgPool);
+const campUserRepository = new PostgresCampUserRepository(pgPool);
 
 // Service
 const userService = new UserService(userRepository);
@@ -46,6 +52,7 @@ const childrenService = new ChildService(childRepository)
 const campEventService = new CampEventService(campEventRepository);
 const campService = new CampService(campRepository);
 const attendanceTrackingService = new PostgresAttendanceTrackingService(attendanceTrackingRepository);
+const campUserService = new PostgresCampUserService(campUserRepository);
 
 // Controller
 const authController = new AuthController(userService);
@@ -54,6 +61,7 @@ const childController = new ChildController(childrenService)
 const campEventController = new EventcampController(campEventService);
 const campController = new CampController(campService);
 const attendanceTrackingController = new AttendanceTrackingController(attendanceTrackingService);
+const campUserController = new CampUserController(campUserService);
 
 
 // Middleware
@@ -67,6 +75,7 @@ app.use("/api/camps", campRoutes(campController));
 app.use("/api/users", userRoutes(userController));
 app.use("/api/child", childRoutes (childController))
 app.use("/api/attendance", attendanceRoutes(attendanceTrackingController));
+app.use("/api/camp-user", campUserRoutes(campUserController));
 
 // Start server
 app.listen(PORT, () => {

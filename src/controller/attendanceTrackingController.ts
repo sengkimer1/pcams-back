@@ -53,7 +53,7 @@ export class AttendanceTrackingController {
     const attendanceData = {
       ...data,
       attendance_date: attendanceDate,
-      monitor_user_id: req.user.id, // Extract monitor_user_id from token
+      tracker_id: req.user.id, // Extract tracker_id from token
     };
 
     try {

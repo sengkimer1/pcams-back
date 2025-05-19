@@ -1,7 +1,7 @@
 export interface AttendanceTracking {
     id?: string;
     children_id?: string;
-    monitor_user_id?: string;
+    tracker_id?: string;
     attendance_date?: Date;
     description?: string;
     status?: "present" | "absent" | "late";
