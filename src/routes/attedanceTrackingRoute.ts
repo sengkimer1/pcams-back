@@ -6,6 +6,7 @@ export default function attendanceRoutes(controller: AttendanceTrackingControlle
   const router = Router();
 
   router.patch("/:id/status", authMiddleware, controller.updateStatus.bind(controller));
+  router.post("/", authMiddleware, controller.create.bind(controller));
 
   return router;
 }
