@@ -83,4 +83,12 @@ export class UserService implements IUserService {
       throw Object.assign(new Error("Failed to delete user"), { status: 500 });
     }
   }
+  async getOneUserByRole(roleName: string): Promise<IUserWithoutPassword> {
+    const user = await this.userRepository.getOneUserByRole(roleName);
+    if (!user) {
+      throw Object.assign(new Error("User with specified role not found"), { status: 404 });
+    }
+    return user;
+  }
+  
 }

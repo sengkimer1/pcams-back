@@ -22,9 +22,10 @@ export interface IUserRepository {
   findAll(): Promise<IUserWithoutPassword[]>;
   findById(id: string): Promise<IUserWithoutPassword | null>;
   findByEmail(email: string): Promise<IUser | null>;
-
   update(id: string, user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword | null>;
   delete(id: string): Promise<boolean>;
+  getOneUserByRole(roleName: string): Promise<IUserWithoutPassword | null>;
+
 }
 
 export interface IUserService {
@@ -32,7 +33,8 @@ export interface IUserService {
   getAllUsers(): Promise<IUserWithoutPassword[]>;
   getUserById(id: string): Promise<IUserWithoutPassword>;
   login(email: string, password: string): Promise<ILoginResponse>;
-
   updateUser(id: string, user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword>;
   deleteUser(id: string): Promise<void>;
+  getOneUserByRole(roleName: string): Promise<IUserWithoutPassword>;
+
 }

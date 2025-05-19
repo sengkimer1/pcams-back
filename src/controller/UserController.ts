@@ -75,5 +75,13 @@ export class UserController {
       next(err);
     }
   }
-
+  async getOneUserByRole(req: Request, res: Response, next: NextFunction) {
+    try {
+      const roleName = req.params.roleName;
+      const user = await this.userService.getOneUserByRole(roleName);
+      res.json(user);
+    } catch (err) {
+      next(err);
+    }
+  }
 }

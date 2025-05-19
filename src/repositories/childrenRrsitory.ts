@@ -18,16 +18,17 @@ export class PostgresChildRepository implements IChildRepository {
       registered_date,
       description,
       camp_id,
+      status,
     } = child;
 
     const { rows } = await queryWithLogging(
       this.pool,
       `INSERT INTO children (
         id, english_name, khmer_name, family_id, age, gender,
-        image_url, registered_date, description, camp_id
+        image_url, registered_date, description, camp_id, status
       ) VALUES (
         $1, $2, $3, $4, $5, $6,
-        $7, $8, $9, $10
+        $7, $8, $9, $10, $11
       )
       RETURNING *`,
       [
@@ -41,6 +42,7 @@ export class PostgresChildRepository implements IChildRepository {
         registered_date ?? null,
         description ?? null,
         camp_id,
+        status,
       ]
     );
 
@@ -104,4 +106,13 @@ export class PostgresChildRepository implements IChildRepository {
     );
     return (rowCount ?? 0) > 0;
   }
+
+  // async getChildrenByCampId(campId: string): Promise<IChild[]> {
+  //   const { rows } = await queryWithLogging(
+  //     this.pool,
+  //     `SELECT id, name, age FROM children WHERE camp_id = $1`,
+  //     [campId]
+  //   );
+  //   return rows;
+  // }
 }
