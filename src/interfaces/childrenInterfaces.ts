@@ -9,6 +9,7 @@ export interface IChild {
   registered_date?: string;
   description?: string;
   camp_id: string;
+  status?: "Present"|"Late";
 }
 
 export interface IChildRepository {
@@ -18,6 +19,7 @@ export interface IChildRepository {
   findByCampId(campId: string): Promise<IChild[]>;
   update(id: string, child: Partial<Omit<IChild, "id">>): Promise<IChild>;
   delete(id: string): Promise<boolean>;
+  // getChildrenByCampId(campId: string): Promise<IChild[]>;
 }
 
 
@@ -28,4 +30,5 @@ export interface IChildService {
   getChildrenByCampId(campId: string): Promise<IChild[]>;
   updateChild(id: string, child: Partial<Omit<IChild, "id">>): Promise<IChild>;
   deleteChild(id: string): Promise<void>;
+  // getChildrenByCampId(campId: string): Promise<IChild[]>;
 }

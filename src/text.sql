@@ -53,7 +53,8 @@ CREATE TABLE Children (
     description TEXT, 
     camp_id UUID REFERENCES Camp(id)
 );
-
+ALTER TABLE Children
+ADD COLUMN status VARCHAR(10);
 
 -- Table: Children_Attendance
 CREATE TABLE Children_Attendance (

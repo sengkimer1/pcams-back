@@ -4572,3 +4572,527 @@ man-token": "8280a2e9-fe4a-4464-9244-de61cc16af75",
   "rowCount": 1,
   "duration": "5ms"
 }
+2025-05-19 07:55:37 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "93f6d4b2-acc0-4358-be56-9278c9f4f522",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-19 07:55:37 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "189ms"
+}
+2025-05-19 07:55:57 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/role/admin",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "82a8d2e5-cb57-4541-8fca-8468aed2a5c2",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-19 07:55:57 [ERROR]: Database query failed {
+  "sql": " \n      SELECT u.*\n      FROM users u\n      JOIN roles r ON u.role_id = r.id\n      WHERE r.name = $1\n      LIMIT 1\n    ",
+  "params": [
+    "admin"
+  ],
+  "error": "relation \"roles\" does not exist",
+  "duration": "17ms"
+}
+2025-05-19 07:56:53 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/role/admin",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "af90e3ee-e9f1-4ebc-af39-ba08a0056f6c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-19 07:56:54 [INFO]: Database query executed {
+  "sql": " \n      SELECT u.*\n      FROM users u\n      JOIN role r ON u.role_id = r.id\n      WHERE r.name = $1\n      LIMIT 1\n    ",
+  "params": [
+    "admin"
+  ],
+  "rowCount": 1,
+  "duration": "39ms"
+}
+2025-05-19 07:57:07 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/role/coordinator",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "d1e19cf2-5af2-4286-879b-e46e5c093b0f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-19 07:57:07 [INFO]: Database query executed {
+  "sql": " \n      SELECT u.*\n      FROM users u\n      JOIN role r ON u.role_id = r.id\n      WHERE r.name = $1\n      LIMIT 1\n    ",
+  "params": [
+    "coordinator"
+  ],
+  "rowCount": 0,
+  "duration": "13ms"
+}
+2025-05-19 07:58:18 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/role/monitor",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "50aa2a4d-4d33-40bc-ab87-ebe6a5dee5b0",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-19 07:58:18 [INFO]: Database query executed {
+  "sql": " \n      SELECT u.*\n      FROM users u\n      JOIN role r ON u.role_id = r.id\n      WHERE r.name = $1\n      LIMIT 1\n    ",
+  "params": [
+    "monitor"
+  ],
+  "rowCount": 0,
+  "duration": "12ms"
+}
+2025-05-19 07:58:41 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "ae9b8e9d-7f3b-49d2-91db-19da86751b74",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "243"
+  },
+  "body": {
+    "role_id": "e847e878-9e4d-4cad-8e41-08e8c5fde7fb",
+    "khmer_name": "test",
+    "english_name": "test",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "monitor",
+    "email": "***"
+  }
+}
+2025-05-19 07:59:01 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "40a42831-df71-43f4-87d5-54cf8b5d6dbd",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "243"
+  },
+  "body": {
+    "role_id": "e847e878-9e4d-4cad-8e41-08e8c5fde7fb",
+    "khmer_name": "test",
+    "english_name": "test",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "monitor",
+    "email": "***"
+  }
+}
+2025-05-19 07:59:01 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "test@test.com"
+  ],
+  "rowCount": 0,
+  "duration": "12ms"
+}
+2025-05-19 07:59:01 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "88371acb-51d8-44c2-8802-7c757abde129",
+    "e847e878-9e4d-4cad-8e41-08e8c5fde7fb",
+    "test",
+    "test",
+    "2005-01-01",
+    "Khmer",
+    "monitor",
+    "test@test.com",
+    "$2b$10$PACHEa1RtJTdsIuRenT3x.65CNynBBxTWgPUl9hOl04NJRQMBelKq"
+  ],
+  "rowCount": 1,
+  "duration": "5ms"
+}
+2025-05-19 07:59:07 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/role/monitor",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "abed5c6a-bb0b-41fe-9295-434109e654bf",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-19 07:59:07 [INFO]: Database query executed {
+  "sql": " \n      SELECT u.*\n      FROM users u\n      JOIN role r ON u.role_id = r.id\n      WHERE r.name = $1\n      LIMIT 1\n    ",
+  "params": [
+    "monitor"
+  ],
+  "rowCount": 1,
+  "duration": "1ms"
+}
+2025-05-19 09:36:07 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "b9a0a192-0187-455b-b11a-013ee6f6476a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "330"
+  },
+  "body": {
+    "english_name": "Sokha",
+    "khmer_name": "សុខា",
+    "family_id": "101",
+    "age": 10,
+    "gender": "Male",
+    "image_url": "https://example.com/images/sokha.jpg",
+    "registered_date": "2025-05-19",
+    "description": "Very active and friendly.",
+    "camp_id": "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "status": "Present"
+  }
+}
+2025-05-19 09:36:07 [ERROR]: Database query failed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id,status\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10,11$\n      )\n      RETURNING *",
+  "params": [
+    "e9d1d68f-8b37-4e27-987e-fcc3d2a6a400",
+    "Sokha",
+    "សុខា",
+    "101",
+    10,
+    "Male",
+    "https://example.com/images/sokha.jpg",
+    "2025-05-19",
+    "Very active and friendly.",
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    null
+  ],
+  "error": "syntax error at or near \"$\"",
+  "duration": "28ms"
+}
+2025-05-19 09:36:40 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "73dbee70-6452-4b2a-b8c5-b2cd57385327",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "330"
+  },
+  "body": {
+    "english_name": "Sokha",
+    "khmer_name": "សុខា",
+    "family_id": "101",
+    "age": 10,
+    "gender": "Male",
+    "image_url": "https://example.com/images/sokha.jpg",
+    "registered_date": "2025-05-19",
+    "description": "Very active and friendly.",
+    "camp_id": "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "status": "Present"
+  }
+}
+2025-05-19 09:36:40 [INFO]: Database query executed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id,status\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10,$11\n      )\n      RETURNING *",
+  "params": [
+    "d01bfc7f-858b-482f-9006-ed6ab7411b91",
+    "Sokha",
+    "សុខា",
+    "101",
+    10,
+    "Male",
+    "https://example.com/images/sokha.jpg",
+    "2025-05-19",
+    "Very active and friendly.",
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    null
+  ],
+  "rowCount": 1,
+  "duration": "38ms"
+}
+2025-05-19 09:38:31 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "6afe4278-44d8-4f4f-a000-d2d4ae96c598",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "330"
+  },
+  "body": {
+    "english_name": "Nita",
+    "khmer_name": "នីតា",
+    "family_id": "202",
+    "age": 8,
+    "gender": "Female",
+    "image_url": "https://example.com/images/nita.jpg",
+    "registered_date": "2025-05-19",
+    "description": "Loves drawing and singing.",
+    "camp_id": "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "status": "present"
+  }
+}
+2025-05-19 09:38:31 [INFO]: Database query executed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id,status\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10,$11\n      )\n      RETURNING *",
+  "params": [
+    "dc8f94cb-d245-40d4-af5c-fee9360643e3",
+    "Nita",
+    "នីតា",
+    "202",
+    8,
+    "Female",
+    "https://example.com/images/nita.jpg",
+    "2025-05-19",
+    "Loves drawing and singing.",
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    null
+  ],
+  "rowCount": 1,
+  "duration": "15ms"
+}
+2025-05-19 09:40:34 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "4a84cb82-deca-4fa1-9514-d45e5031d506",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "330"
+  },
+  "body": {
+    "english_name": "Nita",
+    "khmer_name": "នីតា",
+    "family_id": "202",
+    "age": 8,
+    "gender": "Female",
+    "image_url": "https://example.com/images/nita.jpg",
+    "registered_date": "2025-05-19",
+    "description": "Loves drawing and singing.",
+    "camp_id": "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "status": "present"
+  }
+}
+2025-05-19 09:40:34 [INFO]: Database query executed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id, status\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10, $11\n      )\n      RETURNING *",
+  "params": [
+    "a499607c-363e-4a2b-be1a-f182244208f3",
+    "Nita",
+    "នីតា",
+    "202",
+    8,
+    "Female",
+    "https://example.com/images/nita.jpg",
+    "2025-05-19",
+    "Loves drawing and singing.",
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    null
+  ],
+  "rowCount": 1,
+  "duration": "35ms"
+}
+2025-05-19 09:46:09 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "ff6c6f89-af52-40bd-8f2f-cb07c618e036",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "330"
+  },
+  "body": {
+    "english_name": "Nita",
+    "khmer_name": "នីតា",
+    "family_id": "202",
+    "age": 8,
+    "gender": "Female",
+    "image_url": "https://example.com/images/nita.jpg",
+    "registered_date": "2025-05-19",
+    "description": "Loves drawing and singing.",
+    "camp_id": "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "status": "present"
+  }
+}
+2025-05-19 09:46:09 [INFO]: Database query executed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id, status\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10, $11\n      )\n      RETURNING *",
+  "params": [
+    "7a2d58c5-feea-4a43-b8c1-47e6bc5e6e3f",
+    "Nita",
+    "នីតា",
+    "202",
+    8,
+    "Female",
+    "https://example.com/images/nita.jpg",
+    "2025-05-19",
+    "Loves drawing and singing.",
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    null
+  ],
+  "rowCount": 1,
+  "duration": "17ms"
+}
+2025-05-19 09:46:19 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "d4ebb8e3-3ea0-45ba-b06d-0284da5faabf",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "330"
+  },
+  "body": {
+    "english_name": "Nita",
+    "khmer_name": "នីតា",
+    "family_id": "202",
+    "age": 8,
+    "gender": "Female",
+    "image_url": "https://example.com/images/nita.jpg",
+    "registered_date": "2025-05-19",
+    "description": "Loves drawing and singing.",
+    "camp_id": "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "status": "Present"
+  }
+}
+2025-05-19 09:46:19 [INFO]: Database query executed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id, status\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10, $11\n      )\n      RETURNING *",
+  "params": [
+    "7ff61cec-7662-4873-8a2d-60b3f6900c5a",
+    "Nita",
+    "នីតា",
+    "202",
+    8,
+    "Female",
+    "https://example.com/images/nita.jpg",
+    "2025-05-19",
+    "Loves drawing and singing.",
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    null
+  ],
+  "rowCount": 1,
+  "duration": "4ms"
+}
+2025-05-19 09:48:01 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/child/",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjlmN2QzZTVmLTJiODUtNDYyOS05MTE5LTlhMGM3OGNlMjhiNSIsInJvbGVfaWQiOiI1NGYzZTgzMy0wYjRmLTRiMmUtODUwZS05ZjZkMzBlMDExYjciLCJpYXQiOjE3NDc2MTYxMzgsImV4cCI6MTc0NzYxOTczOH0.cmZGLef5Hkh5ReDQL38OMXGZ0GYoAhlCcdLT5ENU-Aw",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "66fb61c5-2680-4ed9-8f9f-4931d76897f7",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "330"
+  },
+  "body": {
+    "english_name": "Nita",
+    "khmer_name": "នីតា",
+    "family_id": "202",
+    "age": 8,
+    "gender": "Female",
+    "image_url": "https://example.com/images/nita.jpg",
+    "registered_date": "2025-05-19",
+    "description": "Loves drawing and singing.",
+    "camp_id": "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "status": "Present"
+  }
+}
+2025-05-19 09:48:01 [INFO]: Database query executed {
+  "sql": "INSERT INTO children (\n        id, english_name, khmer_name, family_id, age, gender,\n        image_url, registered_date, description, camp_id, status\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6,\n        $7, $8, $9, $10, $11\n      )\n      RETURNING *",
+  "params": [
+    "6f90c190-2218-4623-85b7-68355c501066",
+    "Nita",
+    "នីតា",
+    "202",
+    8,
+    "Female",
+    "https://example.com/images/nita.jpg",
+    "2025-05-19",
+    "Loves drawing and singing.",
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "Present"
+  ],
+  "rowCount": 1,
+  "duration": "41ms"
+}
