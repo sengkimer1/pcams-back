@@ -1,4 +1,3 @@
-// src/middlewares/authMiddleware.ts
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
@@ -14,7 +13,7 @@ export interface AuthRequest extends Request {
 export function authMiddleware(req: AuthRequest, res: Response, next: NextFunction): void {
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    res.status(401).json({ message: "Unauthorized" });
+    res.status(401).json({ message: "Unauthorized: No token provided" });
     return;
   }
 
@@ -22,6 +21,10 @@ export function authMiddleware(req: AuthRequest, res: Response, next: NextFuncti
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET!) as AuthPayload;
+    if (!decoded.id || decoded.role_id === undefined) {
+      res.status(401).json({ message: "Invalid token: Missing id or role_id" });
+      return;
+    }
     req.user = decoded;
     next();
   } catch (err) {

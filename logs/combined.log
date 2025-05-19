@@ -693,3 +693,262 @@
     "description": "First attendance record for the day"
   }
 }
+2025-05-19 13:59:33 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/child",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "13639f3a-dafc-4da2-9f43-4f29cfdde042",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-19 13:59:33 [INFO]: Database query executed {
+  "sql": "SELECT * FROM children",
+  "params": [],
+  "rowCount": 3,
+  "duration": "320ms"
+}
+2025-05-19 14:03:01 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "6478d889-47cf-4af5-8431-60b24eff2f1d",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-19 14:03:01 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "235ms"
+}
+2025-05-19 14:07:16 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAxZWEyMTNlLTEyZGYtNGMxZC05MjA5LWQ3MzQwNWNkZDA5ZSIsInJvbGVfaWQiOiIzOTU5ZGM3Mi02MWEzLTQxYmMtOWI0Zi05MTg3NDFiODljMDYiLCJpYXQiOjE3NDcyNzYzNTUsImV4cCI6MTc0NzI3OTk1NX0.6sWcTRYXdgijjiwPMtAnXeBkpbaLKT_C-kbQFYxtp54",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "6c1ce206-d427-4ed5-8934-754380d5b2fc",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "278"
+  },
+  "body": {
+    "role_id": "b2c3d4e5-f678-9012-bcde-2345678901bc",
+    "khmer_name": "Tri Thay",
+    "english_name": "ថាយ",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "student pse volunteer coordinator",
+    "email": "***"
+  }
+}
+2025-05-19 14:07:39 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc2MzgxODEsImV4cCI6MTc0NzY0MTc4MX0.96wGERsW7UQvk17AH3AuPF1yrSPpGZKSH95eivFCecg",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "fa3f41dd-3cce-4f8c-927d-2e02fca76327",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "278"
+  },
+  "body": {
+    "role_id": "b2c3d4e5-f678-9012-bcde-2345678901bc",
+    "khmer_name": "Tri Thay",
+    "english_name": "ថាយ",
+    "password": "***",
+    "date_of_birth": "2005-01-01",
+    "nationality": "Khmer",
+    "position": "student pse volunteer coordinator",
+    "email": "***"
+  }
+}
+2025-05-19 14:07:39 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "thay@gmail.com"
+  ],
+  "rowCount": 0,
+  "duration": "244ms"
+}
+2025-05-19 14:07:39 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email, password\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6, $7, $8, $9\n      )\n      RETURNING id, role_id, khmer_name, english_name, date_of_birth, nationality, position, email",
+  "params": [
+    "31d26eb5-8fbb-4155-8e3f-e19ee850f435",
+    "b2c3d4e5-f678-9012-bcde-2345678901bc",
+    "Tri Thay",
+    "ថាយ",
+    "2005-01-01",
+    "Khmer",
+    "student pse volunteer coordinator",
+    "thay@gmail.com",
+    "$2b$10$6rdMUyUvOlBUZjYIB65aeOQasYDk4bp0Chv2nT4VmV/pfx2ygxiYG"
+  ],
+  "rowCount": 1,
+  "duration": "52ms"
+}
+2025-05-19 16:03:28 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "c50bc6a4-ca75-4dbf-9a71-04270857f883",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-19 16:03:28 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "337ms"
+}
+2025-05-19 16:05:09 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/api/camps",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc2NDU0MDgsImV4cCI6MTc0NzY0OTAwOH0.m7J8ZnYzAOyWY8vxlOiwv1f4vHfgTJrhMztjOFM-mgM",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "6895e2e9-1fe0-4115-bb2f-087311b89d45",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-19 16:06:11 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc2NDU0MDgsImV4cCI6MTc0NzY0OTAwOH0.m7J8ZnYzAOyWY8vxlOiwv1f4vHfgTJrhMztjOFM-mgM",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "87fd173d-a042-4efa-9985-9c4729c480fa",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-19 16:06:11 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_event_id, camp_name, location FROM camp",
+  "params": [],
+  "rowCount": 2,
+  "duration": "227ms"
+}
+2025-05-19 16:09:27 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc2NDU0MDgsImV4cCI6MTc0NzY0OTAwOH0.m7J8ZnYzAOyWY8vxlOiwv1f4vHfgTJrhMztjOFM-mgM",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "e6ad5a5a-2d4c-457a-be60-9150fee5d49a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-19 16:09:27 [INFO]: Database query executed {
+  "sql": "SELECT id, email, role_id, khmer_name, english_name, date_of_birth, nationality, position FROM users",
+  "params": [],
+  "rowCount": 3,
+  "duration": "229ms"
+}
+2025-05-19 16:10:03 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-user",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc2NDU0MDgsImV4cCI6MTc0NzY0OTAwOH0.m7J8ZnYzAOyWY8vxlOiwv1f4vHfgTJrhMztjOFM-mgM",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "c0826f9e-2e69-48c0-8287-49a1b5410a33",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "129"
+  },
+  "body": {
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+    "user_id": "31d26eb5-8fbb-4155-8e3f-e19ee850f435",
+    "is_active": true
+  }
+}
+2025-05-19 16:14:19 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-user",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc2NDU0MDgsImV4cCI6MTc0NzY0OTAwOH0.m7J8ZnYzAOyWY8vxlOiwv1f4vHfgTJrhMztjOFM-mgM",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "30c1de71-d170-49e4-86c2-3d3339937021",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "129"
+  },
+  "body": {
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+    "user_id": "6a6a4c2d-3001-46eb-b6d1-2f071bba6b65",
+    "is_active": true
+  }
+}
+2025-05-19 16:27:39 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-user",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc2NDU0MDgsImV4cCI6MTc0NzY0OTAwOH0.m7J8ZnYzAOyWY8vxlOiwv1f4vHfgTJrhMztjOFM-mgM",
+    "user-agent": "PostmanRuntime/7.43.4",
+    "accept": "*/*",
+    "postman-token": "e766be5e-07da-4762-b9f1-9ecf5619a5d4",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "129"
+  },
+  "body": {
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+    "user_id": "56720edb-b447-47d0-9311-682350961973",
+    "is_active": true
+  }
+}
