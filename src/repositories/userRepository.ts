@@ -5,7 +5,7 @@ import { queryWithLogging } from "./utils";
 import { v4 as uuidv4 } from "uuid";
 
 export class PostgresUserRepository implements IUserRepository {
-  constructor(private pool: Pool) {}
+  constructor(private pool: Pool) { }
 
   async findAll(): Promise<IUserWithoutPassword[]> {
     const { rows } = await queryWithLogging(
@@ -36,7 +36,6 @@ export class PostgresUserRepository implements IUserRepository {
   async create(user: IUser): Promise<IUserWithoutPassword> {
     const hashedPassword = await bcrypt.hash(user.password!, 10);
     const id = uuidv4();
-
     const {
       role_id,
       khmer_name,
@@ -46,7 +45,6 @@ export class PostgresUserRepository implements IUserRepository {
       position,
       email,
     } = user;
-
     const { rows } = await queryWithLogging(
       this.pool,
       `INSERT INTO users (
@@ -60,13 +58,10 @@ export class PostgresUserRepository implements IUserRepository {
 
     return rows[0];
   }
-  async update(
-    id: string,
-    user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>
-  ): Promise<IUserWithoutPassword | null> {
+
+  async update(id: string,user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword | null> {
     const { khmer_name, english_name, date_of_birth, nationality, position, email, role_id } = user;
-  
-    const { rows } = await queryWithLogging( this.pool,
+    const { rows } = await queryWithLogging(this.pool,
       `UPDATE users 
        SET khmer_name = $1,
            english_name = $2,
@@ -79,10 +74,10 @@ export class PostgresUserRepository implements IUserRepository {
        RETURNING *`,
       [khmer_name, english_name, date_of_birth, nationality, position, email, role_id, id]
     );
-  
+
     return rows[0] || null;
   }
-  
+
   async delete(id: string): Promise<boolean> {
     const { rowCount } = await queryWithLogging(
       this.pool,
@@ -90,5 +85,18 @@ export class PostgresUserRepository implements IUserRepository {
       [id]
     );
     return (rowCount ?? 0) > 0;
+  }
+  
+  async getOneUserByRole(roleName: string): Promise<IUser | null> {
+    const { rows } = await queryWithLogging(
+      this.pool, ` 
+      SELECT u.*
+      FROM users u
+      JOIN role r ON u.role_id = r.id
+      WHERE r.name = $1
+      LIMIT 1
+    `,[roleName]
+    );
+    return rows[0] || null;
   }
 }

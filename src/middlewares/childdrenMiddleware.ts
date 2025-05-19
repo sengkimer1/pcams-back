@@ -12,6 +12,7 @@ export const childSchema = z.object({
     registered_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "Registered date must be in YYYY-MM-DD format").optional(),
     description: z.string().optional(),
     camp_id: z.string({ required_error: "Camp ID is required", }).uuid("Camp ID must be a valid UUID"),
+    status: z.enum(["Present", "Late"], {required_error: "Status is required",invalid_type_error: "Status must be 'present', 'late'",}),
 });
 export const validateChild = (
     req: Request,

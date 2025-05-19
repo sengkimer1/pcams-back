@@ -17,6 +17,7 @@ export class ChildController {
         registered_date,
         description,
         camp_id,
+        status,
       } = req.body;
 
       const result = await this.childService.createChild({
@@ -29,6 +30,7 @@ export class ChildController {
         registered_date,
         description,
         camp_id,
+        status
       });
 
       res.status(201).json({ message: "A new child was created.", data: result });
