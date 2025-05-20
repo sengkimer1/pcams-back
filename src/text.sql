@@ -64,3 +64,5 @@ CREATE TABLE Children_Attendance (
     attendance_date DATE NOT NULL,
     description TEXT
 );
+ALTER TABLE Children_Attendance
+ADD COLUMN status VARCHAR(50);

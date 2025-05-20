@@ -497,3 +497,287 @@
   "error": "insert or update on table \"children\" violates foreign key constraint \"children_camp_id_fkey\"",
   "duration": "243ms"
 }
+2025-05-19 16:28:43 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'monitor'",
+  "params": [
+    "someCampId"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "15ms"
+}
+2025-05-19 16:28:43 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'coordinator'",
+  "params": [
+    "someCampId"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "32ms"
+}
+2025-05-19 16:28:43 [ERROR]: Database query failed {
+  "sql": "SELECT status, COUNT(children_attendance.id) AS count\n       FROM children_attendance\n       JOIN children ON children_attendance.child_id = children.id\n       WHERE children.camp_id = $1\n         AND children_attendance.date BETWEEN $2 AND $3\n       GROUP BY status",
+  "params": [
+    "someCampId",
+    "2025-05-01",
+    "2025-05-10"
+  ],
+  "error": "column children_attendance.child_id does not exist",
+  "duration": "36ms"
+}
+2025-05-19 16:28:43 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM children WHERE camp_id = $1",
+  "params": [
+    "someCampId"
+  ],
+  "error": "invalid input syntax for type uuid: \"someCampId\"",
+  "duration": "38ms"
+}
+2025-05-19 16:28:44 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'coordinator'",
+  "params": [
+    "someCampId"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "16ms"
+}
+2025-05-19 16:28:44 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'monitor'",
+  "params": [
+    "someCampId"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "19ms"
+}
+2025-05-19 16:28:44 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM children WHERE camp_id = $1",
+  "params": [
+    "someCampId"
+  ],
+  "error": "invalid input syntax for type uuid: \"someCampId\"",
+  "duration": "20ms"
+}
+2025-05-19 16:28:44 [ERROR]: Database query failed {
+  "sql": "SELECT status, COUNT(children_attendance.id) AS count\n       FROM children_attendance\n       JOIN children ON children_attendance.child_id = children.id\n       WHERE children.camp_id = $1\n         AND children_attendance.date BETWEEN $2 AND $3\n       GROUP BY status",
+  "params": [
+    "someCampId",
+    "2025-05-01",
+    "2025-05-10"
+  ],
+  "error": "column children_attendance.child_id does not exist",
+  "duration": "20ms"
+}
+2025-05-19 16:29:35 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'coordinator'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "19ms"
+}
+2025-05-19 16:29:35 [ERROR]: Database query failed {
+  "sql": "SELECT status, COUNT(children_attendance.id) AS count\n       FROM children_attendance\n       JOIN children ON children_attendance.child_id = children.id\n       WHERE children.camp_id = $1\n         AND children_attendance.date BETWEEN $2 AND $3\n       GROUP BY status",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "2025-05-01",
+    "2025-05-10"
+  ],
+  "error": "column children_attendance.child_id does not exist",
+  "duration": "26ms"
+}
+2025-05-19 16:29:35 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'monitor'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "30ms"
+}
+2025-05-19 16:29:37 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'coordinator'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "2ms"
+}
+2025-05-19 16:29:37 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'monitor'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "29ms"
+}
+2025-05-19 16:29:37 [ERROR]: Database query failed {
+  "sql": "SELECT status, COUNT(children_attendance.id) AS count\n       FROM children_attendance\n       JOIN children ON children_attendance.child_id = children.id\n       WHERE children.camp_id = $1\n         AND children_attendance.date BETWEEN $2 AND $3\n       GROUP BY status",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "2025-05-01",
+    "2025-05-10"
+  ],
+  "error": "column children_attendance.child_id does not exist",
+  "duration": "31ms"
+}
+2025-05-19 16:31:23 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'coordinator'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "41ms"
+}
+2025-05-19 16:31:23 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'monitor'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "45ms"
+}
+2025-05-19 16:31:23 [ERROR]: Database query failed {
+  "sql": "SELECT status, COUNT(children_attendance.id) AS count\n       FROM children_attendance\n       JOIN children ON children_attendance.children_id = children.id\n       WHERE children.camp_id = $1\n         AND children_attendance.attendance_date BETWEEN $2 AND $3\n       GROUP BY status",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "2025-05-01",
+    "2025-05-10"
+  ],
+  "error": "column reference \"status\" is ambiguous",
+  "duration": "50ms"
+}
+2025-05-19 16:31:36 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'coordinator'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "29ms"
+}
+2025-05-19 16:31:36 [ERROR]: Database query failed {
+  "sql": "SELECT status, COUNT(children_attendance.id) AS count\n       FROM children_attendance\n       JOIN children ON children_attendance.children_id = children.id\n       WHERE children.camp_id = $1\n         AND children_attendance.attendance_date BETWEEN $2 AND $3\n       GROUP BY status",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4",
+    "2025-05-01",
+    "2025-05-10"
+  ],
+  "error": "column reference \"status\" is ambiguous",
+  "duration": "37ms"
+}
+2025-05-19 16:31:36 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(id) AS count FROM users WHERE camp_id = $1 AND role = 'monitor'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "column \"camp_id\" does not exist",
+  "duration": "41ms"
+}
+2025-05-19 16:37:48 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'monitor'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "35ms"
+}
+2025-05-19 16:37:48 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'coordinator'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "45ms"
+}
+2025-05-19 16:38:45 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN users cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'coordinator'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "column cur.user_id does not exist",
+  "duration": "49ms"
+}
+2025-05-19 16:38:45 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN users cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'monitor'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "column cur.user_id does not exist",
+  "duration": "43ms"
+}
+2025-05-20 07:36:11 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'coordinator'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "27ms"
+}
+2025-05-20 07:36:11 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'monitor'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "30ms"
+}
+2025-05-20 07:42:51 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'monitor'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "23ms"
+}
+2025-05-20 07:42:51 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'coordinator'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "53ms"
+}
+2025-05-20 07:46:38 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'monitor'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "27ms"
+}
+2025-05-20 07:46:38 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'coordinator'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "53ms"
+}
+2025-05-20 07:47:00 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'coordinator'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "17ms"
+}
+2025-05-20 07:47:00 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'monitor'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "20ms"
+}
+2025-05-20 07:47:31 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'coordinator'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "41ms"
+}
+2025-05-20 07:47:31 [ERROR]: Database query failed {
+  "sql": "SELECT COUNT(u.id) AS count\n       FROM users u\n       JOIN camp_user_roles cur ON cur.user_id = u.id\n       WHERE cur.camp_id = $1 AND cur.role = 'monitor'",
+  "params": [
+    "d4465360-0f99-48f9-bcaf-6a29b79d12b4"
+  ],
+  "error": "relation \"camp_user_roles\" does not exist",
+  "duration": "49ms"
+}
