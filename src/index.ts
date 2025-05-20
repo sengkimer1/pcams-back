@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors"; 
 
 // Middleware
 import { loggingMiddleware } from "./middlewares/logginMiddleware";
@@ -52,6 +53,16 @@ const PORT = process.env.PORT || 3000;
 
 const pgPool = connectPostgresDb();
 
+// ✅ Add CORS Middleware BEFORE routes
+app.use(cors({
+  origin: "http://localhost:5174", // frontend URL
+  credentials: true, // only if you're using cookies or sessions
+}));
+
+// Middleware
+app.use(express.json());
+app.use(loggingMiddleware);
+
 // Repositories
 const userRepository = new PostgresUserRepository(pgPool);
 const campEventRepository = new PostgresCampEventRepository(pgPool);
@@ -79,10 +90,6 @@ const campController = new CampController(campService);
 const attendanceTrackingController = new AttendanceTrackingController(attendanceTrackingService);
 const dashboardController = new DashboardController(dashboardService);
 const campUserController = new CampUserController(campUserService);
-
-// Middleware
-app.use(express.json());
-app.use(loggingMiddleware);
 
 // Routes
 app.use("/api/auth", authRoutes(authController));
