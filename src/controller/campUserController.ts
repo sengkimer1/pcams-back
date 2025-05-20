@@ -12,12 +12,6 @@ export class CampUserController {
     }
 
     console.log("req.user:", req.user); // Debug log to inspect req.user
-
-    if (req.user.role_id !== 1) {
-      res.status(403).json({ message: "Forbidden: Only admins can assign users to camps" });
-      return;
-    }
-
     const data = req.body;
 
     if (!data.camp_id || !data.user_id || data.is_active === undefined || data.is_active === null) {

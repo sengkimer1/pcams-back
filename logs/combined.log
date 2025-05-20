@@ -952,3 +952,221 @@
     "is_active": true
   }
 }
+2025-05-20 07:18:14 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "5ed5e166-93b0-480e-9506-c9e1557fc2b7",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-20 07:18:14 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "312ms"
+}
+2025-05-20 07:18:54 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-user",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc3MDAyOTUsImV4cCI6MTc0NzcwMzg5NX0.23DGai01VndgCQ8ToaB9vNvbi1A0jnqxe2bnPrjuASI",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "965236ae-46b1-4727-a4af-55e2a667d18c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "129"
+  },
+  "body": {
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+    "user_id": "56720edb-b447-47d0-9311-682350961973",
+    "is_active": true
+  }
+}
+2025-05-20 07:41:10 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "60edd1a6-3063-414e-a2da-c37986b2ddf3",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-20 07:41:11 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "250ms"
+}
+2025-05-20 08:22:52 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "3694ad7a-3b49-4d4b-9595-4b725a2f9f41",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-20 08:22:52 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "230ms"
+}
+2025-05-20 08:25:04 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-user",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc3MDAyOTUsImV4cCI6MTc0NzcwMzg5NX0.23DGai01VndgCQ8ToaB9vNvbi1A0jnqxe2bnPrjuASI",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "e73873ce-000e-49c6-a8b9-78c434bdc5e7",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "129"
+  },
+  "body": {
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+    "user_id": "56720edb-b447-47d0-9311-682350961973",
+    "is_active": true
+  }
+}
+2025-05-20 08:25:31 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-user",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc3MDQxNzIsImV4cCI6MTc0NzcwNzc3Mn0.kCHIAQNz3gJ7p6A02UuqaaalAdm3uhVk3-GdicjxceY",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "1220c1b2-58d9-4a5b-8847-14c69b71911a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "129"
+  },
+  "body": {
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+    "user_id": "56720edb-b447-47d0-9311-682350961973",
+    "is_active": true
+  }
+}
+2025-05-20 08:25:33 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-user",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc3MDQxNzIsImV4cCI6MTc0NzcwNzc3Mn0.kCHIAQNz3gJ7p6A02UuqaaalAdm3uhVk3-GdicjxceY",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "429c910f-42d7-4f7c-905b-8342e2f8de74",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "129"
+  },
+  "body": {
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+    "user_id": "56720edb-b447-47d0-9311-682350961973",
+    "is_active": true
+  }
+}
+2025-05-20 08:25:34 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-user",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc3MDQxNzIsImV4cCI6MTc0NzcwNzc3Mn0.kCHIAQNz3gJ7p6A02UuqaaalAdm3uhVk3-GdicjxceY",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "63cc7652-1554-4a68-bae7-923fd4aec2e7",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "129"
+  },
+  "body": {
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+    "user_id": "56720edb-b447-47d0-9311-682350961973",
+    "is_active": true
+  }
+}
+2025-05-20 08:28:50 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-user",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc3MDQxNzIsImV4cCI6MTc0NzcwNzc3Mn0.kCHIAQNz3gJ7p6A02UuqaaalAdm3uhVk3-GdicjxceY",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "bc0324d8-5840-4be8-ade2-4e739b12f580",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "129"
+  },
+  "body": {
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+    "user_id": "56720edb-b447-47d0-9311-682350961973",
+    "is_active": true
+  }
+}
+2025-05-20 08:29:14 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camp-user",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc3MDQxNzIsImV4cCI6MTc0NzcwNzc3Mn0.kCHIAQNz3gJ7p6A02UuqaaalAdm3uhVk3-GdicjxceY",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "a83536fd-5a79-4bf8-b465-4848c3f23534",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "129"
+  },
+  "body": {
+    "camp_id": "2afc3f62-5d05-4b6b-9fb1-c5d308e06c37",
+    "user_id": "56720edb-b447-47d0-9311-682350961973",
+    "is_active": true
+  }
+}
