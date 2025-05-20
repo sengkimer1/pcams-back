@@ -55,8 +55,8 @@ const pgPool = connectPostgresDb();
 
 // ✅ Add CORS Middleware BEFORE routes
 app.use(cors({
-  origin: "http://localhost:5174", // frontend URL
-  credentials: true, // only if you're using cookies or sessions
+  origin: "http://localhost:5173", // frontend URL
+  // credentials: true, // only if you're using cookies or sessions
 }));
 
 // Middleware
