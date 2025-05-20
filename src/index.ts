@@ -33,7 +33,25 @@ import { PostgresDashboardRepository } from "./repositories/dashboardRepository"
 import { loggingMiddleware } from "./middlewares/logginMiddleware";
 import dotenv from "dotenv";
 import { authMiddleware } from "./middlewares/authMiddleware";
+
 import { connectPostgresDb } from "./config/db";
+import { PostgresCampEventRepository } from "./repositories/PostgresCampEventRepository";
+import { CampEventService } from "./services/campsEventsSerivce";
+import { EventcampController } from "./controller/campEventController";
+import campEventRoutes from "./routes/campEvetnRoutes"; 
+import {PostgresCampRepository} from "./repositories/campRepository";
+import {CampService} from "./services/campServices";
+import {CampController} from "./controller/campController";
+import campRoutes from "./routes/campRoute"; 
+import {PostgresAttendanceTrackingRepository} from "./repositories/attendanceTrackingRepository";
+import {PostgresAttendanceTrackingService} from "./services/attendanceTrackingService";
+import {AttendanceTrackingController} from "./controller/attendanceTrackingController";
+import attendanceRoutes from "./routes/attedanceTrackingRoute";
+import {PostgresCampUserRepository} from "./repositories/campUserRepository";
+import {PostgresCampUserService} from "./services/campUserServices";
+import {CampUserController} from "./controller/campUserController";
+import campUserRoutes from "./routes/campUserRoute";
+
 
 dotenv.config(); 
 
@@ -47,15 +65,24 @@ const campEventRepository = new PostgresCampEventRepository(pgPool);
 const campRepository = new PostgresCampRepository(pgPool);
 const childRepository = new PostgresChildRepository(pgPool);
 const attendanceTrackingRepository = new PostgresAttendanceTrackingRepository(pgPool);
+
 const dashboardRepository = new PostgresDashboardRepository(pgPool)
+
+const campUserRepository = new PostgresCampUserRepository(pgPool);
+
 
 // Service
 const userService = new UserService(userRepository);
 const childrenService = new ChildService(childRepository)
 const campEventService = new CampEventService(campEventRepository);
 const campService = new CampService(campRepository);
+
 const attendanceTrackingService = new AttendanceTrackingServiceImpl(attendanceTrackingRepository);
 const dashboardService = new DashboardService(dashboardRepository)
+
+const attendanceTrackingService = new PostgresAttendanceTrackingService(attendanceTrackingRepository);
+const campUserService = new PostgresCampUserService(campUserRepository);
+
 
 // Controller
 const authController = new AuthController(userService);
@@ -64,7 +91,11 @@ const childController = new ChildController(childrenService)
 const campEventController = new EventcampController(campEventService);
 const campController = new CampController(campService);
 const attendanceTrackingController = new AttendanceTrackingController(attendanceTrackingService);
+
 const dashboardController = new DashboardController(dashboardService)
+
+const campUserController = new CampUserController(campUserService);
+
 
 
 // Middleware
@@ -78,7 +109,11 @@ app.use("/api/camps", campRoutes(campController));
 app.use("/api/users", userRoutes(userController));
 app.use("/api/child", childRoutes (childController))
 app.use("/api/attendance", attendanceRoutes(attendanceTrackingController));
+
 app.use("/api/dashboard", dashboardRoutes(dashboardController));
+
+app.use("/api/camp-user", campUserRoutes(campUserController));
+
 
 // Start server
 app.listen(PORT, () => {
