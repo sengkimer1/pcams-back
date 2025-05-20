@@ -45,7 +45,7 @@ export class UserService implements IUserService {
     }
 
     const token = jwt.sign({ id: user.id, role_id: user.role_id }, process.env.JWT_SECRET!, {
-      expiresIn: "1h",
+      expiresIn: "3h",
     });
 
     const { password: _, ...userWithoutPassword } = user;
