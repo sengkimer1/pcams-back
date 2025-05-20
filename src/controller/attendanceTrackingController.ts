@@ -63,4 +63,30 @@ export class AttendanceTrackingController {
       res.status(500).json({ message: "Error creating attendance record", error });
     }
   }
+  async getAttendanceByStatus  (req: AuthRequest, res: Response)  {
+    const { status } = req.params;
+
+    if (!["present", "absent", "late"].includes(status)) {
+      res.status(400).json({ error: "Invalid status" });
+      return;
+    }
+
+    try {
+      const data = await this.service.getAttendanceByStatus(status as "present" | "absent" | "late");
+      res.json(data);
+    } catch (error) {
+      console.error("Error:", error);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  };
+  async getGroupAttendanceSummary(req: AuthRequest, res: Response) {
+    try {
+      const summary = await this.service.getGroupAttendanceSummary();
+      res.json(summary);
+    } catch (error) {
+      console.error("Error getting group summary:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  }
+  
 }

@@ -25,4 +25,35 @@ export class PostgresAttendanceTrackingRepository implements AttendanceTrackingR
     );
     return rows[0];
   }
+  async getAttendanceByStatus(status: "present" | "absent" | "late"): Promise<AttendanceTracking[]> {
+    const { rows } = await this.pool.query(
+      `SELECT * FROM children_attendance WHERE status = $1`,
+      [status]
+    );
+    
+    return rows;
+  }
+  async getGroupAttendanceSummary(): Promise<any[]> {
+    const { rows } = await this.pool.query(`
+      SELECT 
+        c.id AS camp_id,
+        c.camp_name,
+        COUNT(DISTINCT ch.id) AS total_children,
+        COUNT(DISTINCT ca.id) FILTER (WHERE ca.status = 'present') AS present_count,
+        COUNT(DISTINCT ca.id) FILTER (WHERE ca.status = 'absent') AS absent_count
+      FROM 
+        Camp c
+      LEFT JOIN 
+        Children ch ON ch.camp_id = c.id
+      LEFT JOIN 
+        Children_Attendance ca ON ca.children_id = ch.id
+      GROUP BY 
+        c.id, c.camp_name
+      ORDER BY 
+        c.camp_name
+    `);
+    return rows;
+  }
+  
+
 }
