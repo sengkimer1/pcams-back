@@ -8,12 +8,17 @@ export class PostgresCampUserRepository implements CampUserRepository {
   async create(data: CampUser): Promise<CampUser> {
     const id = uuidv4();
     const { camp_id, user_id, is_active } = data;
-    const { rows } = await this.pool.query(
-      `INSERT INTO camp_user (id, camp_id, user_id, is_active) 
-       VALUES ($1, $2, $3, $4) RETURNING *`,
-      [id, camp_id, user_id, is_active]
-    );
-    return rows[0];
+    try {
+      const { rows } = await this.pool.query(
+        `INSERT INTO camp_user (id, camp_id, user_id, is_active) 
+         VALUES ($1, $2, $3, $4) RETURNING *`,
+        [id, camp_id, user_id, is_active]
+      );
+      return rows[0];
+    } catch (error) {
+      console.error("Error creating CampUser entry:", error);
+      throw error;
+    }
   }
 
   async findAll(): Promise<CampUser[]> {

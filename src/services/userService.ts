@@ -1,18 +1,42 @@
 import { IUserService, IUser, IUserWithoutPassword, IUserRepository } from "../interfaces/userinterfaces";
+import { CampUserService } from "../interfaces/campUserInterface";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
-
 export class UserService implements IUserService {
-  constructor(private userRepository: IUserRepository) {}
-
+  constructor(
+    private userRepository: IUserRepository,
+    private campUserService: CampUserService
+  ) {}
 
   async createUser(user: Omit<IUser, "id">): Promise<{ user: IUserWithoutPassword; token: string }> {
+    console.log("Received user data:", user); // Debug log
     const existingUser = await this.userRepository.findByEmail(user.email);
     if (existingUser) {
       throw Object.assign(new Error("User already exists"), { status: 400 });
     }
+
+    if (!user.camp_id) {
+      console.error("camp_id is missing or null in the request");
+      throw Object.assign(new Error("Camp ID is required"), { status: 400 });
+    }
+
+    console.log("Creating user with camp_id:", user.camp_id); // Debug log
     const newUser = await this.userRepository.create(user);
+
+    // Create CampUser entry
+    try {
+      console.log("Creating CampUser entry for user_id:", newUser.id, "with camp_id:", user.camp_id); // Debug log
+      await this.campUserService.create({
+        camp_id: user.camp_id,
+        user_id: newUser.id!,
+        is_active: true,
+      });
+      console.log("CampUser entry created successfully");
+    } catch (error) {
+      console.error("Failed to create CampUser entry:", error);
+      throw Object.assign(new Error("Failed to associate user with camp"), { status: 500 });
+    }
 
     const token = jwt.sign({ id: newUser.id }, process.env.JWT_SECRET!, {
       expiresIn: "1h",
@@ -55,6 +79,7 @@ export class UserService implements IUserService {
       token,
     };
   }
+
   async updateUser(
     id: string,
     user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>
@@ -63,15 +88,15 @@ export class UserService implements IUserService {
     if (!existingUser) {
       throw Object.assign(new Error("User not found"), { status: 404 });
     }
-  
+
     const updatedUser = await this.userRepository.update(id, user);
     if (!updatedUser) {
       throw Object.assign(new Error("Failed to update user"), { status: 500 });
     }
-  
+
     return updatedUser;
   }
-  
+
   async deleteUser(id: string): Promise<void> {
     const existingUser = await this.userRepository.findById(id);
     if (!existingUser) {
@@ -83,6 +108,7 @@ export class UserService implements IUserService {
       throw Object.assign(new Error("Failed to delete user"), { status: 500 });
     }
   }
+
   async getOneUserByRole(roleName: string): Promise<IUserWithoutPassword> {
     const user = await this.userRepository.getOneUserByRole(roleName);
     if (!user) {
@@ -90,5 +116,4 @@ export class UserService implements IUserService {
     }
     return user;
   }
-  
 }

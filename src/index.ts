@@ -73,13 +73,13 @@ const dashboardRepository = new PostgresDashboardRepository(pgPool);
 const campUserRepository = new PostgresCampUserRepository(pgPool);
 
 // Services
-const userService = new UserService(userRepository);
+const campUserService = new PostgresCampUserService(campUserRepository);
+const userService = new UserService(userRepository, campUserService);
 const childrenService = new ChildService(childRepository);
 const campEventService = new CampEventService(campEventRepository);
 const campService = new CampService(campRepository);
 const attendanceTrackingService = new AttendanceTrackingServiceImpl(attendanceTrackingRepository);
 const dashboardService = new DashboardService(dashboardRepository);
-const campUserService = new PostgresCampUserService(campUserRepository);
 
 // Controllers
 const authController = new AuthController(userService);
