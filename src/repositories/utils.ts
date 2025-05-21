@@ -2,7 +2,7 @@ import { Pool, QueryResult } from "pg";
 import { logger } from "../services/loggerService";
 
 export async function queryWithLogging<T>(
-  pool: Pool,
+  pool: Pool | any,
   sql: string,
   params: any[] = [],
   requestId?: string

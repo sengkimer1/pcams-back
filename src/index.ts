@@ -14,6 +14,7 @@ import campRoutes from "./routes/campRoute";
 import attendanceRoutes from "./routes/attedanceTrackingRoute";
 import dashboardRoutes from "./routes/dashboradRoutes";
 import campUserRoutes from "./routes/campUserRoute";
+// import CreateUserCampRoutes from "./routes/createUserCampRoute";
 
 // Controllers
 import { AuthController } from "./controller/authController";
@@ -24,6 +25,7 @@ import { CampController } from "./controller/campController";
 import { AttendanceTrackingController } from "./controller/attendanceTrackingController";
 import { DashboardController } from "./controller/dashboardController";
 import { CampUserController } from "./controller/campUserController";
+// import { CreateUserCampController } from "./controller/createUserCampController";
 
 // Services
 import { UserService } from "./services/userService";
@@ -100,6 +102,7 @@ app.use("/api/child", childRoutes(childController));
 app.use("/api/attendance", attendanceRoutes(attendanceTrackingController));
 app.use("/api/dashboard", dashboardRoutes(dashboardController));
 app.use("/api/camp-user", campUserRoutes(campUserController));
+// app.use("/api/create-user-camp", CreateUserCampRoutes(createUserCampController));
 
 // Server
 app.listen(PORT, () => {
