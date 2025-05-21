@@ -11,7 +11,7 @@ export class DashboardService {
       this.dashboardRepository.getTotalChildren(params.campId),
       this.dashboardRepository.getAttendanceStats(params),
     ]);
-  
+
     return {
       totalCoordinators,
       totalMonitors,
@@ -19,5 +19,4 @@ export class DashboardService {
       attendance,
     };
   }
-  
 }
