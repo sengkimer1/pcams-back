@@ -8,6 +8,7 @@ export interface IUser {
   date_of_birth: string;
   nationality: string;
   position: string;
+  camp_id?: string; // Optional but must be provided for creation
 }
 
 export interface IUserWithoutPassword extends Omit<IUser, "password"> { }
@@ -25,7 +26,6 @@ export interface IUserRepository {
   update(id: string, user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword | null>;
   delete(id: string): Promise<boolean>;
   getOneUserByRole(roleName: string): Promise<IUserWithoutPassword | null>;
-
 }
 
 export interface IUserService {
@@ -36,5 +36,4 @@ export interface IUserService {
   updateUser(id: string, user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword>;
   deleteUser(id: string): Promise<void>;
   getOneUserByRole(roleName: string): Promise<IUserWithoutPassword>;
-
 }

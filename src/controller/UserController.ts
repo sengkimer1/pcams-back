@@ -15,7 +15,12 @@ export class UserController {
         date_of_birth,
         nationality,
         position,
+        camp_id,
       } = req.body;
+
+      if (!camp_id) {
+        throw Object.assign(new Error("Camp ID is required"), { status: 400 });
+      }
 
       const result = await this.userService.createUser({
         email,
@@ -26,23 +31,26 @@ export class UserController {
         date_of_birth,
         nationality,
         position,
+        camp_id,
       });
 
       res.status(201).json({ message: "A new user was created.", data: result });
     } catch (err) {
-      console.error(err);
+      console.error("Error in createUser:", err);
       next(err);
     }
   }
+
   async getAllUser(req: Request, res: Response, next: NextFunction) {
     try {
-      const user = await this.userService.getAllUsers();
-      res.status(200).json(user);
+      const users = await this.userService.getAllUsers();
+      res.status(200).json(users);
     } catch (err) {
       console.error(err);
       next(err);
     }
   }
+
   async getUserById(req: Request, res: Response, next: NextFunction) {
     try {
       const { id } = req.params;
@@ -52,6 +60,7 @@ export class UserController {
       next(error);
     }
   }
+
   async updateUser(req: Request, res: Response, next: NextFunction) {
     try {
       const id = req.params.id;
@@ -75,6 +84,7 @@ export class UserController {
       next(err);
     }
   }
+
   async getOneUserByRole(req: Request, res: Response, next: NextFunction) {
     try {
       const roleName = req.params.roleName;
