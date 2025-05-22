@@ -868,3 +868,135 @@
   "duration": "54ms"
 >>>>>>> dd7be24dd7dfcdac5f68cb8a1cdb62ac7758aafd
 }
+2025-05-22 15:00:22 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camps (\n        id, name, location, start_date, end_date, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, name, location, start_date, end_date, created_at",
+  "params": [
+    "ce80992e-bcae-4b55-9958-0b9594fc2a1d",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant",
+    "2025-06-01T02:00:00.000Z",
+    "2025-06-07T10:00:00.000Z",
+    "2025-05-22T07:43:00.000Z"
+  ],
+  "error": "relation \"camps\" does not exist",
+  "duration": "221ms"
+}
+2025-05-22 15:00:22 [ERROR]: Error in createCamp {
+  "error": "relation \"camps\" does not exist"
+}
+2025-05-22 15:00:36 [ERROR]: Error in createCamp {
+  "error": "Name, location, start_date, and end_date are required"
+}
+2025-05-22 15:00:57 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camps (\n        id, name, location, start_date, end_date, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, name, location, start_date, end_date, created_at",
+  "params": [
+    "0ecd1a72-b685-4a06-8acf-74506f9b13b7",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant",
+    "2025-06-01T02:00:00.000Z",
+    "2025-06-07T10:00:00.000Z",
+    "2025-05-22T08:00:57.191Z"
+  ],
+  "error": "relation \"camps\" does not exist",
+  "duration": "203ms"
+}
+2025-05-22 15:00:57 [ERROR]: Error in createCamp {
+  "error": "relation \"camps\" does not exist"
+}
+2025-05-22 15:01:14 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camps (\n        id, name, location, start_date, end_date, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, name, location, start_date, end_date, created_at",
+  "params": [
+    "0b5d6710-29df-4324-af56-5ffa9fd94279",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant",
+    "2025-06-01T02:00:00.000Z",
+    "2025-06-07T10:00:00.000Z",
+    "2025-05-22T07:43:00.000Z"
+  ],
+  "error": "relation \"camps\" does not exist",
+  "duration": "195ms"
+}
+2025-05-22 15:01:14 [ERROR]: Error in createCamp {
+  "error": "relation \"camps\" does not exist"
+}
+2025-05-22 15:02:51 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camps (\n        id, name, location, start_date, end_date, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, name, location, start_date, end_date, created_at",
+  "params": [
+    "cdb8e958-a599-49be-bebc-32a5abd420b8",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant",
+    "2025-06-01T02:00:00.000Z",
+    "2025-06-07T10:00:00.000Z",
+    "2025-05-22T07:43:00.000Z"
+  ],
+  "error": "relation \"camps\" does not exist",
+  "duration": "254ms"
+}
+2025-05-22 15:02:51 [ERROR]: Error in createCamp {
+  "error": "relation \"camps\" does not exist"
+}
+2025-05-22 15:04:36 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp (\n        id, name, location, start_date, end_date, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, name, location, start_date, end_date, created_at",
+  "params": [
+    "b2186b9a-882d-44ae-bde4-d46cd8b92e43",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant",
+    "2025-06-01T02:00:00.000Z",
+    "2025-06-07T10:00:00.000Z",
+    "2025-05-22T07:43:00.000Z"
+  ],
+  "error": "column \"name\" of relation \"camp\" does not exist",
+  "duration": "212ms"
+}
+2025-05-22 15:04:36 [ERROR]: Error in createCamp {
+  "error": "column \"name\" of relation \"camp\" does not exist"
+}
+2025-05-22 15:12:45 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp (\n        id, camp_name, camp_location, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, camp_name, camp_location, created_at",
+  "params": [
+    "4f4d13c1-69f5-4235-855a-64772ece01b1",
+    null,
+    null,
+    "2025-05-22T07:43:00.000Z"
+  ],
+  "error": "INSERT has more expressions than target columns",
+  "duration": "241ms"
+}
+2025-05-22 15:12:45 [ERROR]: Error in createCamp {
+  "error": "INSERT has more expressions than target columns"
+}
+2025-05-22 15:13:02 [ERROR]: Error in createCamp {
+  "error": "camp_name and camp_location are required"
+}
+2025-05-22 15:13:20 [ERROR]: Error in createCamp {
+  "error": "camp_name and camp_location are required"
+}
+2025-05-22 15:13:30 [ERROR]: Error in createCamp {
+  "error": "camp_name and camp_location are required"
+}
+2025-05-22 15:14:08 [ERROR]: Error in createCamp {
+  "error": "camp_name and camp_location are required"
+}
+2025-05-22 15:39:36 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camps (\n        id, camp_name, camp_location, created_at\n      ) VALUES (\n        $1, $2, $3, $4\n      )\n      RETURNING id, camp_name, camp_location, created_at",
+  "params": [
+    "a8d9fe26-3862-456c-b536-900bc3cc2b25",
+    "Central Camp",
+    "Bangkok, Thailand",
+    "2025-05-22T08:15:00.000Z"
+  ],
+  "error": "relation \"camps\" does not exist",
+  "duration": "213ms"
+}
+2025-05-22 15:39:36 [ERROR]: Error in createCamp {
+  "error": "relation \"camps\" does not exist"
+}
+2025-05-22 15:53:25 [ERROR]: Database query failed {
+  "sql": "SELECT id, camp_name, camp_location, created_at FROM camps",
+  "params": [],
+  "error": "relation \"camps\" does not exist",
+  "duration": "200ms"
+}
+2025-05-22 15:53:25 [ERROR]: Error in getAllCamps {
+  "error": "relation \"camps\" does not exist"
+}
