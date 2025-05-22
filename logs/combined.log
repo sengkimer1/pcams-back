@@ -1,0 +1,336 @@
+2025-05-22 16:41:17 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/events",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "ab93ab94-a6a6-4482-a897-c126a50cf189",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-22 16:41:17 [INFO]: Fetching all events
+2025-05-22 16:41:18 [INFO]: Database query executed {
+  "sql": "SELECT id, event_name, from_date, end_date, created_at FROM event",
+  "params": [],
+  "rowCount": 1,
+  "duration": "209ms"
+}
+2025-05-22 16:41:18 [INFO]: Fetched all events
+2025-05-22 16:42:12 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campevents",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "3da262b1-0c45-4d5f-9b89-79808f5bb771",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "109"
+  },
+  "body": {
+    "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+    "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+  }
+}
+2025-05-22 16:42:12 [INFO]: Creating camp-event association {
+  "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+  "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 16:42:12 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (\n        camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3\n      )\n      RETURNING camp_id, event_id, created_at",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T09:42:12.584Z"
+  ],
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint",
+  "duration": "196ms"
+}
+2025-05-22 16:42:12 [ERROR]: Error in createCampEvent {
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint"
+}
+2025-05-22 16:43:27 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campevents",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "0dab3b28-41b5-4b62-a3a2-05cf75c387fe",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "109"
+  },
+  "body": {
+    "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+    "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+  }
+}
+2025-05-22 16:43:27 [INFO]: Creating camp-event association {
+  "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+  "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 16:43:27 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (\n        camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3\n      )\n      RETURNING camp_id, event_id, created_at",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T09:43:27.451Z"
+  ],
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint",
+  "duration": "192ms"
+}
+2025-05-22 16:43:27 [ERROR]: Error in createCampEvent {
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint"
+}
+2025-05-22 16:47:25 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campevents",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "8b65a400-7de0-48e8-afdc-4b9861b57e4d",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "153"
+  },
+  "body": {
+    "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+    "event_id": "b4fed184-34c8-48d3-94bd-451f74625621",
+    "created_at": "2025-05-22T09:25:00.000Z"
+  }
+}
+2025-05-22 16:47:25 [INFO]: Creating camp-event association {
+  "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+  "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 16:47:25 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (\n        camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3\n      )\n      RETURNING camp_id, event_id, created_at",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T09:25:00.000Z"
+  ],
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint",
+  "duration": "219ms"
+}
+2025-05-22 16:47:25 [ERROR]: Error in createCampEvent {
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint"
+}
+2025-05-22 16:48:38 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campevents",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "0f86c35d-901f-40b6-93ca-ee813cadf610",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "153"
+  },
+  "body": {
+    "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+    "event_id": "b4fed184-34c8-48d3-94bd-451f74625621",
+    "created_at": "2025-05-22T09:25:00.000Z"
+  }
+}
+2025-05-22 16:48:38 [INFO]: Creating camp-event association {
+  "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+  "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 16:48:38 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (\n        camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3\n      )\n      RETURNING camp_id, event_id, created_at",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T09:25:00.000Z"
+  ],
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint",
+  "duration": "212ms"
+}
+2025-05-22 16:48:38 [ERROR]: Error in createCampEvent {
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint"
+}
+2025-05-22 16:48:57 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campevents",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "6346d6ec-fcdc-44da-8eb9-7669e26c7e9f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "109"
+  },
+  "body": {
+    "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+    "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+  }
+}
+2025-05-22 16:48:57 [INFO]: Creating camp-event association {
+  "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+  "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 16:48:57 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (\n        camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3\n      )\n      RETURNING camp_id, event_id, created_at",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T09:48:57.549Z"
+  ],
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint",
+  "duration": "222ms"
+}
+2025-05-22 16:48:57 [ERROR]: Error in createCampEvent {
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint"
+}
+2025-05-22 17:05:33 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campevents",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "c92fca1c-3f57-4e0c-acc4-767992cbcc1c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "109"
+  },
+  "body": {
+    "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+    "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+  }
+}
+2025-05-22 17:05:33 [INFO]: Creating camp-event association {
+  "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+  "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 17:05:33 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp_event (\n        id, camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3, $4\n      )\n      RETURNING id, camp_id, event_id, created_at",
+  "params": [
+    "e5716545-9b15-45b3-951b-0baafdb8f28a",
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T10:05:33.267Z"
+  ],
+  "rowCount": 1,
+  "duration": "242ms"
+}
+2025-05-22 17:05:33 [INFO]: Camp-event association created successfully {
+  "id": "e5716545-9b15-45b3-951b-0baafdb8f28a",
+  "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+  "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 17:05:33 [INFO]: Camp-event created {
+  "id": "e5716545-9b15-45b3-951b-0baafdb8f28a",
+  "camp_id": "6cb1d790-8551-4538-ab43-4b802973f754",
+  "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 17:06:11 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/campevents",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "99995263-995b-4280-9089-a2ec21a99b36",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-22 17:06:11 [INFO]: Fetching all camp-event associations
+2025-05-22 17:06:11 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_id, event_id, created_at FROM camp_event",
+  "params": [],
+  "rowCount": 1,
+  "duration": "189ms"
+}
+2025-05-22 17:06:11 [INFO]: Fetched all camp-event associations
+2025-05-22 17:06:49 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campevents",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "8cd15d9c-1404-4b87-bbe9-f78c2452df24",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "109"
+  },
+  "body": {
+    "camp_id": "265f6dee-9fff-428a-b8b0-d76b0e9beb10",
+    "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+  }
+}
+2025-05-22 17:06:49 [INFO]: Creating camp-event association {
+  "camp_id": "265f6dee-9fff-428a-b8b0-d76b0e9beb10",
+  "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 17:06:49 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp_event (\n        id, camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3, $4\n      )\n      RETURNING id, camp_id, event_id, created_at",
+  "params": [
+    "34fa66a3-cf0b-45c7-8f3b-120f61c8a125",
+    "265f6dee-9fff-428a-b8b0-d76b0e9beb10",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T10:06:49.196Z"
+  ],
+  "rowCount": 1,
+  "duration": "184ms"
+}
+2025-05-22 17:06:49 [INFO]: Camp-event association created successfully {
+  "id": "34fa66a3-cf0b-45c7-8f3b-120f61c8a125",
+  "camp_id": "265f6dee-9fff-428a-b8b0-d76b0e9beb10",
+  "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 17:06:49 [INFO]: Camp-event created {
+  "id": "34fa66a3-cf0b-45c7-8f3b-120f61c8a125",
+  "camp_id": "265f6dee-9fff-428a-b8b0-d76b0e9beb10",
+  "event_id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 17:06:53 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/campevents",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "3e28459a-e346-4d31-8fe2-d2dcbe06236b",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-22 17:06:53 [INFO]: Fetching all camp-event associations
+2025-05-22 17:06:53 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_id, event_id, created_at FROM camp_event",
+  "params": [],
+  "rowCount": 2,
+  "duration": "36ms"
+}
+2025-05-22 17:06:53 [INFO]: Fetched all camp-event associations

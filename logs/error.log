@@ -1000,3 +1000,68 @@
 2025-05-22 15:53:25 [ERROR]: Error in getAllCamps {
   "error": "relation \"camps\" does not exist"
 }
+2025-05-22 16:42:12 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (\n        camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3\n      )\n      RETURNING camp_id, event_id, created_at",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T09:42:12.584Z"
+  ],
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint",
+  "duration": "196ms"
+}
+2025-05-22 16:42:12 [ERROR]: Error in createCampEvent {
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint"
+}
+2025-05-22 16:43:27 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (\n        camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3\n      )\n      RETURNING camp_id, event_id, created_at",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T09:43:27.451Z"
+  ],
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint",
+  "duration": "192ms"
+}
+2025-05-22 16:43:27 [ERROR]: Error in createCampEvent {
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint"
+}
+2025-05-22 16:47:25 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (\n        camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3\n      )\n      RETURNING camp_id, event_id, created_at",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T09:25:00.000Z"
+  ],
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint",
+  "duration": "219ms"
+}
+2025-05-22 16:47:25 [ERROR]: Error in createCampEvent {
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint"
+}
+2025-05-22 16:48:38 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (\n        camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3\n      )\n      RETURNING camp_id, event_id, created_at",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T09:25:00.000Z"
+  ],
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint",
+  "duration": "212ms"
+}
+2025-05-22 16:48:38 [ERROR]: Error in createCampEvent {
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint"
+}
+2025-05-22 16:48:57 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp_event (\n        camp_id, event_id, created_at\n      ) VALUES (\n        $1, $2, $3\n      )\n      RETURNING camp_id, event_id, created_at",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "2025-05-22T09:48:57.549Z"
+  ],
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint",
+  "duration": "222ms"
+}
+2025-05-22 16:48:57 [ERROR]: Error in createCampEvent {
+  "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint"
+}
