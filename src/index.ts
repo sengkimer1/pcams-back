@@ -10,22 +10,24 @@ import authRoutes from "./routes/authRoutes";
 import userRoutes from "./routes/userRoutes";
 import campRoutes from "./routes/campRoutes";
 import eventRoutes from "./routes/eventRoute";
-
+import campEventRoutes from "./routes/campEventRoutes";
 // Controllers
 import { AuthController } from "./controller/authController";
 import { UserController } from "./controller/UserController";
 import { CampController } from "./controller/campController";
 import { EventController } from "./controller/eventController";
+import { CampEventController } from "./controller/campEventController";
 
 // Services
 import { UserService } from "./services/userService";
 import { CampService } from "./services/campService";
 import { EventService } from "./services/eventService";
-
+import { CampEventService } from "./services/campEventService";
 // Repositories
 import { PostgresUserRepository } from "./repositories/userRepository";
 import {PostgresCampRepository} from "./repositories/CampRepository";
 import {PostgresEventRepository} from "./repositories/eventRepository";
+import {PostgresCampEventRepository} from "./repositories/campEventRepository";
 
 
 // Config
@@ -51,23 +53,28 @@ app.use(loggingMiddleware);
 const userRepository = new PostgresUserRepository(pgPool);
 const campRepository = new PostgresCampRepository(pgPool);
 const eventRepository = new PostgresEventRepository(pgPool);
+const campEventRepository = new PostgresCampEventRepository(pgPool);
+
 
 // Services
 const userService = new UserService(userRepository);
 const campService = new CampService(campRepository);
 const eventService = new EventService(eventRepository);
+const campEventService = new CampEventService(campEventRepository);
 
 // Controllers
 const authController = new AuthController(userService);
 const userController = new UserController(userService);
 const campController = new CampController(campService);
 const eventController = new EventController(eventService);
+const campEventController = new CampEventController(campEventService);
 
 // Routes
 app.use("/api/auth", authRoutes(authController));
 app.use("/api/users", userRoutes(userController));
 app.use("/api/camps", campRoutes(campController));
 app.use("/api/events", eventRoutes(eventController));
+app.use("/api/campevents", campEventRoutes(campEventController));
 
 // Error Handling Middleware
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
