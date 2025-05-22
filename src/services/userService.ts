@@ -1,55 +1,44 @@
-import { IUserService, IUser, IUserWithoutPassword, IUserRepository } from "../interfaces/userinterfaces";
-import { CampUserService } from "../interfaces/campUserInterface";
+import { IUser, IUserWithoutPassword, IUserRepository, UserRole, ILoginResponse, IUserService } from "../interfaces/userinterfaces";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+import { logger } from "./loggerService";
 
 export class UserService implements IUserService {
-  constructor(
-    private userRepository: IUserRepository,
-    private campUserService: CampUserService
-  ) {}
+  constructor(private userRepository: IUserRepository) {}
 
-  async createUser(user: Omit<IUser, "id">): Promise<{ user: IUserWithoutPassword; token: string }> {
-    console.log("Received user data:", user); // Debug log
-    const existingUser = await this.userRepository.findByEmail(user.email);
+  async createUser(data: { email: string; password: string; role: UserRole; username?: string; created_at?: Date }): Promise<{ user: IUserWithoutPassword; token: string }> {
+    logger.info("Creating user", { email: data.email });
+    const existingUser = await this.userRepository.findByEmail(data.email);
     if (existingUser) {
       throw Object.assign(new Error("User already exists"), { status: 400 });
     }
 
-    if (!user.camp_id) {
-      console.error("camp_id is missing or null in the request");
-      throw Object.assign(new Error("Camp ID is required"), { status: 400 });
-    }
+    const userData: Omit<IUser, "id"> = {
+      email: data.email,
+      password: data.password,
+      role: data.role,
+      username: data.username,
+      created_at: data.created_at || new Date(),
+    };
 
-    console.log("Creating user with camp_id:", user.camp_id); // Debug log
-    const newUser = await this.userRepository.create(user);
+    logger.info("User data prepared", { userData });
+    const newUser = await this.userRepository.create(userData);
 
-    // Create CampUser entry
-    try {
-      console.log("Creating CampUser entry for user_id:", newUser.id, "with camp_id:", user.camp_id); // Debug log
-      await this.campUserService.create({
-        camp_id: user.camp_id,
-        user_id: newUser.id!,
-        is_active: true,
-      });
-      console.log("CampUser entry created successfully");
-    } catch (error) {
-      console.error("Failed to create CampUser entry:", error);
-      throw Object.assign(new Error("Failed to associate user with camp"), { status: 500 });
-    }
-
-    const token = jwt.sign({ id: newUser.id }, process.env.JWT_SECRET!, {
+    const token = jwt.sign({ id: newUser.id, role: newUser.role }, process.env.JWT_SECRET!, {
       expiresIn: "1h",
     });
 
+    logger.info("User created successfully", { id: newUser.id });
     return { user: newUser, token };
   }
 
   async getAllUsers(): Promise<IUserWithoutPassword[]> {
+    logger.info("Fetching all users");
     return this.userRepository.findAll();
   }
 
   async getUserById(id: string): Promise<IUserWithoutPassword> {
+    logger.info("Fetching user by id", { id });
     const user = await this.userRepository.findById(id);
     if (!user) {
       throw Object.assign(new Error("User not found"), { status: 404 });
@@ -57,7 +46,8 @@ export class UserService implements IUserService {
     return user;
   }
 
-  async login(email: string, password: string): Promise<any> {
+  async login(email: string, password: string): Promise<ILoginResponse> {
+    logger.info("Attempting login", { email });
     const user = await this.userRepository.findByEmail(email);
     if (!user) {
       throw Object.assign(new Error("User not found"), { status: 404 });
@@ -68,36 +58,35 @@ export class UserService implements IUserService {
       throw Object.assign(new Error("Invalid password"), { status: 400 });
     }
 
-    const token = jwt.sign({ id: user.id, role_id: user.role_id }, process.env.JWT_SECRET!, {
+    const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET!, {
       expiresIn: "3h",
     });
 
     const { password: _, ...userWithoutPassword } = user;
-
+    logger.info("Login successful", { id: user.id });
     return {
       user: userWithoutPassword,
       token,
     };
   }
 
-  async updateUser(
-    id: string,
-    user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>
-  ): Promise<IUserWithoutPassword> {
+  async updateUser(id: string, updateData: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword> {
+    logger.info("Updating user", { id });
     const existingUser = await this.userRepository.findById(id);
     if (!existingUser) {
       throw Object.assign(new Error("User not found"), { status: 404 });
     }
 
-    const updatedUser = await this.userRepository.update(id, user);
+    const updatedUser = await this.userRepository.update(id, updateData);
     if (!updatedUser) {
       throw Object.assign(new Error("Failed to update user"), { status: 500 });
     }
-
+    logger.info("User updated successfully", { id });
     return updatedUser;
   }
 
   async deleteUser(id: string): Promise<void> {
+    logger.info("Deleting user", { id });
     const existingUser = await this.userRepository.findById(id);
     if (!existingUser) {
       throw Object.assign(new Error("User not found"), { status: 404 });
@@ -107,10 +96,12 @@ export class UserService implements IUserService {
     if (!deleted) {
       throw Object.assign(new Error("Failed to delete user"), { status: 500 });
     }
+    logger.info("User deleted successfully", { id });
   }
 
-  async getOneUserByRole(roleName: string): Promise<IUserWithoutPassword> {
-    const user = await this.userRepository.getOneUserByRole(roleName);
+  async getOneUserByRole(role: UserRole): Promise<IUserWithoutPassword> {
+    logger.info("Fetching user by role", { role });
+    const user = await this.userRepository.getOneUserByRole(role);
     if (!user) {
       throw Object.assign(new Error("User with specified role not found"), { status: 404 });
     }

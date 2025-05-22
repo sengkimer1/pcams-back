@@ -8,8 +8,7 @@ declare module "winston" {
 
 export class LoggerService {
   private logger: Logger;
-  private level: "debug" | "info" =
-    process.env.NODE_ENV === "development" ? "debug" : "info";
+  private level: "debug" | "info" = process.env.NODE_ENV === "development" ? "debug" : "info";
 
   constructor() {
     this.logger = winston.createLogger({

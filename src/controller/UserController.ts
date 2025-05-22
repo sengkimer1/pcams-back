@@ -1,37 +1,27 @@
 import { Request, Response, NextFunction } from "express";
-import { UserService } from "../services/userService";
+import { IUserService, UserRole } from "../interfaces/userinterfaces";
 
 export class UserController {
-  constructor(private userService: UserService) { }
+  constructor(private userService: IUserService) {}
 
   async createUser(req: Request, res: Response, next: NextFunction) {
     try {
-      const {
-        email,
-        password,
-        role_id,
-        khmer_name,
-        english_name,
-        date_of_birth,
-        nationality,
-        position,
-        camp_id,
-      } = req.body;
+      const { email, password, role, username, created_at } = req.body;
 
-      if (!camp_id) {
-        throw Object.assign(new Error("Camp ID is required"), { status: 400 });
+      if (!email || !password || !role) {
+        throw Object.assign(new Error("Email, password, and role are required"), { status: 400 });
+      }
+
+      if (!Object.values(UserRole).includes(role)) {
+        throw Object.assign(new Error("Invalid role"), { status: 400 });
       }
 
       const result = await this.userService.createUser({
         email,
         password,
-        role_id,
-        khmer_name,
-        english_name,
-        date_of_birth,
-        nationality,
-        position,
-        camp_id,
+        role,
+        username,
+        created_at: created_at ? new Date(created_at) : new Date(),
       });
 
       res.status(201).json({ message: "A new user was created.", data: result });
@@ -46,7 +36,7 @@ export class UserController {
       const users = await this.userService.getAllUsers();
       res.status(200).json(users);
     } catch (err) {
-      console.error(err);
+      console.error("Error in getAllUser:", err);
       next(err);
     }
   }
@@ -56,8 +46,9 @@ export class UserController {
       const { id } = req.params;
       const user = await this.userService.getUserById(id);
       res.status(200).json(user);
-    } catch (error) {
-      next(error);
+    } catch (err) {
+      console.error("Error in getUserById:", err);
+      next(err);
     }
   }
 
@@ -65,10 +56,14 @@ export class UserController {
     try {
       const id = req.params.id;
       const updateData = req.body;
+      if (updateData.role && !Object.values(UserRole).includes(updateData.role)) {
+        throw Object.assign(new Error("Invalid role"), { status: 400 });
+      }
       const updatedUser = await this.userService.updateUser(id, updateData);
 
       res.status(200).json({ message: "User updated", data: updatedUser });
     } catch (err) {
+      console.error("Error in updateUser:", err);
       next(err);
     }
   }
@@ -80,17 +75,21 @@ export class UserController {
 
       res.status(200).json({ message: "User deleted successfully." });
     } catch (err) {
-      console.error(err);
+      console.error("Error in deleteUser:", err);
       next(err);
     }
   }
 
   async getOneUserByRole(req: Request, res: Response, next: NextFunction) {
     try {
-      const roleName = req.params.roleName;
+      const roleName = req.params.roleName as UserRole;
+      if (!Object.values(UserRole).includes(roleName)) {
+        throw Object.assign(new Error("Invalid role"), { status: 400 });
+      }
       const user = await this.userService.getOneUserByRole(roleName);
-      res.json(user);
+      res.status(200).json(user);
     } catch (err) {
+      console.error("Error in getOneUserByRole:", err);
       next(err);
     }
   }

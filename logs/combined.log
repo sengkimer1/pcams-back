@@ -3719,3 +3719,480 @@
   "rowCount": 1,
   "duration": "74ms"
 }
+2025-05-22 12:57:08 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc4NzMxMTQsImV4cCI6MTc0Nzg4MzkxNH0.6rEA8QuThMsOzY9CNsxq8Tr15m4POc2eKH5E3tp3feU",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "80eb3949-1253-4095-99c5-6ac83438d84b",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "102"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role": "admin",
+    "username": "Admin"
+  }
+}
+2025-05-22 12:57:08 [INFO]: Creating user {
+  "email": "admin@admin.com"
+}
+2025-05-22 12:57:08 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "relation \"users\" does not exist",
+  "duration": "218ms"
+}
+2025-05-22 12:57:34 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc4NzMxMTQsImV4cCI6MTc0Nzg4MzkxNH0.6rEA8QuThMsOzY9CNsxq8Tr15m4POc2eKH5E3tp3feU",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "8985cebe-2b50-458f-b494-c8897e188011",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "142"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role": "admin",
+    "username": "Admin",
+    "created_at": "2025-05-:54:00+07:00"
+  }
+}
+2025-05-22 12:57:34 [INFO]: Creating user {
+  "email": "admin@admin.com"
+}
+2025-05-22 12:57:34 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "relation \"users\" does not exist",
+  "duration": "216ms"
+}
+2025-05-22 13:04:22 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "2d0ce57c-0414-41d7-8252-3436e3532ccc",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-22 13:04:22 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-22 13:04:23 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "251ms"
+}
+2025-05-22 13:04:23 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-22 13:05:06 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "d9f3587d-7779-4857-a6c8-f5e9742faaa7",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-22 13:05:06 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-22 13:05:07 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "226ms"
+}
+2025-05-22 13:05:07 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-22 13:05:08 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "da3192e8-53d8-4e8d-82a5-93d32d60df29",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-22 13:05:08 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-22 13:05:08 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "48ms"
+}
+2025-05-22 13:05:08 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-22 13:12:11 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "3b46d7be-41af-4f53-ac97-3ae9f4f062a9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-22 13:12:11 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-22 13:12:11 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "208ms"
+}
+2025-05-22 13:12:11 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-22 13:12:52 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc4NzMxMTQsImV4cCI6MTc0Nzg4MzkxNH0.6rEA8QuThMsOzY9CNsxq8Tr15m4POc2eKH5E3tp3feU",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "96825a78-f5a6-4b07-b4db-1093df27d7a3",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "141"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role": "admin",
+    "username": "Admin",
+    "created_at": "2025-05-:54:00+07:00"
+  }
+}
+2025-05-22 13:14:31 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc4NzMxMTQsImV4cCI6MTc0Nzg4MzkxNH0.6rEA8QuThMsOzY9CNsxq8Tr15m4POc2eKH5E3tp3feU",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "0471b9e7-88ec-4dbc-a7ae-a9fa8bf238b5",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "141"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role": "admin",
+    "username": "Admin",
+    "created_at": "2025-05-:54:00+07:00"
+  }
+}
+2025-05-22 13:14:31 [INFO]: Creating user {
+  "email": "admin@admin.com"
+}
+2025-05-22 13:14:31 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "233ms"
+}
+2025-05-22 13:15:58 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc4NzMxMTQsImV4cCI6MTc0Nzg4MzkxNH0.6rEA8QuThMsOzY9CNsxq8Tr15m4POc2eKH5E3tp3feU",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "d1531389-bd16-4fee-ad53-0ee868b62b51",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "141"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role": "admin",
+    "username": "Admin",
+    "created_at": "2025-05-:54:00+07:00"
+  }
+}
+2025-05-22 13:15:58 [INFO]: Creating user {
+  "email": "admin@admin.com"
+}
+2025-05-22 13:15:58 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "208ms"
+}
+2025-05-22 13:15:58 [INFO]: User data prepared {
+  "userData": {
+    "email": "admin@admin.com",
+    "password": "admin1234",
+    "role": "admin",
+    "username": "Admin",
+    "created_at": null
+  }
+}
+2025-05-22 13:15:58 [ERROR]: Database query failed {
+  "sql": "INSERT INTO users (\n        id, username, email, password, role, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, username, email, role, created_at",
+  "params": [
+    "b2159a32-c065-4296-a1ee-1ebcb45b86b9",
+    "Admin",
+    "admin@admin.com",
+    "$2b$10$npChzuc0fXCksaq9S.lfh.MKfA5WchMNz1YMMnmk9tuTfBljSWLcC",
+    "admin",
+    null
+  ],
+  "error": "invalid input syntax for type timestamp: \"0NaN-NaN-NaNTNaN:NaN:NaN.NaN+NaN:NaN\"",
+  "duration": "54ms"
+}
+2025-05-22 13:16:12 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc4NzMxMTQsImV4cCI6MTc0Nzg4MzkxNH0.6rEA8QuThMsOzY9CNsxq8Tr15m4POc2eKH5E3tp3feU",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "2ccde9d4-9331-4e0b-a028-90160ea88d0a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "101"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role": "admin",
+    "username": "Admin"
+  }
+}
+2025-05-22 13:16:12 [INFO]: Creating user {
+  "email": "admin@admin.com"
+}
+2025-05-22 13:16:13 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 0,
+  "duration": "213ms"
+}
+2025-05-22 13:16:13 [INFO]: User data prepared {
+  "userData": {
+    "email": "admin@admin.com",
+    "password": "admin1234",
+    "role": "admin",
+    "username": "Admin",
+    "created_at": "2025-05-22T06:16:12.965Z"
+  }
+}
+2025-05-22 13:16:13 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, username, email, password, role, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, username, email, role, created_at",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0",
+    "Admin",
+    "admin@admin.com",
+    "$2b$10$0Gyqwtt1BChRnAqq8nmNYuKH.GUgugEjJ802GJInDvFON8wb7W/G6",
+    "admin",
+    "2025-05-22T06:16:12.965Z"
+  ],
+  "rowCount": 1,
+  "duration": "47ms"
+}
+2025-05-22 13:16:13 [INFO]: User created successfully {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-22 13:16:50 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "6ad10047-e7d7-4c54-a112-74582f139775",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-22 13:16:50 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-22 13:16:51 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "195ms"
+}
+2025-05-22 13:16:51 [INFO]: Login successful {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-22 13:16:51 [INFO]: Login successful {
+  "email": "admin@admin.com"
+}
+2025-05-22 13:17:46 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc4NzMxMTQsImV4cCI6MTc0Nzg4MzkxNH0.6rEA8QuThMsOzY9CNsxq8Tr15m4POc2eKH5E3tp3feU",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "bf2e1c84-8f83-4c4c-be95-0b7f9c4d48da",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "107"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role": "coodinator",
+    "username": "Pheak"
+  }
+}
+2025-05-22 13:18:23 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc4NzMxMTQsImV4cCI6MTc0Nzg4MzkxNH0.6rEA8QuThMsOzY9CNsxq8Tr15m4POc2eKH5E3tp3feU",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "b2fe4eff-e8f0-4277-906c-e43796456c73",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "108"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role": "coordinator",
+    "username": "Pheak"
+  }
+}
+2025-05-22 13:18:23 [INFO]: Creating user {
+  "email": "Sopheak@gmail.com"
+}
+2025-05-22 13:18:23 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "Sopheak@gmail.com"
+  ],
+  "rowCount": 0,
+  "duration": "203ms"
+}
+2025-05-22 13:18:23 [INFO]: User data prepared {
+  "userData": {
+    "email": "Sopheak@gmail.com",
+    "password": "pk151052",
+    "role": "coordinator",
+    "username": "Pheak",
+    "created_at": "2025-05-22T06:18:23.193Z"
+  }
+}
+2025-05-22 13:18:23 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, username, email, password, role, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, username, email, role, created_at",
+  "params": [
+    "b1d9491a-8702-40d9-a999-68a7dccdc7c3",
+    "Pheak",
+    "Sopheak@gmail.com",
+    "$2b$10$D9Q.6hoGhTIMM1mLc22sReZbpobuC2nqDYF2yvJAmkrFEaRlf/95m",
+    "coordinator",
+    "2025-05-22T06:18:23.193Z"
+  ],
+  "rowCount": 1,
+  "duration": "40ms"
+}
+2025-05-22 13:18:23 [INFO]: User created successfully {
+  "id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+}
