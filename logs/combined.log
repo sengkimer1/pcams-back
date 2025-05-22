@@ -4196,3 +4196,809 @@
 2025-05-22 13:18:23 [INFO]: User created successfully {
   "id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
 }
+2025-05-22 14:21:25 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNmE0YzJkLTMwMDEtNDZlYi1iNmQxLTJmMDcxYmJhNmI2NSIsInJvbGVfaWQiOiJhMWIyYzNkNC1lNWY2LTc4OTAtYWJjZC0xMjM0NTY3ODkwYWIiLCJpYXQiOjE3NDc4NzMxMTQsImV4cCI6MTc0Nzg4MzkxNH0.6rEA8QuThMsOzY9CNsxq8Tr15m4POc2eKH5E3tp3feU",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "e8a87d6e-f359-4425-96ff-6b1ada90851b",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-22 14:21:31 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "e44840f8-2fca-4318-97af-a749016551c8",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-22 14:21:31 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-22 14:21:31 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "234ms"
+}
+2025-05-22 14:21:31 [INFO]: Login successful {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-22 14:21:31 [INFO]: Login successful {
+  "email": "admin@admin.com"
+}
+2025-05-22 14:22:18 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzg5ODQ5MSwiZXhwIjoxNzQ3OTA5MjkxfQ.Wm0BRENQpU6l3AWYy8lxgIUEil8DA2PcohaL4LGt40M",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "0bac246e-b74f-4efd-b741-cac8c1c10bd7",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-22 14:22:18 [INFO]: Fetching all users
+2025-05-22 14:22:18 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, created_at FROM users",
+  "params": [],
+  "rowCount": 2,
+  "duration": "201ms"
+}
+2025-05-22 14:22:18 [INFO]: Fetched all users
+2025-05-22 15:00:22 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzg5ODQ5MSwiZXhwIjoxNzQ3OTA5MjkxfQ.Wm0BRENQpU6l3AWYy8lxgIUEil8DA2PcohaL4LGt40M",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "804a19ed-9a7a-4464-a9c9-a35a0d173b11",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "209"
+  },
+  "body": {
+    "name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant",
+    "start_date": "2025-06-01T09:00:00+07:00",
+    "end_date": "2025-06-07T17:00:00+07:00",
+    "created_at": "2025-05-22T14:43:00+07:00"
+  }
+}
+2025-05-22 15:00:22 [INFO]: Creating camp {
+  "name": "Central Camp"
+}
+2025-05-22 15:00:22 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camps (\n        id, name, location, start_date, end_date, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, name, location, start_date, end_date, created_at",
+  "params": [
+    "ce80992e-bcae-4b55-9958-0b9594fc2a1d",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant",
+    "2025-06-01T02:00:00.000Z",
+    "2025-06-07T10:00:00.000Z",
+    "2025-05-22T07:43:00.000Z"
+  ],
+  "error": "relation \"camps\" does not exist",
+  "duration": "221ms"
+}
+2025-05-22 15:00:22 [ERROR]: Error in createCamp {
+  "error": "relation \"camps\" does not exist"
+}
+2025-05-22 15:00:36 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzg5ODQ5MSwiZXhwIjoxNzQ3OTA5MjkxfQ.Wm0BRENQpU6l3AWYy8lxgIUEil8DA2PcohaL4LGt40M",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "65cc756e-0888-4348-b4ca-32f9bdb6bdb7",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "76"
+  },
+  "body": {
+    "name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant"
+  }
+}
+2025-05-22 15:00:36 [ERROR]: Error in createCamp {
+  "error": "Name, location, start_date, and end_date are required"
+}
+2025-05-22 15:00:57 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzg5ODQ5MSwiZXhwIjoxNzQ3OTA5MjkxfQ.Wm0BRENQpU6l3AWYy8lxgIUEil8DA2PcohaL4LGt40M",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "156663b2-d2c4-47f3-a9de-dfc33bbe9eac",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "164"
+  },
+  "body": {
+    "name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant",
+    "start_date": "2025-06-01T09:00:00+07:00",
+    "end_date": "2025-06-07T17:00:00+07:00"
+  }
+}
+2025-05-22 15:00:57 [INFO]: Creating camp {
+  "name": "Central Camp"
+}
+2025-05-22 15:00:57 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camps (\n        id, name, location, start_date, end_date, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, name, location, start_date, end_date, created_at",
+  "params": [
+    "0ecd1a72-b685-4a06-8acf-74506f9b13b7",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant",
+    "2025-06-01T02:00:00.000Z",
+    "2025-06-07T10:00:00.000Z",
+    "2025-05-22T08:00:57.191Z"
+  ],
+  "error": "relation \"camps\" does not exist",
+  "duration": "203ms"
+}
+2025-05-22 15:00:57 [ERROR]: Error in createCamp {
+  "error": "relation \"camps\" does not exist"
+}
+2025-05-22 15:01:14 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzg5ODQ5MSwiZXhwIjoxNzQ3OTA5MjkxfQ.Wm0BRENQpU6l3AWYy8lxgIUEil8DA2PcohaL4LGt40M",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "34e3d6ca-c1f9-49d7-ac47-15f268fdc107",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "209"
+  },
+  "body": {
+    "name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant",
+    "start_date": "2025-06-01T09:00:00+07:00",
+    "end_date": "2025-06-07T17:00:00+07:00",
+    "created_at": "2025-05-22T14:43:00+07:00"
+  }
+}
+2025-05-22 15:01:14 [INFO]: Creating camp {
+  "name": "Central Camp"
+}
+2025-05-22 15:01:14 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camps (\n        id, name, location, start_date, end_date, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, name, location, start_date, end_date, created_at",
+  "params": [
+    "0b5d6710-29df-4324-af56-5ffa9fd94279",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant",
+    "2025-06-01T02:00:00.000Z",
+    "2025-06-07T10:00:00.000Z",
+    "2025-05-22T07:43:00.000Z"
+  ],
+  "error": "relation \"camps\" does not exist",
+  "duration": "195ms"
+}
+2025-05-22 15:01:14 [ERROR]: Error in createCamp {
+  "error": "relation \"camps\" does not exist"
+}
+2025-05-22 15:02:16 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "5b2cd9c4-6964-45ae-a55e-94803c33a935",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-22 15:02:16 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-22 15:02:16 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "195ms"
+}
+2025-05-22 15:02:16 [INFO]: Login successful {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-22 15:02:16 [INFO]: Login successful {
+  "email": "admin@admin.com"
+}
+2025-05-22 15:02:51 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "16486a0b-4798-417a-b507-4bd5ad3ea79b",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "209"
+  },
+  "body": {
+    "name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant",
+    "start_date": "2025-06-01T09:00:00+07:00",
+    "end_date": "2025-06-07T17:00:00+07:00",
+    "created_at": "2025-05-22T14:43:00+07:00"
+  }
+}
+2025-05-22 15:02:51 [INFO]: Creating camp {
+  "name": "Central Camp"
+}
+2025-05-22 15:02:51 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camps (\n        id, name, location, start_date, end_date, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, name, location, start_date, end_date, created_at",
+  "params": [
+    "cdb8e958-a599-49be-bebc-32a5abd420b8",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant",
+    "2025-06-01T02:00:00.000Z",
+    "2025-06-07T10:00:00.000Z",
+    "2025-05-22T07:43:00.000Z"
+  ],
+  "error": "relation \"camps\" does not exist",
+  "duration": "254ms"
+}
+2025-05-22 15:02:51 [ERROR]: Error in createCamp {
+  "error": "relation \"camps\" does not exist"
+}
+2025-05-22 15:04:35 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "16fa0176-e13a-4f92-aa4a-01adee4d3e8c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "209"
+  },
+  "body": {
+    "name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant",
+    "start_date": "2025-06-01T09:00:00+07:00",
+    "end_date": "2025-06-07T17:00:00+07:00",
+    "created_at": "2025-05-22T14:43:00+07:00"
+  }
+}
+2025-05-22 15:04:35 [INFO]: Creating camp {
+  "name": "Central Camp"
+}
+2025-05-22 15:04:36 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp (\n        id, name, location, start_date, end_date, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, name, location, start_date, end_date, created_at",
+  "params": [
+    "b2186b9a-882d-44ae-bde4-d46cd8b92e43",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant",
+    "2025-06-01T02:00:00.000Z",
+    "2025-06-07T10:00:00.000Z",
+    "2025-05-22T07:43:00.000Z"
+  ],
+  "error": "column \"name\" of relation \"camp\" does not exist",
+  "duration": "212ms"
+}
+2025-05-22 15:04:36 [ERROR]: Error in createCamp {
+  "error": "column \"name\" of relation \"camp\" does not exist"
+}
+2025-05-22 15:12:44 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "4c30df49-902e-491e-9ddb-12033b3881d7",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "209"
+  },
+  "body": {
+    "name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant",
+    "start_date": "2025-06-01T09:00:00+07:00",
+    "end_date": "2025-06-07T17:00:00+07:00",
+    "created_at": "2025-05-22T14:43:00+07:00"
+  }
+}
+2025-05-22 15:12:44 [INFO]: Creating camp {}
+2025-05-22 15:12:45 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camp (\n        id, camp_name, camp_location, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, camp_name, camp_location, created_at",
+  "params": [
+    "4f4d13c1-69f5-4235-855a-64772ece01b1",
+    null,
+    null,
+    "2025-05-22T07:43:00.000Z"
+  ],
+  "error": "INSERT has more expressions than target columns",
+  "duration": "241ms"
+}
+2025-05-22 15:12:45 [ERROR]: Error in createCamp {
+  "error": "INSERT has more expressions than target columns"
+}
+2025-05-22 15:13:02 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "0b189630-c3f3-4fe3-869f-1e2391b22749",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "209"
+  },
+  "body": {
+    "name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant",
+    "start_date": "2025-06-01T09:00:00+07:00",
+    "end_date": "2025-06-07T17:00:00+07:00",
+    "created_at": "2025-05-22T14:43:00+07:00"
+  }
+}
+2025-05-22 15:13:02 [ERROR]: Error in createCamp {
+  "error": "camp_name and camp_location are required"
+}
+2025-05-22 15:13:20 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "5216acff-d875-4b6f-8f83-396126e47d84",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "121"
+  },
+  "body": {
+    "name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant",
+    "created_at": "2025-05-22T14:43:00+07:00"
+  }
+}
+2025-05-22 15:13:20 [ERROR]: Error in createCamp {
+  "error": "camp_name and camp_location are required"
+}
+2025-05-22 15:13:30 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "70b7e55a-1a5e-469d-85f0-649e717c3973",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "76"
+  },
+  "body": {
+    "name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant"
+  }
+}
+2025-05-22 15:13:30 [ERROR]: Error in createCamp {
+  "error": "camp_name and camp_location are required"
+}
+2025-05-22 15:14:08 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "1d0f4685-b25c-4ff0-82d6-f929ddbb8ef5",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "76"
+  },
+  "body": {
+    "name": "Central Camp",
+    "location": "PSE - Pour un Sourire d'Enfant"
+  }
+}
+2025-05-22 15:14:08 [ERROR]: Error in createCamp {
+  "error": "camp_name and camp_location are required"
+}
+2025-05-22 15:39:36 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "dd0cbfe3-0a4e-4b84-ab76-66d2f1fae77e",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "118"
+  },
+  "body": {
+    "camp_name": "Central Camp",
+    "camp_location": "Bangkok, Thailand",
+    "created_at": "2025-05-22T15:15:00+07:00"
+  }
+}
+2025-05-22 15:39:36 [INFO]: Creating camp {
+  "name": "Central Camp"
+}
+2025-05-22 15:39:36 [ERROR]: Database query failed {
+  "sql": "INSERT INTO camps (\n        id, camp_name, camp_location, created_at\n      ) VALUES (\n        $1, $2, $3, $4\n      )\n      RETURNING id, camp_name, camp_location, created_at",
+  "params": [
+    "a8d9fe26-3862-456c-b536-900bc3cc2b25",
+    "Central Camp",
+    "Bangkok, Thailand",
+    "2025-05-22T08:15:00.000Z"
+  ],
+  "error": "relation \"camps\" does not exist",
+  "duration": "213ms"
+}
+2025-05-22 15:39:36 [ERROR]: Error in createCamp {
+  "error": "relation \"camps\" does not exist"
+}
+2025-05-22 15:43:05 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "70fc94f2-fffb-40bf-a016-87148bfd036a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "118"
+  },
+  "body": {
+    "camp_name": "Central Camp",
+    "camp_location": "Bangkok, Thailand",
+    "created_at": "2025-05-22T15:15:00+07:00"
+  }
+}
+2025-05-22 15:43:05 [INFO]: Creating camp {
+  "name": "Central Camp"
+}
+2025-05-22 15:43:06 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp (\n        id, camp_name, camp_location, created_at\n      ) VALUES (\n        $1, $2, $3, $4\n      )\n      RETURNING id, camp_name, camp_location, created_at",
+  "params": [
+    "744a6254-252f-49fd-9379-5d249fe06148",
+    "Central Camp",
+    "Bangkok, Thailand",
+    "2025-05-22T08:15:00.000Z"
+  ],
+  "rowCount": 1,
+  "duration": "287ms"
+}
+2025-05-22 15:43:06 [INFO]: Camp created successfully {
+  "id": "744a6254-252f-49fd-9379-5d249fe06148"
+}
+2025-05-22 15:43:06 [INFO]: Camp created {
+  "id": "744a6254-252f-49fd-9379-5d249fe06148"
+}
+2025-05-22 15:48:07 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "e56327e5-95c4-4603-83eb-bd602027a5d9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "131"
+  },
+  "body": {
+    "camp_name": "Central Camp",
+    "camp_location": "PSE - Pour un Sourire d'Enfant",
+    "created_at": "2025-05-22T15:15:00+07:00"
+  }
+}
+2025-05-22 15:48:07 [INFO]: Creating camp {
+  "name": "Central Camp"
+}
+2025-05-22 15:48:07 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp (\n        id, camp_name, camp_location, created_at\n      ) VALUES (\n        $1, $2, $3, $4\n      )\n      RETURNING id, camp_name, camp_location, created_at",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754",
+    "Central Camp",
+    "PSE - Pour un Sourire d'Enfant",
+    "2025-05-22T08:15:00.000Z"
+  ],
+  "rowCount": 1,
+  "duration": "211ms"
+}
+2025-05-22 15:48:07 [INFO]: Camp created successfully {
+  "id": "6cb1d790-8551-4538-ab43-4b802973f754"
+}
+2025-05-22 15:48:07 [INFO]: Camp created {
+  "id": "6cb1d790-8551-4538-ab43-4b802973f754"
+}
+2025-05-22 15:49:11 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "918296b8-cf9f-4733-93a0-7900bf5309ef",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "63"
+  },
+  "body": {
+    "camp_name": "Teenger Camp",
+    "camp_location": "PSE OBK"
+  }
+}
+2025-05-22 15:49:11 [INFO]: Creating camp {
+  "name": "Teenger Camp"
+}
+2025-05-22 15:49:11 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp (\n        id, camp_name, camp_location, created_at\n      ) VALUES (\n        $1, $2, $3, $4\n      )\n      RETURNING id, camp_name, camp_location, created_at",
+  "params": [
+    "265f6dee-9fff-428a-b8b0-d76b0e9beb10",
+    "Teenger Camp",
+    "PSE OBK",
+    "2025-05-22T08:49:11.746Z"
+  ],
+  "rowCount": 1,
+  "duration": "211ms"
+}
+2025-05-22 15:49:11 [INFO]: Camp created successfully {
+  "id": "265f6dee-9fff-428a-b8b0-d76b0e9beb10"
+}
+2025-05-22 15:49:11 [INFO]: Camp created {
+  "id": "265f6dee-9fff-428a-b8b0-d76b0e9beb10"
+}
+2025-05-22 15:50:07 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/camps",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "b997e99f-0e64-4acf-8de5-7fbac2da4e70",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "66"
+  },
+  "body": {
+    "camp_name": "Jouni Camp",
+    "camp_location": "PSE Old land"
+  }
+}
+2025-05-22 15:50:07 [INFO]: Creating camp {
+  "name": "Jouni Camp"
+}
+2025-05-22 15:50:07 [INFO]: Database query executed {
+  "sql": "INSERT INTO camp (\n        id, camp_name, camp_location, created_at\n      ) VALUES (\n        $1, $2, $3, $4\n      )\n      RETURNING id, camp_name, camp_location, created_at",
+  "params": [
+    "092d22e8-4d28-44fd-b5b0-63f6c4074976",
+    "Jouni Camp",
+    "PSE Old land",
+    "2025-05-22T08:50:07.037Z"
+  ],
+  "rowCount": 1,
+  "duration": "201ms"
+}
+2025-05-22 15:50:07 [INFO]: Camp created successfully {
+  "id": "092d22e8-4d28-44fd-b5b0-63f6c4074976"
+}
+2025-05-22 15:50:07 [INFO]: Camp created {
+  "id": "092d22e8-4d28-44fd-b5b0-63f6c4074976"
+}
+2025-05-22 15:53:25 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "553e74a9-fc12-4c71-b70c-1f9b794609a0",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-22 15:53:25 [INFO]: Fetching all camps
+2025-05-22 15:53:25 [ERROR]: Database query failed {
+  "sql": "SELECT id, camp_name, camp_location, created_at FROM camps",
+  "params": [],
+  "error": "relation \"camps\" does not exist",
+  "duration": "200ms"
+}
+2025-05-22 15:53:25 [ERROR]: Error in getAllCamps {
+  "error": "relation \"camps\" does not exist"
+}
+2025-05-22 15:53:54 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "a42a8f2b-f320-4fe8-9fc5-0436251ce5dd",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-22 15:53:54 [INFO]: Fetching all camps
+2025-05-22 15:53:54 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
+  "params": [],
+  "rowCount": 3,
+  "duration": "207ms"
+}
+2025-05-22 15:53:54 [INFO]: Fetched all camps
+2025-05-22 15:54:37 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/6cb1d790-8551-4538-ab43-4b802973f754",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "1b335b01-8902-4a09-bfb4-9c3290991782",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-22 15:54:49 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps/6cb1d790-8551-4538-ab43-4b802973f754",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "11517d22-64c5-43c2-86fd-244ba7938223",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-22 15:54:49 [INFO]: Fetching camp by id {
+  "id": "6cb1d790-8551-4538-ab43-4b802973f754"
+}
+2025-05-22 15:54:49 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp WHERE id = $1",
+  "params": [
+    "6cb1d790-8551-4538-ab43-4b802973f754"
+  ],
+  "rowCount": 1,
+  "duration": "235ms"
+}
+2025-05-22 15:54:49 [INFO]: Fetched camp by id {
+  "id": "6cb1d790-8551-4538-ab43-4b802973f754"
+}
+2025-05-22 16:17:19 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/events",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "014eb315-749c-4e39-97f1-4fd0dab76479",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "120"
+  },
+  "body": {
+    "event_name": "Summer Camp",
+    "from_date": "2025-09-01T18:00:00+07:00",
+    "end_date": "2025-09-20T20:00:00+07:00"
+  }
+}
+2025-05-22 16:17:19 [INFO]: Creating event {
+  "name": "Summer Camp"
+}
+2025-05-22 16:17:20 [INFO]: Database query executed {
+  "sql": "INSERT INTO event (\n        id, event_name, from_date, end_date, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5\n      )\n      RETURNING id, event_name, from_date, end_date, created_at",
+  "params": [
+    "b4fed184-34c8-48d3-94bd-451f74625621",
+    "Summer Camp",
+    "2025-09-01T11:00:00.000Z",
+    "2025-09-20T13:00:00.000Z",
+    "2025-05-22T09:17:19.959Z"
+  ],
+  "rowCount": 1,
+  "duration": "226ms"
+}
+2025-05-22 16:17:20 [INFO]: Event created successfully {
+  "id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 16:17:20 [INFO]: Event created {
+  "id": "b4fed184-34c8-48d3-94bd-451f74625621"
+}
+2025-05-22 16:17:58 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/events",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "694313a1-9f65-480f-800c-87e7f33c8cc3",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-22 16:17:58 [INFO]: Fetching all events
+2025-05-22 16:17:58 [INFO]: Database query executed {
+  "sql": "SELECT id, event_name, from_date, end_date, created_at FROM event",
+  "params": [],
+  "rowCount": 1,
+  "duration": "211ms"
+}
+2025-05-22 16:17:58 [INFO]: Fetched all events
