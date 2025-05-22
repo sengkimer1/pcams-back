@@ -10,7 +10,7 @@ export class UserService implements IUserService {
   ) {}
 
   async createUser(user: Omit<IUser, "id">): Promise<{ user: IUserWithoutPassword; token: string }> {
-    console.log("Received user data:", user); // Debug log
+    console.log("Received user data:", user);
     const existingUser = await this.userRepository.findByEmail(user.email);
     if (existingUser) {
       throw Object.assign(new Error("User already exists"), { status: 400 });
@@ -21,12 +21,16 @@ export class UserService implements IUserService {
       throw Object.assign(new Error("Camp ID is required"), { status: 400 });
     }
 
-    console.log("Creating user with camp_id:", user.camp_id); // Debug log
+    if (!user.position) {
+      console.error("position is missing in the request");
+      throw Object.assign(new Error("Position is required"), { status: 400 });
+    }
+
+    console.log("Creating user with camp_id:", user.camp_id);
     const newUser = await this.userRepository.create(user);
 
-    // Create CampUser entry
     try {
-      console.log("Creating CampUser entry for user_id:", newUser.id, "with camp_id:", user.camp_id); // Debug log
+      console.log("Creating CampUser entry for user_id:", newUser.id, "with camp_id:", user.camp_id);
       await this.campUserService.create({
         camp_id: user.camp_id,
         user_id: newUser.id!,
@@ -38,7 +42,7 @@ export class UserService implements IUserService {
       throw Object.assign(new Error("Failed to associate user with camp"), { status: 500 });
     }
 
-    const token = jwt.sign({ id: newUser.id }, process.env.JWT_SECRET!, {
+    const token = jwt.sign({ id: newUser.id, position: newUser.position }, process.env.JWT_SECRET!, {
       expiresIn: "1h",
     });
 
@@ -68,7 +72,7 @@ export class UserService implements IUserService {
       throw Object.assign(new Error("Invalid password"), { status: 400 });
     }
 
-    const token = jwt.sign({ id: user.id, role_id: user.role_id }, process.env.JWT_SECRET!, {
+    const token = jwt.sign({ id: user.id, position: user.position }, process.env.JWT_SECRET!, {
       expiresIn: "3h",
     });
 

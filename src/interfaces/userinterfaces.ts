@@ -2,16 +2,15 @@ export interface IUser {
   id?: string;
   email: string;
   password?: string;
-  role_id: number;
+  position: string;
   khmer_name: string;
   english_name: string;
   date_of_birth: string;
   nationality: string;
-  position: string;
-  camp_id?: string; // Optional but must be provided for creation
+  camp_id?: string;
 }
 
-export interface IUserWithoutPassword extends Omit<IUser, "password"> { }
+export interface IUserWithoutPassword extends Omit<IUser, "password"> {}
 
 export interface ILoginResponse {
   user: IUserWithoutPassword;

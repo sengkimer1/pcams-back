@@ -1,20 +1,20 @@
 import { Request, Response, NextFunction } from "express";
 import { UserService } from "../services/userService";
+import { IUser } from "../interfaces/userinterfaces";
 
 export class UserController {
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   async createUser(req: Request, res: Response, next: NextFunction) {
     try {
       const {
         email,
         password,
-        role_id,
+        position,
         khmer_name,
         english_name,
         date_of_birth,
         nationality,
-        position,
         camp_id,
       } = req.body;
 
@@ -22,17 +22,26 @@ export class UserController {
         throw Object.assign(new Error("Camp ID is required"), { status: 400 });
       }
 
-      const result = await this.userService.createUser({
+      if (!position) {
+        throw Object.assign(new Error("Position is required"), { status: 400 });
+      }
+
+      if (!email || !password || !khmer_name || !english_name || !date_of_birth || !nationality) {
+        throw Object.assign(new Error("All required fields must be provided"), { status: 400 });
+      }
+
+      const userData: Omit<IUser, "id"> = {
         email,
         password,
-        role_id,
+        position,
         khmer_name,
         english_name,
         date_of_birth,
         nationality,
-        position,
         camp_id,
-      });
+      };
+
+      const result = await this.userService.createUser(userData);
 
       res.status(201).json({ message: "A new user was created.", data: result });
     } catch (err) {
@@ -89,7 +98,7 @@ export class UserController {
     try {
       const roleName = req.params.roleName;
       const user = await this.userService.getOneUserByRole(roleName);
-      res.json(user);
+      res.status(200).json(user);
     } catch (err) {
       next(err);
     }
