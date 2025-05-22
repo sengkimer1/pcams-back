@@ -1,39 +1,46 @@
-export interface IUser {
-  id?: string;
-  email: string;
-  password?: string;
-  role_id: number;
-  khmer_name: string;
-  english_name: string;
-  date_of_birth: string;
-  nationality: string;
-  position: string;
-  camp_id?: string; // Optional but must be provided for creation
+export enum UserRole {
+  ADMIN = "admin",
+  COORDINATOR = "coordinator",
+  MONITOR = "monitor",
 }
 
-export interface IUserWithoutPassword extends Omit<IUser, "password"> { }
+export interface IUser {
+  id?: string;
+  username?: string;
+  email: string;
+  password?: string;
+  role: UserRole;
+  created_at?: Date;
+}
+
+export interface IUserWithoutPassword extends Omit<IUser, "password"> {}
 
 export interface ILoginResponse {
   user: IUserWithoutPassword;
   token: string;
 }
 
+export interface ILoginRequest {
+  email: string;
+  password: string;
+}
+
 export interface IUserRepository {
-  create(user: Omit<IUser, "id">): Promise<IUserWithoutPassword>;
   findAll(): Promise<IUserWithoutPassword[]>;
   findById(id: string): Promise<IUserWithoutPassword | null>;
   findByEmail(email: string): Promise<IUser | null>;
+  create(user: Omit<IUser, "id">): Promise<IUserWithoutPassword>;
   update(id: string, user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword | null>;
   delete(id: string): Promise<boolean>;
-  getOneUserByRole(roleName: string): Promise<IUserWithoutPassword | null>;
+  getOneUserByRole(roleName: UserRole): Promise<IUserWithoutPassword | null>;
 }
 
 export interface IUserService {
-  createUser(user: Omit<IUser, "id">): Promise<{ user: IUserWithoutPassword; token: string }>;
+  login(email: string, password: string): Promise<ILoginResponse>;
+  createUser(data: { email: string; password: string; role: UserRole; username?: string; created_at?: Date }): Promise<{ user: IUserWithoutPassword; token: string }>;
   getAllUsers(): Promise<IUserWithoutPassword[]>;
   getUserById(id: string): Promise<IUserWithoutPassword>;
-  login(email: string, password: string): Promise<ILoginResponse>;
-  updateUser(id: string, user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword>;
+  updateUser(id: string, updateData: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword>;
   deleteUser(id: string): Promise<void>;
-  getOneUserByRole(roleName: string): Promise<IUserWithoutPassword>;
+  getOneUserByRole(role: UserRole): Promise<IUserWithoutPassword>;
 }

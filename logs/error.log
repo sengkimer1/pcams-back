@@ -781,6 +781,7 @@
   "error": "relation \"camp_user_roles\" does not exist",
   "duration": "49ms"
 }
+<<<<<<< HEAD
 2025-05-21 16:26:00 [ERROR]: Database query failed {
   "sql": "SELECT c.id AS child_id, g.name AS group_name\n       FROM children c\n       JOIN groups g ON c.group_id = g.id\n       WHERE c.coordinator_id = $1",
   "params": [
@@ -820,4 +821,50 @@
   ],
   "error": "column c.users does not exist",
   "duration": "29ms"
+=======
+2025-05-22 12:57:08 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "relation \"users\" does not exist",
+  "duration": "218ms"
+}
+2025-05-22 12:57:34 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "relation \"users\" does not exist",
+  "duration": "216ms"
+}
+2025-05-22 13:04:23 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-22 13:05:07 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-22 13:05:08 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-22 13:12:11 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-22 13:15:58 [ERROR]: Database query failed {
+  "sql": "INSERT INTO users (\n        id, username, email, password, role, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, username, email, role, created_at",
+  "params": [
+    "b2159a32-c065-4296-a1ee-1ebcb45b86b9",
+    "Admin",
+    "admin@admin.com",
+    "$2b$10$npChzuc0fXCksaq9S.lfh.MKfA5WchMNz1YMMnmk9tuTfBljSWLcC",
+    "admin",
+    null
+  ],
+  "error": "invalid input syntax for type timestamp: \"0NaN-NaN-NaNTNaN:NaN:NaN.NaN+NaN:NaN\"",
+  "duration": "54ms"
+>>>>>>> dd7be24dd7dfcdac5f68cb8a1cdb62ac7758aafd
 }
