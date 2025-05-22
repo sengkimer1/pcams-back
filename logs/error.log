@@ -1065,3 +1065,19 @@
 2025-05-22 16:48:57 [ERROR]: Error in createCampEvent {
   "error": "null value in column \"id\" of relation \"camp_event\" violates not-null constraint"
 }
+2025-05-23 03:45:09 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-23 03:45:35 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-23 03:45:46 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-23 03:45:57 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}

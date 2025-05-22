@@ -334,3 +334,249 @@
   "duration": "36ms"
 }
 2025-05-22 17:06:53 [INFO]: Fetched all camp-event associations
+2025-05-23 03:45:09 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "f413cd2e-6fad-4989-8237-5e99cff2a845",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-23 03:45:09 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-23 03:45:09 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "268ms"
+}
+2025-05-23 03:45:09 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-23 03:45:35 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "34c1a541-13bf-41e6-9272-baf7c1d283e5",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "62"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-23 03:45:35 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-23 03:45:35 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "222ms"
+}
+2025-05-23 03:45:35 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-23 03:45:46 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "cceb6daa-554c-47e2-8fec-0a6295e9b86e",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-23 03:45:46 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-23 03:45:46 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "196ms"
+}
+2025-05-23 03:45:46 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-23 03:45:56 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "e42665c6-b61e-499e-9a6a-83c2bc13b21c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-23 03:45:56 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-23 03:45:57 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "229ms"
+}
+2025-05-23 03:45:57 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-23 03:46:42 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "29c7f070-ab62-4094-9b03-831baf125cee",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-23 03:46:42 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-23 03:46:43 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "237ms"
+}
+2025-05-23 03:46:43 [INFO]: Login successful {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-23 03:46:43 [INFO]: Login successful {
+  "email": "admin@admin.com"
+}
+2025-05-23 03:49:36 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/campevents",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk0NjgwMywiZXhwIjoxNzQ3OTU3NjAzfQ.XpmUeRYs0HKblqaJL7hTrDQ3-uDzgpMYJ-ALOlyOrmg",
+    "content-type": "text/plain",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "abe0475f-c4de-4c4b-b1b4-d3b9fd6f2149",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "306"
+  },
+  "body": {}
+}
+2025-05-23 03:49:36 [INFO]: Fetching all camp-event associations
+2025-05-23 03:49:36 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_id, event_id, created_at FROM camp_event",
+  "params": [],
+  "rowCount": 2,
+  "duration": "242ms"
+}
+2025-05-23 03:49:36 [INFO]: Fetched all camp-event associations
+2025-05-23 03:50:43 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk0NjgwMywiZXhwIjoxNzQ3OTU3NjAzfQ.XpmUeRYs0HKblqaJL7hTrDQ3-uDzgpMYJ-ALOlyOrmg",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "08330c88-c16e-4b55-b791-aaec29b4a0eb",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 03:50:43 [INFO]: Fetching all users
+2025-05-23 03:50:43 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, created_at FROM users",
+  "params": [],
+  "rowCount": 4,
+  "duration": "214ms"
+}
+2025-05-23 03:50:43 [INFO]: Fetched all users
+2025-05-23 03:51:16 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/campeventorganizers",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk0NjgwMywiZXhwIjoxNzQ3OTU3NjAzfQ.XpmUeRYs0HKblqaJL7hTrDQ3-uDzgpMYJ-ALOlyOrmg",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "ed2add91-0edd-41fc-a255-055feff6da5a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "114"
+  },
+  "body": {
+    "camp_event_id": "e5716545-9b15-45b3-951b-0baafdb8f28a",
+    "user_id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+  }
+}
+2025-05-23 03:52:08 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/campeventorganizers",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk0NjgwMywiZXhwIjoxNzQ3OTU3NjAzfQ.XpmUeRYs0HKblqaJL7hTrDQ3-uDzgpMYJ-ALOlyOrmg",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "35d9d0f1-6945-47ad-b6a8-c21f0e3e4a48",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}

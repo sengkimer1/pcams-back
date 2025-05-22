@@ -11,23 +11,27 @@ import userRoutes from "./routes/userRoutes";
 import campRoutes from "./routes/campRoutes";
 import eventRoutes from "./routes/eventRoute";
 import campEventRoutes from "./routes/campEventRoutes";
+import campEventOrganizerRoutes from "./routes/campEventOrganizerRoutes";
 // Controllers
 import { AuthController } from "./controller/authController";
 import { UserController } from "./controller/UserController";
 import { CampController } from "./controller/campController";
 import { EventController } from "./controller/eventController";
 import { CampEventController } from "./controller/campEventController";
+import { CampEventOrganizerController } from "./controller/campEventOrganizerController";
 
 // Services
 import { UserService } from "./services/userService";
 import { CampService } from "./services/campService";
 import { EventService } from "./services/eventService";
 import { CampEventService } from "./services/campEventService";
+import { CampEventOrganizerService } from "./services/campEventOrganizerService";
 // Repositories
 import { PostgresUserRepository } from "./repositories/userRepository";
 import {PostgresCampRepository} from "./repositories/CampRepository";
 import {PostgresEventRepository} from "./repositories/eventRepository";
 import {PostgresCampEventRepository} from "./repositories/campEventRepository";
+import {PostgresCampEventOrganizerRepository} from "./repositories/campEventOrganizerRepository";
 
 
 // Config
@@ -54,6 +58,7 @@ const userRepository = new PostgresUserRepository(pgPool);
 const campRepository = new PostgresCampRepository(pgPool);
 const eventRepository = new PostgresEventRepository(pgPool);
 const campEventRepository = new PostgresCampEventRepository(pgPool);
+const campEventOrganizerRepository = new PostgresCampEventOrganizerRepository(pgPool);
 
 
 // Services
@@ -61,6 +66,7 @@ const userService = new UserService(userRepository);
 const campService = new CampService(campRepository);
 const eventService = new EventService(eventRepository);
 const campEventService = new CampEventService(campEventRepository);
+const campEventOrganizerService = new CampEventOrganizerService(campEventOrganizerRepository);
 
 // Controllers
 const authController = new AuthController(userService);
@@ -68,6 +74,7 @@ const userController = new UserController(userService);
 const campController = new CampController(campService);
 const eventController = new EventController(eventService);
 const campEventController = new CampEventController(campEventService);
+const campEventOrganizerController = new CampEventOrganizerController(campEventOrganizerService);
 
 // Routes
 app.use("/api/auth", authRoutes(authController));
@@ -75,6 +82,7 @@ app.use("/api/users", userRoutes(userController));
 app.use("/api/camps", campRoutes(campController));
 app.use("/api/events", eventRoutes(eventController));
 app.use("/api/campevents", campEventRoutes(campEventController));
+app.use("/api/campeventorganizers", campEventOrganizerRoutes(campEventOrganizerController));
 
 // Error Handling Middleware
 app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
