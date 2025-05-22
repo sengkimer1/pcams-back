@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { IUserService, UserRole } from "../interfaces/userinterfaces";
+import { logger } from "../services/loggerService";
 
 export class UserController {
   constructor(private userService: IUserService) {}
@@ -24,9 +25,10 @@ export class UserController {
         created_at: created_at ? new Date(created_at) : new Date(),
       });
 
+      logger.info("User created", { email });
       res.status(201).json({ message: "A new user was created.", data: result });
     } catch (err) {
-      console.error("Error in createUser:", err);
+      logger.error("Error in createUser", { error: err instanceof Error ? err.message : "Unknown error" });
       next(err);
     }
   }
@@ -34,9 +36,10 @@ export class UserController {
   async getAllUser(req: Request, res: Response, next: NextFunction) {
     try {
       const users = await this.userService.getAllUsers();
+      logger.info("Fetched all users");
       res.status(200).json(users);
     } catch (err) {
-      console.error("Error in getAllUser:", err);
+      logger.error("Error in getAllUser", { error: err instanceof Error ? err.message : "Unknown error" });
       next(err);
     }
   }
@@ -45,9 +48,10 @@ export class UserController {
     try {
       const { id } = req.params;
       const user = await this.userService.getUserById(id);
+      logger.info("Fetched user by id", { id });
       res.status(200).json(user);
     } catch (err) {
-      console.error("Error in getUserById:", err);
+      logger.error("Error in getUserById", { error: err instanceof Error ? err.message : "Unknown error", id: req.params.id });
       next(err);
     }
   }
@@ -61,9 +65,10 @@ export class UserController {
       }
       const updatedUser = await this.userService.updateUser(id, updateData);
 
+      logger.info("User updated", { id });
       res.status(200).json({ message: "User updated", data: updatedUser });
     } catch (err) {
-      console.error("Error in updateUser:", err);
+      logger.error("Error in updateUser", { error: err instanceof Error ? err.message : "Unknown error", id: req.params.id });
       next(err);
     }
   }
@@ -73,9 +78,10 @@ export class UserController {
       const id = req.params.id;
       await this.userService.deleteUser(id);
 
+      logger.info("User deleted", { id });
       res.status(200).json({ message: "User deleted successfully." });
     } catch (err) {
-      console.error("Error in deleteUser:", err);
+      logger.error("Error in deleteUser", { error: err instanceof Error ? err.message : "Unknown error", id: req.params.id });
       next(err);
     }
   }
@@ -87,9 +93,10 @@ export class UserController {
         throw Object.assign(new Error("Invalid role"), { status: 400 });
       }
       const user = await this.userService.getOneUserByRole(roleName);
+      logger.info("Fetched user by role", { role: roleName });
       res.status(200).json(user);
     } catch (err) {
-      console.error("Error in getOneUserByRole:", err);
+      logger.error("Error in getOneUserByRole", { error: err instanceof Error ? err.message : "Unknown error", role: req.params.roleName });
       next(err);
     }
   }
