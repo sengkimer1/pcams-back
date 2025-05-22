@@ -14,6 +14,7 @@ import campRoutes from "./routes/campRoute";
 import attendanceRoutes from "./routes/attedanceTrackingRoute";
 import dashboardRoutes from "./routes/dashboradRoutes";
 import campUserRoutes from "./routes/campUserRoute";
+import coordinatorRoutes from "./routes/coordinatorRoutes";
 
 // Controllers
 import { AuthController } from "./controller/authController";
@@ -24,6 +25,7 @@ import { CampController } from "./controller/campController";
 import { AttendanceTrackingController } from "./controller/attendanceTrackingController";
 import { DashboardController } from "./controller/dashboardController";
 import { CampUserController } from "./controller/campUserController";
+import { CoordinatorController } from "./controller/coordinatorController";
 
 // Services
 import { UserService } from "./services/userService";
@@ -33,6 +35,7 @@ import { CampService } from "./services/campServices";
 import { AttendanceTrackingServiceImpl } from "./services/attendanceTrackingService";
 import { DashboardService } from "./services/dashboardService";
 import { PostgresCampUserService } from "./services/campUserServices";
+import { CoordinatorAttendanceService } from "./services/coordinatorService";
 
 // Repositories
 import { PostgresUserRepository } from "./repositories/userRepository";
@@ -42,7 +45,7 @@ import { PostgresCampRepository } from "./repositories/campRepository";
 import { PostgresAttendanceTrackingRepository } from "./repositories/attendanceTrackingRepository";
 import { PostgresDashboardRepository } from "./repositories/dashboardRepository";
 import { PostgresCampUserRepository } from "./repositories/campUserRepository";
-
+import { PostgresCoordinatorAttendanceRepository } from "./repositories/coordinatorRepository";
 // Config
 import { connectPostgresDb } from "./config/db";
 
@@ -71,6 +74,7 @@ const childRepository = new PostgresChildRepository(pgPool);
 const attendanceTrackingRepository = new PostgresAttendanceTrackingRepository(pgPool);
 const dashboardRepository = new PostgresDashboardRepository(pgPool);
 const campUserRepository = new PostgresCampUserRepository(pgPool);
+const coordinatorRepository = new PostgresCoordinatorAttendanceRepository(pgPool)
 
 // Services
 const campUserService = new PostgresCampUserService(campUserRepository);
@@ -80,6 +84,9 @@ const campEventService = new CampEventService(campEventRepository);
 const campService = new CampService(campRepository);
 const attendanceTrackingService = new AttendanceTrackingServiceImpl(attendanceTrackingRepository);
 const dashboardService = new DashboardService(dashboardRepository);
+// const campUserService = new PostgresCampUserService(campUserRepository);
+const coordinatorAttendanceService = new CoordinatorAttendanceService(coordinatorRepository)
+
 
 // Controllers
 const authController = new AuthController(userService);
@@ -90,6 +97,7 @@ const campController = new CampController(campService);
 const attendanceTrackingController = new AttendanceTrackingController(attendanceTrackingService);
 const dashboardController = new DashboardController(dashboardService);
 const campUserController = new CampUserController(campUserService);
+const coordinatorController = new CoordinatorController(coordinatorAttendanceService)
 
 // Routes
 app.use("/api/auth", authRoutes(authController));
@@ -100,7 +108,7 @@ app.use("/api/child", childRoutes(childController));
 app.use("/api/attendance", attendanceRoutes(attendanceTrackingController));
 app.use("/api/dashboard", dashboardRoutes(dashboardController));
 app.use("/api/camp-user", campUserRoutes(campUserController));
-
+app.use("/api/coordinator",coordinatorRoutes(coordinatorController));
 // Server
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);

@@ -33,7 +33,7 @@ CREATE TABLE Camp (
 
 
 -- Table: Camp_Character
-CREATE TABLE Camp_Character (
+CREATE TABLE Camp_User (
     id UUID PRIMARY KEY,
     camp_id UUID REFERENCES Camp(id),
     user_id UUID REFERENCES Users(id),
@@ -66,3 +66,8 @@ CREATE TABLE Children_Attendance (
 );
 ALTER TABLE Children_Attendance
 ADD COLUMN status VARCHAR(50);
+
+CREATE TABLE groups (
+  id UUID PRIMARY KEY,
+  name VARCHAR(100) NOT NULL
+);

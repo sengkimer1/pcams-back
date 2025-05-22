@@ -1,17 +1,17 @@
-import { Request, Response, RequestHandler } from 'express';
+import { Request, Response } from 'express';
 import { DashboardService } from '../services/dashboardService';
 import { DashboardParams } from '../interfaces/dashboardInterface';
 
 export class DashboardController {
   constructor(private dashboardService: DashboardService) {}
 
-  getDashboard: RequestHandler = async (req, res) => {
+  async getDashboard(req: Request, res: Response): Promise<void> {
     try {
       const { campId, startDate, endDate } = req.query;
 
       if (!campId || !startDate || !endDate) {
         res.status(400).json({ error: 'campId, startDate, and endDate are required' });
-        return;  // explicitly return void here
+        return;
       }
 
       const params: DashboardParams = {
@@ -26,5 +26,5 @@ export class DashboardController {
       console.error('Error fetching dashboard data:', error);
       res.status(500).json({ error: 'Internal server error' });
     }
-  };
+  }
 }

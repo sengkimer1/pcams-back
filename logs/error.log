@@ -781,3 +781,43 @@
   "error": "relation \"camp_user_roles\" does not exist",
   "duration": "49ms"
 }
+2025-05-21 16:26:00 [ERROR]: Database query failed {
+  "sql": "SELECT c.id AS child_id, g.name AS group_name\n       FROM children c\n       JOIN groups g ON c.group_id = g.id\n       WHERE c.coordinator_id = $1",
+  "params": [
+    "9f7d3e5f-2b85-4629-9119-9a0c78ce28b5"
+  ],
+  "error": "relation \"groups\" does not exist",
+  "duration": "12ms"
+}
+2025-05-21 16:26:40 [ERROR]: Database query failed {
+  "sql": "SELECT c.id AS child_id, g.name AS group_name\n       FROM children c\n       JOIN groups g ON c.group_id = g.id\n       WHERE c.coordinator_id = $1",
+  "params": [
+    "9f7d3e5f-2b85-4629-9119-9a0c78ce28b5"
+  ],
+  "error": "relation \"groups\" does not exist",
+  "duration": "33ms"
+}
+2025-05-21 16:30:03 [ERROR]: Database query failed {
+  "sql": "SELECT c.id AS child_id, g.name AS group_name\n       FROM children c\n       JOIN groups g ON c.group_id = g.id\n       WHERE c.coordinator_id = $1",
+  "params": [
+    "9f7d3e5f-2b85-4629-9119-9a0c78ce28b5"
+  ],
+  "error": "column c.group_id does not exist",
+  "duration": "15ms"
+}
+2025-05-21 16:36:53 [ERROR]: Database query failed {
+  "sql": "SELECT c.id AS child_id\n       FROM children c\n       WHERE c.coordinator_id = $1",
+  "params": [
+    "9f7d3e5f-2b85-4629-9119-9a0c78ce28b5"
+  ],
+  "error": "column c.coordinator_id does not exist",
+  "duration": "30ms"
+}
+2025-05-21 16:37:33 [ERROR]: Database query failed {
+  "sql": "SELECT c.id AS child_id\n       FROM children c\n       WHERE c.users = $1",
+  "params": [
+    "9f7d3e5f-2b85-4629-9119-9a0c78ce28b5"
+  ],
+  "error": "column c.users does not exist",
+  "duration": "29ms"
+}
