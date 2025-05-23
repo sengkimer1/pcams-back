@@ -55,7 +55,7 @@ export class ChildAttendanceController {
 
   async getChildAttendanceByDateAndUser(req: Request, res: Response, next: NextFunction) {
     try {
-      const { date, user_id } = req.query; // Extract date and user_id from query parameters
+      const { date, user_id } = req.query;
       const attendances = await this.service.getChildAttendanceByDateAndUser(
         date as string | null,
         user_id as string | null

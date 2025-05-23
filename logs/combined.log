@@ -2172,18 +2172,6 @@
 2025-05-23 11:17:01 [INFO]: User created {
   "email": "Thay@gmail.com"
 }
-2025-05-23 13:37:27 [INFO]: Request received {
-  "method": "POST",
-  "url": "/api/auth/login",
-  "headers": {
-    "host": "localhost:3000",
-    "connection": "keep-alive",
-    "content-length": "50",
-    "sec-ch-ua-platform": "\"Linux\"",
-    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
-    "accept": "application/json, text/plain, */*",
-    "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
-    "content-type": "application/json",
     "sec-ch-ua-mobile": "?0",
     "origin": "http://localhost:5173",
     "sec-fetch-site": "same-site",
@@ -2191,38 +2179,7 @@
     "sec-fetch-dest": "empty",
     "referer": "http://localhost:5173/",
     "accept-encoding": "gzip, deflate, br, zstd",
-    "accept-language": "en-US,en;q=0.9"
-  },
-  "body": {
-    "email": "***",
-    "password": "***"
-  }
-}
-2025-05-23 13:37:27 [INFO]: Attempting login {
-  "email": "admin@admin.com"
-}
-2025-05-23 13:37:28 [INFO]: Database query executed {
-  "sql": "SELECT * FROM users WHERE email = $1",
-  "params": [
-    "admin@admin.com"
-  ],
-  "rowCount": 1,
-  "duration": "314ms"
-}
-2025-05-23 13:37:28 [INFO]: Login successful {
-  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
-}
-2025-05-23 13:37:28 [INFO]: Login successful {
-  "email": "admin@admin.com"
-}
-2025-05-23 13:37:28 [INFO]: Request received {
-  "method": "GET",
-  "url": "/api/camps",
-  "headers": {
-    "host": "localhost:3000",
-    "connection": "keep-alive",
-    "sec-ch-ua-platform": "\"Linux\"",
-    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk4MjI0OCwiZXhwIjoxNzQ3OTkzMDQ4fQ.Iz-_bpwqaPQ40_NVYV-0aoqRNqsJkbyJ6z-5u1RcMxg",
+
     "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "accept": "application/json, text/plain, */*",
     "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
@@ -2238,22 +2195,13 @@
   },
   "body": {}
 }
-2025-05-23 13:37:28 [INFO]: Fetching all camps
-2025-05-23 13:37:28 [INFO]: Database query executed {
-  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
-  "params": [],
-  "rowCount": 5,
-  "duration": "43ms"
-}
-2025-05-23 13:37:28 [INFO]: Fetched all camps
-2025-05-23 13:37:28 [INFO]: Request received {
+
   "method": "GET",
   "url": "/api/camps",
   "headers": {
     "host": "localhost:3000",
     "connection": "keep-alive",
     "sec-ch-ua-platform": "\"Linux\"",
-    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk4MjI0OCwiZXhwIjoxNzQ3OTkzMDQ4fQ.Iz-_bpwqaPQ40_NVYV-0aoqRNqsJkbyJ6z-5u1RcMxg",
     "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "accept": "application/json, text/plain, */*",
     "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
@@ -2269,22 +2217,13 @@
   },
   "body": {}
 }
-2025-05-23 13:37:28 [INFO]: Fetching all camps
-2025-05-23 13:37:28 [INFO]: Database query executed {
-  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
-  "params": [],
-  "rowCount": 5,
-  "duration": "39ms"
-}
-2025-05-23 13:37:28 [INFO]: Fetched all camps
-2025-05-23 13:38:13 [INFO]: Request received {
+
   "method": "GET",
   "url": "/api/users",
   "headers": {
     "host": "localhost:3000",
     "connection": "keep-alive",
     "sec-ch-ua-platform": "\"Linux\"",
-    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk4MjI0OCwiZXhwIjoxNzQ3OTkzMDQ4fQ.Iz-_bpwqaPQ40_NVYV-0aoqRNqsJkbyJ6z-5u1RcMxg",
     "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "accept": "application/json, text/plain, */*",
     "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
@@ -2300,22 +2239,13 @@
   },
   "body": {}
 }
-2025-05-23 13:38:13 [INFO]: Fetching all users
-2025-05-23 13:38:14 [INFO]: Database query executed {
-  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
-  "params": [],
-  "rowCount": 6,
-  "duration": "277ms"
-}
-2025-05-23 13:38:14 [INFO]: Fetched all users
-2025-05-23 13:38:14 [INFO]: Request received {
+
   "method": "GET",
   "url": "/api/users",
   "headers": {
     "host": "localhost:3000",
     "connection": "keep-alive",
     "sec-ch-ua-platform": "\"Linux\"",
-    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk4MjI0OCwiZXhwIjoxNzQ3OTkzMDQ4fQ.Iz-_bpwqaPQ40_NVYV-0aoqRNqsJkbyJ6z-5u1RcMxg",
     "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "accept": "application/json, text/plain, */*",
     "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
@@ -2331,22 +2261,14 @@
   },
   "body": {}
 }
-2025-05-23 13:38:14 [INFO]: Fetching all users
-2025-05-23 13:38:14 [INFO]: Database query executed {
-  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
-  "params": [],
-  "rowCount": 6,
-  "duration": "44ms"
-}
-2025-05-23 13:38:14 [INFO]: Fetched all users
-2025-05-23 13:40:38 [INFO]: Request received {
+
   "method": "GET",
   "url": "/api/camps",
   "headers": {
     "host": "localhost:3000",
     "connection": "keep-alive",
     "sec-ch-ua-platform": "\"Linux\"",
-    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk4MjI0OCwiZXhwIjoxNzQ3OTkzMDQ4fQ.Iz-_bpwqaPQ40_NVYV-0aoqRNqsJkbyJ6z-5u1RcMxg",
+
     "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "accept": "application/json, text/plain, */*",
     "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
@@ -2362,22 +2284,12 @@
   },
   "body": {}
 }
-2025-05-23 13:40:38 [INFO]: Fetching all camps
-2025-05-23 13:40:39 [INFO]: Database query executed {
-  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
-  "params": [],
-  "rowCount": 5,
-  "duration": "224ms"
-}
-2025-05-23 13:40:39 [INFO]: Fetched all camps
-2025-05-23 13:40:39 [INFO]: Request received {
   "method": "GET",
   "url": "/api/camps",
   "headers": {
     "host": "localhost:3000",
     "connection": "keep-alive",
     "sec-ch-ua-platform": "\"Linux\"",
-    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk4MjI0OCwiZXhwIjoxNzQ3OTkzMDQ4fQ.Iz-_bpwqaPQ40_NVYV-0aoqRNqsJkbyJ6z-5u1RcMxg",
     "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
     "accept": "application/json, text/plain, */*",
     "sec-ch-ua": "\"Google Chrome\";v=\"131\", \"Chromium\";v=\"131\", \"Not_A Brand\";v=\"24\"",
@@ -2393,36 +2305,16 @@
   },
   "body": {}
 }
-2025-05-23 13:40:39 [INFO]: Fetching all camps
-2025-05-23 13:40:39 [INFO]: Database query executed {
-  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
-  "params": [],
-  "rowCount": 5,
-  "duration": "39ms"
-}
-2025-05-23 13:40:39 [INFO]: Fetched all camps
-2025-05-23 14:03:30 [INFO]: Request received {
-  "method": "GET",
-  "url": "/api/childattendances/attendance?date=2025-05-23&user_id=b1d9491a-8702-40d9-a999-68a7dccdc7c3",
-  "headers": {
-    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk3MzU4NywiZXhwIjoxNzQ3OTg0Mzg3fQ.d73LH6qilkkhafWlnNGhYTgpIU3nxSjGPguFHmGK2UA",
-    "user-agent": "PostmanRuntime/7.44.0",
-    "accept": "*/*",
-    "postman-token": "e7f2516f-3b09-47ba-b509-b8b664c93651",
     "host": "localhost:3000",
     "accept-encoding": "gzip, deflate, br",
     "connection": "keep-alive"
   },
   "body": {}
 }
-2025-05-23 14:03:41 [INFO]: Request received {
-  "method": "GET",
-  "url": "/api/childattendances/attendance?date=2025-05-23&user_id=b1d9491a-8702-40d9-a999-68a7dccdc7c3",
   "headers": {
     "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk3MzU4NywiZXhwIjoxNzQ3OTg0Mzg3fQ.d73LH6qilkkhafWlnNGhYTgpIU3nxSjGPguFHmGK2UA",
     "user-agent": "PostmanRuntime/7.44.0",
     "accept": "*/*",
-    "postman-token": "85ff12ce-0269-483b-bf0c-13a88bbb281f",
     "host": "localhost:3000",
     "accept-encoding": "gzip, deflate, br",
     "connection": "keep-alive"

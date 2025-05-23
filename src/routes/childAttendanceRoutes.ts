@@ -13,6 +13,8 @@ export default function childAttendanceRoutes(controller: ChildAttendanceControl
   router.get("/:id", controller.getChildAttendanceById.bind(controller));
   router.patch("/:id/:state", controller.updateChildAttendance.bind(controller));
   router.delete("/:id", controller.deleteChildAttendance.bind(controller));
+  router.get("/attendance-date/:date", controller.getChildAttendanceByDate.bind(controller));
+  router.get("/created-by/:user_id", controller.getChildAttendanceByUser.bind(controller));
 
   return router;
 }
