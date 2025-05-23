@@ -580,3 +580,863 @@
   },
   "body": {}
 }
+2025-05-23 08:15:20 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0NzkwMDkzNiwiZXhwIjoxNzQ3OTExNzM2fQ.SIPQYsu3xAC8Jv7tlILTiER0LLjnjNDwKVVljvmqzEE",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "c8d483c8-ac35-47be-8280-062b9de39a35",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:15:32 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "722634e1-1429-4106-b0d6-551dd0098a8d",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "61"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-23 08:15:32 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-23 08:15:33 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "338ms"
+}
+2025-05-23 08:15:33 [INFO]: Login successful {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-23 08:15:33 [INFO]: Login successful {
+  "email": "admin@admin.com"
+}
+2025-05-23 08:16:18 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "76bdc2f2-afdf-40cf-9423-c97e0a139335",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:16:18 [INFO]: Fetching all users
+2025-05-23 08:16:18 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, created_at FROM users",
+  "params": [],
+  "rowCount": 4,
+  "duration": "350ms"
+}
+2025-05-23 08:16:18 [INFO]: Fetched all users
+2025-05-23 08:16:33 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/d64562cf-64b1-4f7b-8cc3-d1c66d831ec0",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "21700363-078f-4b71-a143-72ecaff7c2cb",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:18:49 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/b1d9491a-8702-40d9-a999-68a7dccdc7c3",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "b83c0959-d32b-49fe-8875-bec57018a3b9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "116"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role": "coordinator",
+    "username": "Pheak testing"
+  }
+}
+2025-05-23 08:18:49 [INFO]: Fetching user by id {
+  "id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+}
+2025-05-23 08:18:49 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, created_at FROM users WHERE id = $1",
+  "params": [
+    "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+  ],
+  "rowCount": 1,
+  "duration": "260ms"
+}
+2025-05-23 08:18:49 [INFO]: Fetched user by id {
+  "id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+}
+2025-05-23 08:19:24 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "ab4a5cd1-ffb7-414b-b760-a65a1b6031ef",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:19:24 [INFO]: Fetching all users
+2025-05-23 08:19:25 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, created_at FROM users",
+  "params": [],
+  "rowCount": 4,
+  "duration": "227ms"
+}
+2025-05-23 08:19:25 [INFO]: Fetched all users
+2025-05-23 08:20:17 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/b1d9491a-8702-40d9-a999-68a7dccdc7c3",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "1e9891ea-f94f-4b46-a231-393777a07d52",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "217"
+  },
+  "body": {
+    "id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3",
+    "username": "Pheak Testing",
+    "email": "***",
+    "role": "coordinator",
+    "created_at": "2025-05-22T06:18:23.193Z"
+  }
+}
+2025-05-23 08:20:17 [INFO]: Fetching user by id {
+  "id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+}
+2025-05-23 08:20:18 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, created_at FROM users WHERE id = $1",
+  "params": [
+    "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+  ],
+  "rowCount": 1,
+  "duration": "262ms"
+}
+2025-05-23 08:20:18 [INFO]: Fetched user by id {
+  "id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+}
+2025-05-23 08:39:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "42b244e3-1c57-46f8-b7b8-50dd4b995474",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:39:34 [INFO]: Fetching all camps
+2025-05-23 08:39:34 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
+  "params": [],
+  "rowCount": 5,
+  "duration": "298ms"
+}
+2025-05-23 08:39:34 [INFO]: Fetched all camps
+2025-05-23 08:40:06 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/campevents",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "f33c7490-870a-49f1-b671-36f04a31ca59",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:40:06 [INFO]: Fetching all camp-event associations
+2025-05-23 08:40:06 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_id, event_id, created_at FROM camp_event",
+  "params": [],
+  "rowCount": 2,
+  "duration": "221ms"
+}
+2025-05-23 08:40:06 [INFO]: Fetched all camp-event associations
+2025-05-23 08:41:02 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/events",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "f09dc483-57ac-4130-b9d0-5230a404d1db",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:41:02 [INFO]: Fetching all events
+2025-05-23 08:41:02 [INFO]: Database query executed {
+  "sql": "SELECT id, event_name, from_date, end_date, created_at FROM event",
+  "params": [],
+  "rowCount": 1,
+  "duration": "227ms"
+}
+2025-05-23 08:41:02 [INFO]: Fetched all events
+2025-05-23 08:42:39 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "aab79e22-0680-4a1e-82c6-e69f01c7c85c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:42:39 [INFO]: Fetching all users
+2025-05-23 08:42:39 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, created_at FROM users",
+  "params": [],
+  "rowCount": 4,
+  "duration": "232ms"
+}
+2025-05-23 08:42:39 [INFO]: Fetched all users
+2025-05-23 08:43:41 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/childattendances",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "d53b328c-d0b9-4fd5-b065-029c97c44a9f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "254"
+  },
+  "body": {
+    "fullname": "Monika",
+    "gender": "Female",
+    "age": 10,
+    "family_id": "2680",
+    "attendance_date": "2025-05-23",
+    "status": "Present",
+    "camp_event_id": "e5716545-9b15-45b3-951b-0baafdb8f28a",
+    "user_id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+  }
+}
+2025-05-23 08:48:37 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "536cb014-ff02-4ac7-91e9-6b3b171ca734",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:49:38 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/childattendances",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "25709a24-f6d7-4680-8f5f-346a938c1013",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "254"
+  },
+  "body": {
+    "fullname": "Kimhay",
+    "gender": "Male",
+    "age": 10,
+    "family_id": "7597-3",
+    "attendance_date": "2025-05-23",
+    "status": "Present",
+    "camp_event_id": "e5716545-9b15-45b3-951b-0baafdb8f28a",
+    "user_id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+  }
+}
+2025-05-23 08:49:48 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "effd5714-4fbf-4b92-b829-e1b5c60d2a4b",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:51:43 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances/0913e390-ba2f-4f67-a53a-bb43c850946d",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "821a941c-29fa-46e4-86b0-3357307fbb31",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:51:55 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances/0913e390-ba2f-4f67-a53a-bb43c850946d",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "98f65243-d3dc-4a4c-a922-f55b13e5f4c9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 08:56:49 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/0913e390-ba2f-4f67-a53a-bb43c850946d/present",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "3b517cb6-1a00-4384-ba2f-ede352221cee",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 09:03:17 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/0913e390-ba2f-4f67-a53a-bb43c850946d/Absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "f9f084aa-1fc1-4312-a5c6-d5ca5d3ebb38",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 09:04:10 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/0913e390-ba2f-4f67-a53a-bb43c850946d/Absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "27ff3aed-e17f-4eae-a475-346783ba32ce",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 09:04:15 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/0913e390-ba2f-4f67-a53a-bb43c850946d/Absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "79869a21-5248-4e3f-b326-f81895912e36",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 09:05:02 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/0913e390-ba2f-4f67-a53a-bb43c850946d/Absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "00e27666-2fdd-4f9d-95bc-ff582196d9f9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 09:05:29 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "0cfcf12f-981b-47e2-bcf1-f3f8037a2b41",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 09:06:03 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/0913e390-ba2f-4f67-a53a-bb43c850946d/Absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "0052875a-2f03-448f-9715-7c346bde974c",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 09:08:15 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/0913e390-ba2f-4f67-a53a-bb43c850946d",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "e882d30f-1960-4aae-81cc-5489a0dadb5a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "26"
+  },
+  "body": {
+    "status": "Absent"
+  }
+}
+2025-05-23 09:47:35 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/childattendances",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "3bd779fd-19a0-4201-b6b0-7686682e5e9a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "255"
+  },
+  "body": {
+    "fullname": "Kim In",
+    "gender": "Female",
+    "age": 10,
+    "family_id": "21116",
+    "attendance_date": "2025-05-23",
+    "status": "Present",
+    "camp_event_id": "e5716545-9b15-45b3-951b-0baafdb8f28a",
+    "user_id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+  }
+}
+2025-05-23 09:48:06 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "4b7c28e7-a5f6-454a-9df5-147c676a9901",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 10:15:50 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/890f9afa-9440-4fc3-92e2-c2d26636c658/Absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "9502f8f3-353a-4de0-9a11-d871f83c154f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 10:17:43 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/890f9afa-9440-4fc3-92e2-c2d26636c658/absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "9ba372bb-293d-493a-bf33-f4c7d7f1ea59",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 10:18:18 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/890f9afa-9440-4fc3-92e2-c2d26636c658/absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "857ceb7c-2b66-4dde-a35e-4ac9c1c27f87",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 10:18:42 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/890f9afa-9440-4fc3-92e2-c2d26636c658/Absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "95f32210-1631-4f93-bc9e-5075c339531a",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 10:20:36 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/890f9afa-9440-4fc3-92e2-c2d26636c658/Absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "4e1bc148-ea53-4c37-899e-bc9bbc0e46f3",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 10:20:52 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/890f9afa-9440-4fc3-92e2-c2d26636c658Absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "0c70afdf-d65b-43f8-926f-e194c9265bc1",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 10:24:04 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/890f9afa-9440-4fc3-92e2-c2d26636c658/Absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "e223e391-9617-49e8-b32c-92f46bcc9ade",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 10:25:09 [INFO]: Request received {
+  "method": "PATCH",
+  "url": "/api/childattendances/890f9afa-9440-4fc3-92e2-c2d26636c658/Absent",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "89302f6e-d22d-4929-9c0b-ad9b6defbe08",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "0"
+  },
+  "body": {}
+}
+2025-05-23 10:25:29 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "2440fe47-52e5-4c35-87d8-98cc7cbc31bf",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 10:26:18 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/childattendances",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "1cedc92b-9b9a-4475-929c-6e374c3a0412",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "254"
+  },
+  "body": {
+    "fullname": "Toeng",
+    "gender": "Male",
+    "age": 10,
+    "family_id": "21336-1",
+    "attendance_date": "2025-05-23",
+    "status": "Present",
+    "camp_event_id": "e5716545-9b15-45b3-951b-0baafdb8f28a",
+    "user_id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
+  }
+}
+2025-05-23 10:26:37 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "cc50d510-f4d5-4964-b757-eef5a004016f",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 10:29:21 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/293736d8-13d9-4311-b48a-e9dc4b7df6b1",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "dd5a0738-2c95-418b-8fd9-246cd8cb95c5",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 10:29:49 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/childattendances/293736d8-13d9-4311-b48a-e9dc4b7df6b1",
+  "headers": {
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "c72ab490-1eb1-4134-8ecf-e96fa1f40645",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 10:30:10 [INFO]: Request received {
+  "method": "DELETE",
+  "url": "/api/childattendances/293736d8-13d9-4311-b48a-e9dc4b7df6b1",
+  "headers": {
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "84ccb9b9-fcca-4e9c-ab29-d5068581f4d9",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive"
+  },
+  "body": {}
+}
+2025-05-23 10:41:18 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0Nzk2MjkzMywiZXhwIjoxNzQ3OTczNzMzfQ.sOU7o2OGUrn6hg7MreBnKtz-e0_2yXG8hQ4Y3t87IvQ",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "a630e0f8-0a8e-4352-834b-4581576477c5",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "114"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role": "coordinator",
+    "username": "Chhun Lin"
+  }
+}
+2025-05-23 10:41:18 [INFO]: Creating user {
+  "email": "Chhunlin@gmail.com"
+}
+2025-05-23 10:41:19 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "Chhunlin@gmail.com"
+  ],
+  "rowCount": 0,
+  "duration": "400ms"
+}
+2025-05-23 10:41:19 [INFO]: User data prepared {
+  "userData": {
+    "email": "Chhunlin@gmail.com",
+    "password": "lin151052",
+    "role": "coordinator",
+    "username": "Chhun Lin",
+    "created_at": "2025-05-23T03:41:18.712Z"
+  }
+}
+2025-05-23 10:41:19 [INFO]: Database query executed {
+  "sql": "INSERT INTO users (\n        id, username, email, password, role, created_at\n      ) VALUES (\n        $1, $2, $3, $4, $5, $6\n      )\n      RETURNING id, username, email, role, created_at",
+  "params": [
+    "7fc9a06c-10e9-475f-a07c-b249ef014495",
+    "Chhun Lin",
+    "Chhunlin@gmail.com",
+    "$2b$10$eNhyDSkPv2JxySUNBaxKeu7IJ7ps4fgqmB3Du9.ehYiDXJ/xirO62",
+    "coordinator",
+    "2025-05-23T03:41:18.712Z"
+  ],
+  "rowCount": 1,
+  "duration": "50ms"
+}
+2025-05-23 10:41:19 [INFO]: User created successfully {
+  "id": "7fc9a06c-10e9-475f-a07c-b249ef014495"
+}
+2025-05-23 10:41:19 [INFO]: User created {
+  "email": "Chhunlin@gmail.com"
+}
+2025-05-23 10:42:19 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "925124fc-0b65-4497-a5fc-360c3c475539",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "69"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-23 10:42:19 [INFO]: Attempting login {
+  "email": "Chhunlin@gmail.com"
+}
+2025-05-23 10:42:20 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "Chhunlin@gmail.com"
+  ],
+  "rowCount": 1,
+  "duration": "220ms"
+}
+2025-05-23 10:42:20 [INFO]: Login successful {
+  "id": "7fc9a06c-10e9-475f-a07c-b249ef014495"
+}
+2025-05-23 10:42:20 [INFO]: Login successful {
+  "email": "Chhunlin@gmail.com"
+}
+2025-05-23 10:43:59 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/users",
+  "headers": {
+    "content-type": "application/json",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdmYzlhMDZjLTEwZTktNDc1Zi1hMDdjLWIyNDllZjAxNDQ5NSIsInJvbGUiOiJjb29yZGluYXRvciIsImlhdCI6MTc0Nzk3MTc0MCwiZXhwIjoxNzQ3OTgyNTQwfQ.Ki1MXHrE-Nftph4uPA2W1c15u3Wsv3AR9woB47wDf-M",
+    "user-agent": "PostmanRuntime/7.44.0",
+    "accept": "*/*",
+    "postman-token": "e20778ba-d9cf-4f3d-ba48-b358894578d4",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "103"
+  },
+  "body": {
+    "email": "***",
+    "password": "***",
+    "role": "monitor",
+    "username": "Lai Heang"
+  }
+}
