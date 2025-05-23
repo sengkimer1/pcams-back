@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { authMiddleware } from "../middlewares/authMiddleware";
-import { ChildAttendanceController } from "../controller/childrenAttendanceController"; // Fixed typo
+import { ChildAttendanceController } from "../controller/childrenAttendanceController";
 
 export default function childAttendanceRoutes(controller: ChildAttendanceController): Router {
   const router = Router();
@@ -9,8 +9,9 @@ export default function childAttendanceRoutes(controller: ChildAttendanceControl
 
   router.post("/", controller.createChildAttendance.bind(controller));
   router.get("/", controller.getAllChildAttendances.bind(controller));
+  router.get("/attendance", controller.getChildAttendanceByDateAndUser.bind(controller)); // New endpoint with query params
   router.get("/:id", controller.getChildAttendanceById.bind(controller));
-  router.patch("/:id/:state", controller.updateChildAttendance.bind(controller)); // Updated PATCH route
+  router.patch("/:id/:state", controller.updateChildAttendance.bind(controller));
   router.delete("/:id", controller.deleteChildAttendance.bind(controller));
 
   return router;

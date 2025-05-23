@@ -35,4 +35,18 @@ export class ChildAttendanceService implements IChildAttendanceService {
   async deleteChildAttendance(id: string): Promise<void> {
     return this.repository.delete(id);
   }
+
+  async getChildAttendanceByDateAndUser(attendance_date: string | null, user_id: string | null): Promise<ChildAttendance[]> {
+    let parsedDate: Date | null = null;
+
+    if (attendance_date) {
+      parsedDate = new Date(attendance_date);
+      if (isNaN(parsedDate.getTime())) {
+        throw new Error("Invalid date format. Please use YYYY-MM-DD");
+      }
+    }
+
+    const attendances = await this.repository.findByDateAndUserId(parsedDate, user_id);
+    return attendances;
+  }
 }

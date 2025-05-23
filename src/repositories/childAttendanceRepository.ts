@@ -53,4 +53,51 @@ export class PostgresChildAttendanceRepository implements ChildAttendanceReposit
     );
     if (rowCount === 0) throw new Error("Child attendance record not found");
   }
+
+  async findByAttendanceDate(attendance_date: Date): Promise<ChildAttendance[]> {
+    const { rows } = await this.pool.query(
+      `SELECT id, fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id, created_at, updated_at 
+       FROM child_attendance 
+       WHERE attendance_date = $1`,
+      [attendance_date]
+    );
+    return rows;
+  }
+
+  async findByUserId(user_id: string): Promise<ChildAttendance[]> {
+    const { rows } = await this.pool.query(
+      `SELECT id, fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id, created_at, updated_at 
+       FROM child_attendance 
+       WHERE user_id = $1`,
+      [user_id]
+    );
+    return rows;
+  }
+
+  async findByDateAndUserId(attendance_date: Date | null, user_id: string | null): Promise<ChildAttendance[]> {
+    let query = `SELECT id, fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id, created_at, updated_at 
+                 FROM child_attendance`;
+    const conditions: string[] = [];
+    const values: (Date | string)[] = [];
+    let paramIndex = 1;
+
+    if (attendance_date) {
+      conditions.push(`attendance_date = $${paramIndex}`);
+      values.push(attendance_date);
+      paramIndex++;
+    }
+
+    if (user_id) {
+      conditions.push(`user_id = $${paramIndex}`);
+      values.push(user_id);
+      paramIndex++;
+    }
+
+    if (conditions.length > 0) {
+      query += ` WHERE ${conditions.join(" AND ")}`;
+    }
+
+    const { rows } = await this.pool.query(query, values);
+    return rows;
+  }
 }
