@@ -18,8 +18,9 @@ export interface ChildAttendance {
     findById(id: string): Promise<ChildAttendance | null>;
     update(id: string, data: Partial<ChildAttendance>): Promise<ChildAttendance>;
     delete(id: string): Promise<void>;
-    findByAttendanceDate(attendance_date: Date): Promise<ChildAttendance[]>; // Ensure this is present
-    findByUserId(user_id: string): Promise<ChildAttendance[]>; // Ensure this is present
+    findByAttendanceDate(attendance_date: Date): Promise<ChildAttendance[]>;
+    findByUserId(user_id: string): Promise<ChildAttendance[]>;
+    findByDateAndUserId(attendance_date: Date | null, user_id: string | null): Promise<ChildAttendance[]>; // New method
   }
   
   export interface ChildAttendanceService {
@@ -28,6 +29,5 @@ export interface ChildAttendance {
     getChildAttendanceById(id: string): Promise<ChildAttendance>;
     updateChildAttendance(id: string, data: Partial<ChildAttendance>): Promise<ChildAttendance>;
     deleteChildAttendance(id: string): Promise<void>;
-    getChildAttendanceByDate(attendance_date: string): Promise<ChildAttendance[]>;
-    getChildAttendanceByUser(user_id: string): Promise<ChildAttendance[]>;
+    getChildAttendanceByDateAndUser(attendance_date: string | null, user_id: string | null): Promise<ChildAttendance[]>; // Updated method
   }

@@ -53,20 +53,13 @@ export class ChildAttendanceController {
     }
   }
 
-  async getChildAttendanceByDate(req: Request, res: Response, next: NextFunction) {
+  async getChildAttendanceByDateAndUser(req: Request, res: Response, next: NextFunction) {
     try {
-      const { date } = req.params;
-      const attendances = await this.service.getChildAttendanceByDate(date);
-      res.status(200).json({ data: attendances });
-    } catch (err) {
-      next(err);
-    }
-  }
-
-  async getChildAttendanceByUser(req: Request, res: Response, next: NextFunction) {
-    try {
-      const { user_id } = req.params;
-      const attendances = await this.service.getChildAttendanceByUser(user_id);
+      const { date, user_id } = req.query;
+      const attendances = await this.service.getChildAttendanceByDateAndUser(
+        date as string | null,
+        user_id as string | null
+      );
       res.status(200).json({ data: attendances });
     } catch (err) {
       next(err);

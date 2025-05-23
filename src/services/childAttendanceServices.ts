@@ -36,20 +36,17 @@ export class ChildAttendanceService implements IChildAttendanceService {
     return this.repository.delete(id);
   }
 
-  async getChildAttendanceByDate(attendance_date: string): Promise<ChildAttendance[]> {
-    const parsedDate = new Date(attendance_date);
-    if (isNaN(parsedDate.getTime())) {
-      throw new Error("Invalid date format. Please use YYYY-MM-DD");
-    }
-    const attendances = await this.repository.findByAttendanceDate(parsedDate);
-    return attendances;
-  }
+  async getChildAttendanceByDateAndUser(attendance_date: string | null, user_id: string | null): Promise<ChildAttendance[]> {
+    let parsedDate: Date | null = null;
 
-  async getChildAttendanceByUser(user_id: string): Promise<ChildAttendance[]> {
-    if (!user_id) {
-      throw new Error("User ID is required");
+    if (attendance_date) {
+      parsedDate = new Date(attendance_date);
+      if (isNaN(parsedDate.getTime())) {
+        throw new Error("Invalid date format. Please use YYYY-MM-DD");
+      }
     }
-    const attendances = await this.repository.findByUserId(user_id);
+
+    const attendances = await this.repository.findByDateAndUserId(parsedDate, user_id);
     return attendances;
   }
 }
