@@ -35,7 +35,7 @@ export class ChildAttendanceController {
 
   async updateChildAttendance(req: Request, res: Response, next: NextFunction) {
     try {
-      const { id, state } = req.params; // Extract id and status from URL
+      const { id, state } = req.params;
       const attendance = await this.service.updateChildAttendance(id, { status: state as "Present" | "Absent" });
       res.status(200).json({ data: attendance });
     } catch (err) {
@@ -47,9 +47,29 @@ export class ChildAttendanceController {
     try {
       const { id } = req.params;
       await this.service.deleteChildAttendance(id);
-      res.status(204).send(); // No content on successful delete
+      res.status(204).send();
     } catch (err) {
       next(err);
-    } 
+    }
+  }
+
+  async getChildAttendanceByDate(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { date } = req.params;
+      const attendances = await this.service.getChildAttendanceByDate(date);
+      res.status(200).json({ data: attendances });
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  async getChildAttendanceByUser(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { user_id } = req.params;
+      const attendances = await this.service.getChildAttendanceByUser(user_id);
+      res.status(200).json({ data: attendances });
+    } catch (err) {
+      next(err);
+    }
   }
 }

@@ -53,4 +53,24 @@ export class PostgresChildAttendanceRepository implements ChildAttendanceReposit
     );
     if (rowCount === 0) throw new Error("Child attendance record not found");
   }
+
+  async findByAttendanceDate(attendance_date: Date): Promise<ChildAttendance[]> {
+    const { rows } = await this.pool.query(
+      `SELECT id, fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id, created_at, updated_at 
+       FROM child_attendance 
+       WHERE attendance_date = $1`,
+      [attendance_date]
+    );
+    return rows;
+  }
+
+  async findByUserId(user_id: string): Promise<ChildAttendance[]> {
+    const { rows } = await this.pool.query(
+      `SELECT id, fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id, created_at, updated_at 
+       FROM child_attendance 
+       WHERE user_id = $1`,
+      [user_id]
+    );
+    return rows;
+  }
 }

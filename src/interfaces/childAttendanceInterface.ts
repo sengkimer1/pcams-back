@@ -5,7 +5,7 @@ export interface ChildAttendance {
     age: number;
     family_id: string;
     attendance_date: Date;
-    status: "Present" | "Absent"; // Restricted to Present or Absent
+    status: "Present" | "Absent";
     camp_event_id: string;
     user_id: string;
     created_at?: Date;
@@ -18,6 +18,8 @@ export interface ChildAttendance {
     findById(id: string): Promise<ChildAttendance | null>;
     update(id: string, data: Partial<ChildAttendance>): Promise<ChildAttendance>;
     delete(id: string): Promise<void>;
+    findByAttendanceDate(attendance_date: Date): Promise<ChildAttendance[]>; // Ensure this is present
+    findByUserId(user_id: string): Promise<ChildAttendance[]>; // Ensure this is present
   }
   
   export interface ChildAttendanceService {
@@ -26,4 +28,6 @@ export interface ChildAttendance {
     getChildAttendanceById(id: string): Promise<ChildAttendance>;
     updateChildAttendance(id: string, data: Partial<ChildAttendance>): Promise<ChildAttendance>;
     deleteChildAttendance(id: string): Promise<void>;
+    getChildAttendanceByDate(attendance_date: string): Promise<ChildAttendance[]>;
+    getChildAttendanceByUser(user_id: string): Promise<ChildAttendance[]>;
   }
