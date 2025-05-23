@@ -10,6 +10,7 @@ export interface IUser {
   email: string;
   password?: string;
   role: UserRole;
+  nationality?: string; // New field, optional
   created_at?: Date;
 }
 
@@ -37,10 +38,10 @@ export interface IUserRepository {
 
 export interface IUserService {
   login(email: string, password: string): Promise<ILoginResponse>;
-  createUser(data: { email: string; password: string; role: UserRole; username?: string; created_at?: Date }): Promise<{ user: IUserWithoutPassword; token: string }>;
+  createUser(data: { email: string; password: string; role: UserRole; username?: string; nationality?: string; created_at?: Date }): Promise<{ user: IUserWithoutPassword; token: string }>;
   getAllUsers(): Promise<IUserWithoutPassword[]>;
   getUserById(id: string): Promise<IUserWithoutPassword>;
-  updateUser(id: string, updateData: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword>;
+  updateUser(id: string, updateData: Partial<Omit<IUser, "id" | "password"> & { password?: string; nationality?: string }>): Promise<IUserWithoutPassword>;
   deleteUser(id: string): Promise<void>;
   getOneUserByRole(role: UserRole): Promise<IUserWithoutPassword>;
 }

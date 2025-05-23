@@ -6,7 +6,7 @@ import { logger } from "./loggerService";
 export class UserService implements IUserService {
   constructor(private userRepository: IUserRepository) {}
 
-  async createUser(data: { email: string; password: string; role: UserRole; username?: string; created_at?: Date }): Promise<{ user: IUserWithoutPassword; token: string }> {
+  async createUser(data: { email: string; password: string; role: UserRole; username?: string; nationality?: string; created_at?: Date }): Promise<{ user: IUserWithoutPassword; token: string }> {
     logger.info("Creating user", { email: data.email });
     const existingUser = await this.userRepository.findByEmail(data.email);
     if (existingUser) {
@@ -18,6 +18,7 @@ export class UserService implements IUserService {
       password: data.password,
       role: data.role,
       username: data.username,
+      nationality: data.nationality,
       created_at: data.created_at || new Date(),
     };
 
@@ -70,7 +71,7 @@ export class UserService implements IUserService {
     };
   }
 
-  async updateUser(id: string, updateData: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword> {
+  async updateUser(id: string, updateData: Partial<Omit<IUser, "id" | "password"> & { password?: string; nationality?: string }>): Promise<IUserWithoutPassword> {
     logger.info("Updating user", { id });
     const existingUser = await this.userRepository.findById(id);
     if (!existingUser) {

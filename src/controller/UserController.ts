@@ -7,7 +7,7 @@ export class UserController {
 
   async createUser(req: Request, res: Response, next: NextFunction) {
     try {
-      const { email, password, role, username, created_at } = req.body;
+      const { email, password, role, username, nationality, created_at } = req.body;
 
       if (!email || !password || !role) {
         throw Object.assign(new Error("Email, password, and role are required"), { status: 400 });
@@ -22,6 +22,7 @@ export class UserController {
         password,
         role,
         username,
+        nationality,
         created_at: created_at ? new Date(created_at) : new Date(),
       });
 
