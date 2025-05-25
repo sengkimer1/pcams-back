@@ -26,8 +26,16 @@ export class PostgresCampEventRepository implements ICampEventRepository {
   async findAll(): Promise<ICampEvent[]> {
     const { rows } = await queryWithLogging(
       this.pool,
-      `SELECT id, camp_id, event_id, created_at FROM camp_event`
+      `SELECT 
+         ce.id, 
+         ce.camp_id, 
+         c.camp_name, 
+         ce.event_id, 
+         ce.created_at 
+       FROM camp_event ce
+       JOIN camp c ON ce.camp_id = c.id`
     );
     return rows;
   }
+  
 }

@@ -1081,3 +1081,157 @@
   "error": "Invalid password",
   "email": "admin@admin.com"
 }
+2025-05-24 10:24:13 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "8ms"
+}
+2025-05-24 10:24:13 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "admin@admin.com"
+}
+2025-05-24 10:59:33 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "4ms"
+}
+2025-05-24 10:59:33 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "admin@admin.com"
+}
+2025-05-24 10:59:36 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "3ms"
+}
+2025-05-24 10:59:36 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "admin@admin.com"
+}
+2025-05-24 10:59:36 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "6ms"
+}
+2025-05-24 10:59:36 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "admin@admin.com"
+}
+2025-05-24 10:59:37 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "4ms"
+}
+2025-05-24 10:59:37 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "admin@admin.com"
+}
+2025-05-24 10:59:37 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "4ms"
+}
+2025-05-24 10:59:37 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "admin@admin.com"
+}
+2025-05-24 10:59:37 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "5ms"
+}
+2025-05-24 10:59:37 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "admin@admin.com"
+}
+2025-05-24 10:59:37 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "5ms"
+}
+2025-05-24 10:59:37 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "admin@admin.com"
+}
+2025-05-24 10:59:38 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "7ms"
+}
+2025-05-24 10:59:38 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "admin@admin.com"
+}
+2025-05-24 10:59:39 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "1010ms"
+}
+2025-05-24 10:59:39 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "admin@admin.com"
+}
+2025-05-24 10:59:40 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "4ms"
+}
+2025-05-24 10:59:40 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "admin@admin.com"
+}
+2025-05-25 08:30:40 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-25 11:56:40 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
+  "params": [],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "2ms"
+}
+2025-05-25 11:56:40 [ERROR]: Error in getAllUser {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)"
+}
+2025-05-25 11:56:40 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
+  "params": [],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "2ms"
+}
+2025-05-25 11:56:40 [ERROR]: Error in getAllUser {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)"
+}

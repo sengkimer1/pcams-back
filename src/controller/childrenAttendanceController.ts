@@ -1,13 +1,28 @@
 import { Request, Response, NextFunction } from "express";
 import { ChildAttendanceService } from "../services/childAttendanceServices";
+import { AuthRequest } from "../middlewares/authMiddleware";
 
 export class ChildAttendanceController {
   constructor(private service: ChildAttendanceService) {}
 
-  async createChildAttendance(req: Request, res: Response, next: NextFunction) {
+
+  async createChildAttendance(req: AuthRequest, res: Response, next: NextFunction) {
     try {
-      const { fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id } = req.body;
-      const attendance = await this.service.createChildAttendance({ fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id });
+      const { fullname, gender, age, family_id, attendance_date, status, camp_event_id } = req.body;
+      const user_id = req.user?.id; // Extract user_id from token
+      if (!user_id) {
+        throw new Error("User ID not found in token");
+      }
+      const attendance = await this.service.createChildAttendance({
+        fullname,
+        gender,
+        age,
+        family_id,
+        attendance_date,
+        status,
+        camp_event_id,
+        user_id,
+      });
       res.status(201).json({ data: attendance });
     } catch (err) {
       next(err);
@@ -35,13 +50,19 @@ export class ChildAttendanceController {
 
   async updateChildAttendance(req: Request, res: Response, next: NextFunction) {
     try {
-      const { id, state } = req.params;
-      const attendance = await this.service.updateChildAttendance(id, { status: state as "Present" | "Absent" });
+      const { id } = req.params;
+      const { status } = req.body;
+  
+      const attendance = await this.service.updateChildAttendance(id, {
+        status: status as "Present" | "Absent",
+      });
+  
       res.status(200).json({ data: attendance });
     } catch (err) {
       next(err);
     }
   }
+  
 
   async deleteChildAttendance(req: Request, res: Response, next: NextFunction) {
     try {
