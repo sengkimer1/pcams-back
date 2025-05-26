@@ -49,4 +49,16 @@ export class ChildAttendanceService implements IChildAttendanceService {
     const attendances = await this.repository.findByDateAndUserId(parsedDate, user_id);
     return attendances;
   }
+  async createChildAttendanceList(
+    organizer_id: string,
+    attendance_date: Date
+  ): Promise<ChildAttendance[]> {
+    if (!organizer_id || !attendance_date) {
+      throw new Error("organizer_id and attendance_date are required");
+    }
+  
+    return this.repository.createChildAttendanceList(organizer_id, attendance_date);
+  }
+  
+
 }

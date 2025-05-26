@@ -16,8 +16,13 @@ export class PostgresChildAttendanceRepository implements ChildAttendanceReposit
       attendance_date,
       status,
       camp_event_id,
-      user_id, // ✅ Add this
+      user_id,
     } = data;
+  
+    const parsedAttendanceDate = new Date(attendance_date);
+    if (isNaN(parsedAttendanceDate.getTime())) {
+      throw new Error("Invalid attendance_date");
+    }
   
     const { rows } = await this.pool.query(
       `INSERT INTO child_attendance (
@@ -26,7 +31,7 @@ export class PostgresChildAttendanceRepository implements ChildAttendanceReposit
        ) VALUES (
          $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11
        ) RETURNING *`,
-      [id, fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id, now, now] // ✅ Add `user_id` here
+      [id, fullname, gender, age, family_id, parsedAttendanceDate, status, camp_event_id, user_id, now, now]
     );
   
     return rows[0];
@@ -141,31 +146,27 @@ export class PostgresChildAttendanceRepository implements ChildAttendanceReposit
     return rows; // Return directly if your ChildAttendance type includes username/email
   }
   
-
-  // async findByDateAndUserId(attendance_date: Date | null, user_id: string | null): Promise<ChildAttendance[]> {
-  //   let query = `SELECT id, fullname, gender, age, family_id, attendance_date, status, camp_event_id,  created_at, updated_at 
-  //                FROM child_attendance`;
-  //   const conditions: string[] = [];
-  //   const values: (Date | string)[] = [];
-  //   let paramIndex = 1;
-
-  //   if (attendance_date) {
-  //     conditions.push(`attendance_date = $${paramIndex}`);
-  //     values.push(attendance_date);
-  //     paramIndex++;
-  //   }
-
-  //   if (user_id) {
-  //     conditions.push(`user_id = $${paramIndex}`);
-  //     values.push(user_id);
-  //     paramIndex++;
-  //   }
-
-  //   if (conditions.length > 0) {
-  //     query += ` WHERE ${conditions.join(" AND ")}`;
-  //   }
-
-  //   const { rows } = await this.pool.query(query, values);
-  //   return rows;
-  // }
+  async createChildAttendanceList(
+    organizer_id: string
+  ): Promise<ChildAttendance[]> {
+    const attendance_date = new Date(); // Set to today's date
+    const { rows } = await this.pool.query(`
+      INSERT INTO child_attendance (
+         id, fullname, gender, age, family_id,
+         attendance_date, camp_event_id, user_id,
+         created_at, updated_at
+       )
+       SELECT 
+         gen_random_uuid(), fullname, gender, age, family_id,
+         $1, camp_event_id, user_id,
+         NOW(), NOW()
+       FROM child_attendance
+       WHERE user_id = $2
+       RETURNING *`,
+      [attendance_date, organizer_id]
+    );
+  
+    return rows;
+  }
+  
 }
