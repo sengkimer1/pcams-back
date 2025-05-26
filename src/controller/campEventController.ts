@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { ICampEventService } from "../interfaces/campEventInterface";
+import { ICampEventService, ICampEvent } from "../interfaces/campEventInterface";
 import { logger } from "../services/loggerService";
 
 export class CampEventController {
@@ -13,7 +13,6 @@ export class CampEventController {
         throw Object.assign(new Error("camp_id and event_id are required"), { status: 400 });
       }
 
-      // Validate created_at if provided
       let createdAt: Date;
       if (created_at) {
         createdAt = new Date(created_at);
@@ -45,6 +44,72 @@ export class CampEventController {
       res.status(200).json(campEvents);
     } catch (err) {
       logger.error("Error in getAllCampEvents", { error: err instanceof Error ? err.message : String(err) });
+      next(err);
+    }
+  }
+
+  async getCampEventById(req: Request, res: Response, next: NextFunction): Promise<void> {
+    const eventId = req.params.id;
+    try {
+      const event = await this.campEventService.getCampEventById(eventId);
+      if (!event) {
+        res.status(404).json({ message: "Event not found" });
+        return;
+      }
+      res.status(200).json(event);
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  async updateCampEvent(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { id } = req.params;
+      const { camp_id, event_id, created_at } = req.body;
+
+      if (!id) {
+        throw Object.assign(new Error("id is required"), { status: 400 });
+      }
+
+      let updatedData: Partial<Omit<ICampEvent, "id">> = {};
+      if (camp_id !== undefined) updatedData.camp_id = camp_id;
+      if (event_id !== undefined) updatedData.event_id = event_id;
+      if (created_at !== undefined) {
+        const createdAt = new Date(created_at);
+        if (isNaN(createdAt.getTime())) {
+          throw Object.assign(new Error("Invalid date format for created_at"), { status: 400 });
+        }
+        updatedData.created_at = createdAt;
+      }
+
+      if (Object.keys(updatedData).length === 0) {
+        throw Object.assign(new Error("No updates provided"), { status: 400 });
+      }
+
+      const updatedCampEvent = await this.campEventService.updateCampEvent(id, updatedData);
+      logger.info("Camp-event updated", { id: updatedCampEvent.id, camp_id: updatedCampEvent.camp_id, event_id: updatedCampEvent.event_id });
+      res.status(200).json({ message: "Camp-event updated successfully", data: updatedCampEvent });
+    } catch (err) {
+      logger.error("Error in updateCampEvent", { error: err instanceof Error ? err.message : String(err) });
+      next(err);
+    }
+  }
+
+  async deleteCampEvent(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { id } = req.params;
+      if (!id) {
+        throw Object.assign(new Error("id is required"), { status: 400 });
+      }
+      const deleted = await this.campEventService.deleteCampEvent(id);
+      if (deleted) {
+        logger.info("Camp-event deleted", { id });
+        res.status(200).json({ message: "Camp-event deleted successfully" });
+      } else {
+        res.status(404).json({ message: "Camp-event not found" });
+      }
+    } catch (err) {
+      logger.error("Error in deleteCampEvent", { error: err instanceof Error ? err.message : String(err) });
       next(err);
     }
   }

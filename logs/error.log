@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025-05-12 09:01:00 [ERROR]: Database query failed {
   "sql": "SELECT * FROM users WHERE email = $1",
   "params": [
@@ -1257,3 +1258,5 @@
   "error": "Invalid password",
   "email": "admin@admin.com"
 }
+=======
+>>>>>>> main
