@@ -1,0 +1,20 @@
+2025-05-26 21:46:20 [ERROR]: Login error {
+  "error": "User not found",
+  "email": "test@test.com"
+}
+2025-05-26 23:35:41 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "Ti@example.com"
+}
+2025-05-26 23:36:02 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "Sopheak@gmail.com"
+}
+2025-05-26 23:56:50 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "Sopheak@gmail.com"
+}
+2025-05-27 00:31:58 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "Sopheak@gmail.com"
+}
