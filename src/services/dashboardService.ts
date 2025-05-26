@@ -1,4 +1,3 @@
-// services/dashboardService.ts
 import { DashboardAttendanceSummary, DashboardRepository, AdminCampSummary } from "../interfaces/dashboardInterface";
 
 export class DashboardService {
