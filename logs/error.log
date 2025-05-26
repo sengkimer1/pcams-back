@@ -1081,3 +1081,26 @@
   "error": "Invalid password",
   "email": "admin@admin.com"
 }
+2025-05-25 05:13:01 [ERROR]: Error in createEvent {
+  "error": "event_name, from_date, and end_date are required"
+}
+2025-05-25 12:35:27 [ERROR]: Database query failed {
+  "sql": "DELETE FROM event WHERE id = $1",
+  "params": [
+    " 42ea80d3-5174-4528-b3ec-9640055d4281"
+  ],
+  "error": "invalid input syntax for type uuid: \" 42ea80d3-5174-4528-b3ec-9640055d4281\"",
+  "duration": "176ms"
+}
+2025-05-25 12:35:27 [ERROR]: Error in deleteEvent {
+  "error": "invalid input syntax for type uuid: \" 42ea80d3-5174-4528-b3ec-9640055d4281\""
+}
+2025-05-25 12:37:04 [ERROR]: Error in deleteEvent {
+  "error": "Event not found"
+}
+2025-05-25 15:13:11 [ERROR]: Error in createEvent {
+  "error": "from_date must be before end_date"
+}
+2025-05-25 15:13:26 [ERROR]: Error in createEvent {
+  "error": "from_date must be before end_date"
+}
