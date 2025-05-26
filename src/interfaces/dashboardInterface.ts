@@ -1,4 +1,3 @@
-// interfaces/dashboardInterface.ts
 export interface DashboardAttendanceSummary {
   totalChildren: number;
   presentChildren: number;

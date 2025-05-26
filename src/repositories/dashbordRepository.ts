@@ -1,4 +1,3 @@
-// repositories/postgresDashboardRepository.ts
 import { Pool } from "pg";
 import { DashboardRepository, DashboardAttendanceSummary, AdminCampSummary } from "../interfaces/dashboardInterface";
 
@@ -35,7 +34,6 @@ export class PostgresDashboardRepository implements DashboardRepository {
   }
 
   async getAdminCampSummary(startDate: string, endDate: string): Promise<AdminCampSummary> {
-    // Get total coordinators (filtered by role)
     const coordinatorsRes = await this.pool.query(
       `SELECT COUNT(DISTINCT id) AS total
        FROM users
@@ -43,15 +41,13 @@ export class PostgresDashboardRepository implements DashboardRepository {
       [startDate, endDate]
     );
 
-    // Get total monitors
     const monitorsRes = await this.pool.query(
       `SELECT COUNT(DISTINCT id) AS total
        FROM users
-        WHERE role = 'monitor' AND created_at BETWEEN $1 AND $2`,
+       WHERE role = 'monitor' AND created_at BETWEEN $1 AND $2`,
       [startDate, endDate]
     );
 
-    // Get total children
     const childrenRes = await this.pool.query(
       `SELECT COUNT(DISTINCT id) AS total
        FROM child_attendance
@@ -59,7 +55,6 @@ export class PostgresDashboardRepository implements DashboardRepository {
       [startDate, endDate]
     );
 
-    // Get attendance summary for the date range
     const totalAttendanceRes = await this.pool.query(
       `SELECT COUNT(DISTINCT id) AS total
        FROM child_attendance
