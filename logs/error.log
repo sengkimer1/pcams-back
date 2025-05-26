@@ -1,4 +1,0 @@
-2025-05-27 03:05:24 [ERROR]: Error in updateUser {
-  "error": "Cannot read properties of undefined (reading 'role')",
-  "id": "b1d9491a-8702-40d9-a999-68a7dccdc7c3"
-}
