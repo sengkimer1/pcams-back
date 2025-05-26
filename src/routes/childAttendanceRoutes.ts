@@ -13,6 +13,6 @@ export default function childAttendanceRoutes(controller: ChildAttendanceControl
   router.get("/:id", controller.getChildAttendanceById.bind(controller));
   router.patch("/:id", controller.updateChildAttendance.bind(controller));
   router.delete("/:id", controller.deleteChildAttendance.bind(controller));
-
+  router.post("/checklist",controller.createChildAttendanceList.bind(controller))
   return router;
 }

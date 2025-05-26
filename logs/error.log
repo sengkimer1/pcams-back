@@ -1235,3 +1235,25 @@
 2025-05-25 11:56:40 [ERROR]: Error in getAllUser {
   "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)"
 }
+2025-05-26 10:19:39 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
+  "params": [],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "3ms"
+}
+2025-05-26 10:19:39 [ERROR]: Error in getAllUser {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)"
+}
+2025-05-26 10:19:39 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
+  "params": [],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "1ms"
+}
+2025-05-26 10:19:39 [ERROR]: Error in getAllUser {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)"
+}
+2025-05-26 18:48:21 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}

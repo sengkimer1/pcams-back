@@ -86,4 +86,24 @@ export class ChildAttendanceController {
       next(err);
     }
   }
+  async createChildAttendanceList(req: AuthRequest, res: Response, next: NextFunction) {
+    try {
+      const { attendance_date, organizer_id } = req.body;
+  
+      if (!organizer_id) {
+        throw new Error("organizer_id is required");
+      }
+  
+      const date = new Date(attendance_date);
+      if (isNaN(date.getTime())) {
+        throw new Error("Invalid attendance_date format. Use YYYY-MM-DD");
+      }
+  
+      const result = await this.service.createChildAttendanceList(organizer_id, date);
+      res.status(201).json({ data: result });
+    } catch (err) {
+      next(err);
+    }
+  }
+  
 }
