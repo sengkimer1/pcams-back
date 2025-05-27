@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    dockerfile: dockerfile
+    container_name: pse_camp_attendance_be
+    ports:
+      - "127.0.0.1:9008:3000"
+    environment:
+      - JWT_SECRET=${JWT_SECRET}
+      - PORT=${POSTGRES_PORT}
+      - NODE_ENV=${NODE_ENV}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - PORT=${PORT}
+

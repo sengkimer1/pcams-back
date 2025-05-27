@@ -33,20 +33,22 @@ class ChildAttendanceService {
     async deleteChildAttendance(id) {
         return this.repository.delete(id);
     }
-    async getChildAttendanceByDate(attendance_date) {
-        const parsedDate = new Date(attendance_date);
-        if (isNaN(parsedDate.getTime())) {
-            throw new Error("Invalid date format. Please use YYYY-MM-DD");
+    async getChildAttendanceByDateAndUser(attendance_date, user_id) {
+        let parsedDate = null;
+        if (attendance_date) {
+            parsedDate = new Date(attendance_date);
+            if (isNaN(parsedDate.getTime())) {
+                throw new Error("Invalid date format. Please use YYYY-MM-DD");
+            }
         }
-        const attendances = await this.repository.findByAttendanceDate(parsedDate);
+        const attendances = await this.repository.findByDateAndUserId(parsedDate, user_id);
         return attendances;
     }
-    async getChildAttendanceByUser(user_id) {
-        if (!user_id) {
-            throw new Error("User ID is required");
+    async createChildAttendanceList(organizer_id, attendance_date) {
+        if (!organizer_id || !attendance_date) {
+            throw new Error("organizer_id and attendance_date are required");
         }
-        const attendances = await this.repository.findByUserId(user_id);
-        return attendances;
+        return this.repository.createChildAttendanceList(organizer_id, attendance_date);
     }
 }
 exports.ChildAttendanceService = ChildAttendanceService;

@@ -16,6 +16,7 @@ const eventRoute_1 = __importDefault(require("./routes/eventRoute"));
 const campEventRoutes_1 = __importDefault(require("./routes/campEventRoutes"));
 const campEventOrganizerRoutes_1 = __importDefault(require("./routes/campEventOrganizerRoutes"));
 const childAttendanceRoutes_1 = __importDefault(require("./routes/childAttendanceRoutes"));
+const dashboardRoutes_1 = __importDefault(require("./routes/dashboardRoutes"));
 // Controllers
 const authController_1 = require("./controller/authController");
 const UserController_1 = require("./controller/UserController");
@@ -24,6 +25,7 @@ const eventController_1 = require("./controller/eventController");
 const campEventController_1 = require("./controller/campEventController");
 const campEventOrganizerController_1 = require("./controller/campEventOrganizerController");
 const childrenAttendanceController_1 = require("./controller/childrenAttendanceController");
+const dashboardController_1 = require("./controller/dashboardController");
 // Services
 const userService_1 = require("./services/userService");
 const campService_1 = require("./services/campService");
@@ -31,6 +33,7 @@ const eventService_1 = require("./services/eventService");
 const campEventService_1 = require("./services/campEventService");
 const campEventOrganizerService_1 = require("./services/campEventOrganizerService");
 const childAttendanceServices_1 = require("./services/childAttendanceServices");
+const dashboardService_1 = require("./services/dashboardService");
 // Repositories
 const userRepository_1 = require("./repositories/userRepository");
 const CampRepository_1 = require("./repositories/CampRepository");
@@ -38,6 +41,7 @@ const eventRepository_1 = require("./repositories/eventRepository");
 const campEventRepository_1 = require("./repositories/campEventRepository");
 const campEventOrganizerRepository_1 = require("./repositories/campEventOrganizerRepository");
 const childAttendanceRepository_1 = require("./repositories/childAttendanceRepository");
+const dashbordRepository_1 = require("./repositories/dashbordRepository");
 // Config
 const db_1 = require("./config/db");
 dotenv_1.default.config();
@@ -58,6 +62,7 @@ const eventRepository = new eventRepository_1.PostgresEventRepository(pgPool);
 const campEventRepository = new campEventRepository_1.PostgresCampEventRepository(pgPool);
 const campEventOrganizerRepository = new campEventOrganizerRepository_1.PostgresCampEventOrganizerRepository(pgPool);
 const childAttendanceRepository = new childAttendanceRepository_1.PostgresChildAttendanceRepository(pgPool);
+const coordiantorRepository = new dashbordRepository_1.PostgresDashboardRepository(pgPool);
 // Services
 const userService = new userService_1.UserService(userRepository);
 const campService = new campService_1.CampService(campRepository);
@@ -65,6 +70,7 @@ const eventService = new eventService_1.EventService(eventRepository);
 const campEventService = new campEventService_1.CampEventService(campEventRepository);
 const campEventOrganizerService = new campEventOrganizerService_1.CampEventOrganizerService(campEventOrganizerRepository);
 const childAttendanceService = new childAttendanceServices_1.ChildAttendanceService(childAttendanceRepository);
+const dashboardService = new dashboardService_1.DashboardService(coordiantorRepository);
 // Controllers
 const authController = new authController_1.AuthController(userService);
 const userController = new UserController_1.UserController(userService);
@@ -73,6 +79,7 @@ const eventController = new eventController_1.EventController(eventService);
 const campEventController = new campEventController_1.CampEventController(campEventService);
 const campEventOrganizerController = new campEventOrganizerController_1.CampEventOrganizerController(campEventOrganizerService);
 const childAttendanceController = new childrenAttendanceController_1.ChildAttendanceController(childAttendanceService);
+const coordinatorController = new dashboardController_1.DashboardController(dashboardService);
 // Routes
 app.use("/api/auth", (0, authRoutes_1.default)(authController));
 app.use("/api/users", (0, userRoutes_1.default)(userController));
@@ -81,6 +88,7 @@ app.use("/api/events", (0, eventRoute_1.default)(eventController));
 app.use("/api/campevents", (0, campEventRoutes_1.default)(campEventController));
 app.use("/api/campeventorganizers", (0, campEventOrganizerRoutes_1.default)(campEventOrganizerController));
 app.use("/api/childattendances", (0, childAttendanceRoutes_1.default)(childAttendanceController));
+app.use("/api/dashboard", (0, dashboardRoutes_1.default)(coordinatorController));
 // Error Handling Middleware
 app.use((err, req, res, next) => {
     const status = err.status || 500;

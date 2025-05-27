@@ -7,8 +7,21 @@ class ChildAttendanceController {
     }
     async createChildAttendance(req, res, next) {
         try {
-            const { fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id } = req.body;
-            const attendance = await this.service.createChildAttendance({ fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id });
+            const { fullname, gender, age, family_id, attendance_date, status, camp_event_id } = req.body;
+            const user_id = req.user?.id; // Extract user_id from token
+            if (!user_id) {
+                throw new Error("User ID not found in token");
+            }
+            const attendance = await this.service.createChildAttendance({
+                fullname,
+                gender,
+                age,
+                family_id,
+                attendance_date,
+                status,
+                camp_event_id,
+                user_id,
+            });
             res.status(201).json({ data: attendance });
         }
         catch (err) {
@@ -36,8 +49,11 @@ class ChildAttendanceController {
     }
     async updateChildAttendance(req, res, next) {
         try {
-            const { id, state } = req.params;
-            const attendance = await this.service.updateChildAttendance(id, { status: state });
+            const { id } = req.params;
+            const { status } = req.body;
+            const attendance = await this.service.updateChildAttendance(id, {
+                status: status,
+            });
             res.status(200).json({ data: attendance });
         }
         catch (err) {
@@ -54,21 +70,28 @@ class ChildAttendanceController {
             next(err);
         }
     }
-    async getChildAttendanceByDate(req, res, next) {
+    async getChildAttendanceByDateAndUser(req, res, next) {
         try {
-            const { date } = req.params;
-            const attendances = await this.service.getChildAttendanceByDate(date);
+            const { date, user_id } = req.query;
+            const attendances = await this.service.getChildAttendanceByDateAndUser(date, user_id);
             res.status(200).json({ data: attendances });
         }
         catch (err) {
             next(err);
         }
     }
-    async getChildAttendanceByUser(req, res, next) {
+    async createChildAttendanceList(req, res, next) {
         try {
-            const { user_id } = req.params;
-            const attendances = await this.service.getChildAttendanceByUser(user_id);
-            res.status(200).json({ data: attendances });
+            const { attendance_date, organizer_id } = req.body;
+            if (!organizer_id) {
+                throw new Error("organizer_id is required");
+            }
+            const date = new Date(attendance_date);
+            if (isNaN(date.getTime())) {
+                throw new Error("Invalid attendance_date format. Use YYYY-MM-DD");
+            }
+            const result = await this.service.createChildAttendanceList(organizer_id, date);
+            res.status(201).json({ data: result });
         }
         catch (err) {
             next(err);
