@@ -1,0 +1,46 @@
+2025-05-27 13:02:49 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "3ms"
+}
+2025-05-27 13:02:49 [ERROR]: Error in getUserById {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:02:49 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
+  "params": [],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "1ms"
+}
+2025-05-27 13:02:49 [ERROR]: Error in getAllUser {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)"
+}
+2025-05-27 13:02:49 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
+  "params": [],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "1ms"
+}
+2025-05-27 13:02:49 [ERROR]: Error in getAllUser {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)"
+}
+2025-05-27 13:02:49 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "1ms"
+}
+2025-05-27 13:02:49 [ERROR]: Error in getUserById {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:23:22 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "kimer@gmail.com"
+}
