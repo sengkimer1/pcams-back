@@ -44,3 +44,7 @@
   "error": "Invalid password",
   "email": "kimer@gmail.com"
 }
+2025-05-27 13:54:41 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}

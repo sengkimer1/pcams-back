@@ -15467,3 +15467,949 @@
   },
   "body": {}
 }
+2025-05-27 13:37:50 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"ad-2BGY4nm8x9ntQIaIWyqfZkbXZZw\""
+  },
+  "body": {}
+}
+2025-05-27 13:37:50 [INFO]: Fetching user by id {
+  "id": "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+}
+2025-05-27 13:37:50 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"6c9-kGiDFWTdDT1NTBPrTosovqe6WIA\""
+  },
+  "body": {}
+}
+2025-05-27 13:37:50 [INFO]: Fetching all users
+2025-05-27 13:37:50 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"4d4-NrxMwKlEJlOGm9hmGNwxSg9vXe4\""
+  },
+  "body": {}
+}
+2025-05-27 13:37:50 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
+  "params": [],
+  "rowCount": 10,
+  "duration": "219ms"
+}
+2025-05-27 13:37:50 [INFO]: Fetched all users
+2025-05-27 13:37:50 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+  ],
+  "rowCount": 1,
+  "duration": "238ms"
+}
+2025-05-27 13:37:50 [INFO]: Fetched user by id {
+  "id": "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+}
+2025-05-27 13:37:50 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"6c9-kGiDFWTdDT1NTBPrTosovqe6WIA\""
+  },
+  "body": {}
+}
+2025-05-27 13:37:50 [INFO]: Fetching all users
+2025-05-27 13:37:50 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"4d9-AakzxSCs+fdRGmGy173l394Xq8U\""
+  },
+  "body": {}
+}
+2025-05-27 13:37:50 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"ad-2BGY4nm8x9ntQIaIWyqfZkbXZZw\""
+  },
+  "body": {}
+}
+2025-05-27 13:37:50 [INFO]: Fetching user by id {
+  "id": "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+}
+2025-05-27 13:37:50 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
+  "params": [],
+  "rowCount": 10,
+  "duration": "40ms"
+}
+2025-05-27 13:37:50 [INFO]: Fetched all users
+2025-05-27 13:37:50 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+  ],
+  "rowCount": 1,
+  "duration": "43ms"
+}
+2025-05-27 13:37:50 [INFO]: Fetched user by id {
+  "id": "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+}
+2025-05-27 13:39:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"ad-2BGY4nm8x9ntQIaIWyqfZkbXZZw\""
+  },
+  "body": {}
+}
+2025-05-27 13:39:34 [INFO]: Fetching user by id {
+  "id": "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+}
+2025-05-27 13:39:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"6c9-kGiDFWTdDT1NTBPrTosovqe6WIA\""
+  },
+  "body": {}
+}
+2025-05-27 13:39:34 [INFO]: Fetching all users
+2025-05-27 13:39:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"4d9-AakzxSCs+fdRGmGy173l394Xq8U\""
+  },
+  "body": {}
+}
+2025-05-27 13:39:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/childattendances",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"4d9-AakzxSCs+fdRGmGy173l394Xq8U\""
+  },
+  "body": {}
+}
+2025-05-27 13:39:34 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
+  "params": [],
+  "rowCount": 10,
+  "duration": "242ms"
+}
+2025-05-27 13:39:34 [INFO]: Fetched all users
+2025-05-27 13:39:34 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+  ],
+  "rowCount": 1,
+  "duration": "250ms"
+}
+2025-05-27 13:39:34 [INFO]: Fetched user by id {
+  "id": "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+}
+2025-05-27 13:39:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"6c9-kGiDFWTdDT1NTBPrTosovqe6WIA\""
+  },
+  "body": {}
+}
+2025-05-27 13:39:34 [INFO]: Fetching all users
+2025-05-27 13:39:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkMjMxNTdkLTM5NjMtNGU4NS1iN2Y5LWU2YWQ3ZWU2YTRmMiIsInJvbGUiOiJtb25pdG9yIiwiaWF0IjoxNzQ4MzI3MDA3LCJleHAiOjE3NDgzMzc4MDd9.bbmq-Mf06zB803_tCLcQjgCm9TBiz3PoaQvuHNndurk",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"ad-2BGY4nm8x9ntQIaIWyqfZkbXZZw\""
+  },
+  "body": {}
+}
+2025-05-27 13:39:34 [INFO]: Fetching user by id {
+  "id": "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+}
+2025-05-27 13:39:34 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users",
+  "params": [],
+  "rowCount": 10,
+  "duration": "46ms"
+}
+2025-05-27 13:39:34 [INFO]: Fetched all users
+2025-05-27 13:39:34 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+  ],
+  "rowCount": 1,
+  "duration": "62ms"
+}
+2025-05-27 13:39:34 [INFO]: Fetched user by id {
+  "id": "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+}
+2025-05-27 13:42:38 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "content-type": "application/json",
+    "user-agent": "PostmanRuntime/7.37.3",
+    "accept": "*/*",
+    "postman-token": "2d547736-7e6d-4168-8913-5b225b127af8",
+    "host": "localhost:3000",
+    "accept-encoding": "gzip, deflate, br",
+    "connection": "keep-alive",
+    "content-length": "65"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-27 13:42:38 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-27 13:42:38 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "229ms"
+}
+2025-05-27 13:42:39 [INFO]: Login successful {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:42:39 [INFO]: Login successful {
+  "email": "admin@admin.com"
+}
+2025-05-27 13:46:22 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "content-length": "50",
+    "accept": "application/json, text/plain, */*",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "content-type": "application/json",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-27 13:46:22 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-27 13:46:22 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "210ms"
+}
+2025-05-27 13:46:22 [INFO]: Login successful {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:46:22 [INFO]: Login successful {
+  "email": "admin@admin.com"
+}
+2025-05-27 13:46:22 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMyODM4MiwiZXhwIjoxNzQ4MzM5MTgyfQ.jlQGMry1SN1YcmA2TDkD7xXY_8Sshcj2MM0TEK3Dg-A",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"3e3-m+dKOiRkUBTlK+dMUWe5mvrKpco\""
+  },
+  "body": {}
+}
+2025-05-27 13:46:22 [INFO]: Fetching all camps
+2025-05-27 13:46:22 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/d64562cf-64b1-4f7b-8cc3-d1c66d831ec0",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMyODM4MiwiZXhwIjoxNzQ4MzM5MTgyfQ.jlQGMry1SN1YcmA2TDkD7xXY_8Sshcj2MM0TEK3Dg-A",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9"
+  },
+  "body": {}
+}
+2025-05-27 13:46:22 [INFO]: Fetching user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:46:23 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
+  "params": [],
+  "rowCount": 7,
+  "duration": "43ms"
+}
+2025-05-27 13:46:23 [INFO]: Fetched all camps
+2025-05-27 13:46:23 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMyODM4MiwiZXhwIjoxNzQ4MzM5MTgyfQ.jlQGMry1SN1YcmA2TDkD7xXY_8Sshcj2MM0TEK3Dg-A",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"3e3-m+dKOiRkUBTlK+dMUWe5mvrKpco\""
+  },
+  "body": {}
+}
+2025-05-27 13:46:23 [INFO]: Fetching all camps
+2025-05-27 13:46:23 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
+  "params": [],
+  "rowCount": 7,
+  "duration": "40ms"
+}
+2025-05-27 13:46:23 [INFO]: Fetched all camps
+2025-05-27 13:46:23 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "rowCount": 1,
+  "duration": "186ms"
+}
+2025-05-27 13:46:23 [INFO]: Fetched user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:46:23 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/d64562cf-64b1-4f7b-8cc3-d1c66d831ec0",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMyODM4MiwiZXhwIjoxNzQ4MzM5MTgyfQ.jlQGMry1SN1YcmA2TDkD7xXY_8Sshcj2MM0TEK3Dg-A",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"a4-agL/Tpl+fPE3OBbTsF2MtyhgO9w\""
+  },
+  "body": {}
+}
+2025-05-27 13:46:23 [INFO]: Fetching user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:46:23 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "rowCount": 1,
+  "duration": "34ms"
+}
+2025-05-27 13:46:23 [INFO]: Fetched user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:54:41 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "content-length": "51",
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMyODM4MiwiZXhwIjoxNzQ4MzM5MTgyfQ.jlQGMry1SN1YcmA2TDkD7xXY_8Sshcj2MM0TEK3Dg-A",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "content-type": "application/json",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-27 13:54:41 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-27 13:54:41 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "201ms"
+}
+2025-05-27 13:54:41 [ERROR]: Login error {
+  "error": "Invalid password",
+  "email": "admin@admin.com"
+}
+2025-05-27 13:55:41 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "content-length": "50",
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMyODM4MiwiZXhwIjoxNzQ4MzM5MTgyfQ.jlQGMry1SN1YcmA2TDkD7xXY_8Sshcj2MM0TEK3Dg-A",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "content-type": "application/json",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-27 13:55:41 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-27 13:55:41 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "224ms"
+}
+2025-05-27 13:55:41 [INFO]: Login successful {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:55:41 [INFO]: Login successful {
+  "email": "admin@admin.com"
+}
+2025-05-27 13:55:41 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/d64562cf-64b1-4f7b-8cc3-d1c66d831ec0",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMyODk0MSwiZXhwIjoxNzQ4MzM5NzQxfQ.hh5t_bU0U4qozD4cpdkAa1zXLSIN4QqVSw5ernhYvXU",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"a4-agL/Tpl+fPE3OBbTsF2MtyhgO9w\""
+  },
+  "body": {}
+}
+2025-05-27 13:55:41 [INFO]: Fetching user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:55:41 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMyODk0MSwiZXhwIjoxNzQ4MzM5NzQxfQ.hh5t_bU0U4qozD4cpdkAa1zXLSIN4QqVSw5ernhYvXU",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"3e3-m+dKOiRkUBTlK+dMUWe5mvrKpco\""
+  },
+  "body": {}
+}
+2025-05-27 13:55:41 [INFO]: Fetching all camps
+2025-05-27 13:55:41 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "rowCount": 1,
+  "duration": "45ms"
+}
+2025-05-27 13:55:41 [INFO]: Fetched user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:55:41 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/d64562cf-64b1-4f7b-8cc3-d1c66d831ec0",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMyODk0MSwiZXhwIjoxNzQ4MzM5NzQxfQ.hh5t_bU0U4qozD4cpdkAa1zXLSIN4QqVSw5ernhYvXU",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"a4-agL/Tpl+fPE3OBbTsF2MtyhgO9w\""
+  },
+  "body": {}
+}
+2025-05-27 13:55:41 [INFO]: Fetching user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:55:41 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "rowCount": 1,
+  "duration": "46ms"
+}
+2025-05-27 13:55:41 [INFO]: Fetched user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 13:55:41 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
+  "params": [],
+  "rowCount": 7,
+  "duration": "210ms"
+}
+2025-05-27 13:55:41 [INFO]: Fetched all camps
+2025-05-27 13:55:41 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "accept": "application/json, text/plain, */*",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMyODk0MSwiZXhwIjoxNzQ4MzM5NzQxfQ.hh5t_bU0U4qozD4cpdkAa1zXLSIN4QqVSw5ernhYvXU",
+    "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"3e3-m+dKOiRkUBTlK+dMUWe5mvrKpco\""
+  },
+  "body": {}
+}
+2025-05-27 13:55:41 [INFO]: Fetching all camps
+2025-05-27 13:55:41 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
+  "params": [],
+  "rowCount": 7,
+  "duration": "36ms"
+}
+2025-05-27 13:55:41 [INFO]: Fetched all camps
+2025-05-27 14:36:33 [INFO]: Request received {
+  "method": "POST",
+  "url": "/api/auth/login",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "content-length": "50",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMyODk0MSwiZXhwIjoxNzQ4MzM5NzQxfQ.hh5t_bU0U4qozD4cpdkAa1zXLSIN4QqVSw5ernhYvXU",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "content-type": "application/json",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9"
+  },
+  "body": {
+    "email": "***",
+    "password": "***"
+  }
+}
+2025-05-27 14:36:33 [INFO]: Attempting login {
+  "email": "admin@admin.com"
+}
+2025-05-27 14:36:33 [INFO]: Database query executed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "admin@admin.com"
+  ],
+  "rowCount": 1,
+  "duration": "210ms"
+}
+2025-05-27 14:36:34 [INFO]: Login successful {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 14:36:34 [INFO]: Login successful {
+  "email": "admin@admin.com"
+}
+2025-05-27 14:36:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/d64562cf-64b1-4f7b-8cc3-d1c66d831ec0",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMzMTM5NCwiZXhwIjoxNzQ4MzQyMTk0fQ.RA_B2Yo7ZMsw7SoEaq_MGwU--JET3VSwOQa5V_7LKTE",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"a4-agL/Tpl+fPE3OBbTsF2MtyhgO9w\""
+  },
+  "body": {}
+}
+2025-05-27 14:36:34 [INFO]: Fetching user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 14:36:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMzMTM5NCwiZXhwIjoxNzQ4MzQyMTk0fQ.RA_B2Yo7ZMsw7SoEaq_MGwU--JET3VSwOQa5V_7LKTE",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"3e3-m+dKOiRkUBTlK+dMUWe5mvrKpco\""
+  },
+  "body": {}
+}
+2025-05-27 14:36:34 [INFO]: Fetching all camps
+2025-05-27 14:36:34 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "rowCount": 1,
+  "duration": "40ms"
+}
+2025-05-27 14:36:34 [INFO]: Fetched user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 14:36:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/users/d64562cf-64b1-4f7b-8cc3-d1c66d831ec0",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMzMTM5NCwiZXhwIjoxNzQ4MzQyMTk0fQ.RA_B2Yo7ZMsw7SoEaq_MGwU--JET3VSwOQa5V_7LKTE",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"a4-agL/Tpl+fPE3OBbTsF2MtyhgO9w\""
+  },
+  "body": {}
+}
+2025-05-27 14:36:34 [INFO]: Fetching user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 14:36:34 [INFO]: Database query executed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "rowCount": 1,
+  "duration": "43ms"
+}
+2025-05-27 14:36:34 [INFO]: Fetched user by id {
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-27 14:36:34 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
+  "params": [],
+  "rowCount": 7,
+  "duration": "205ms"
+}
+2025-05-27 14:36:34 [INFO]: Fetched all camps
+2025-05-27 14:36:34 [INFO]: Request received {
+  "method": "GET",
+  "url": "/api/camps",
+  "headers": {
+    "host": "localhost:3000",
+    "connection": "keep-alive",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "accept": "application/json, text/plain, */*",
+    "sec-ch-ua-mobile": "?0",
+    "authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ2NDU2MmNmLTY0YjEtNGY3Yi04Y2MzLWQxYzY2ZDgzMWVjMCIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODMzMTM5NCwiZXhwIjoxNzQ4MzQyMTk0fQ.RA_B2Yo7ZMsw7SoEaq_MGwU--JET3VSwOQa5V_7LKTE",
+    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "origin": "http://localhost:5173",
+    "sec-fetch-site": "same-site",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-dest": "empty",
+    "referer": "http://localhost:5173/",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9",
+    "if-none-match": "W/\"3e3-m+dKOiRkUBTlK+dMUWe5mvrKpco\""
+  },
+  "body": {}
+}
+2025-05-27 14:36:34 [INFO]: Fetching all camps
+2025-05-27 14:36:34 [INFO]: Database query executed {
+  "sql": "SELECT id, camp_name, camp_location, created_at FROM camp",
+  "params": [],
+  "rowCount": 7,
+  "duration": "46ms"
+}
+2025-05-27 14:36:34 [INFO]: Fetched all camps
