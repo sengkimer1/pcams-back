@@ -52,7 +52,7 @@ const pgPool = connectPostgresDb();
 
 // Add CORS Middleware
 app.use(cors({
-  origin: "'http://127.0.0.1:3308'",
+  origin: "http://127.0.0.1:3308",
 }));
 
 // Middleware
