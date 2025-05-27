@@ -109,7 +109,8 @@ export class PostgresChildAttendanceRepository implements ChildAttendanceReposit
 
   async findByDateAndUserId(
     attendance_date: Date | null,
-    user_id: string | null
+    user_id: string | null,
+    onlyIncomplete = false
   ): Promise<ChildAttendance[]> {
     let query = `
       SELECT 
@@ -125,6 +126,9 @@ export class PostgresChildAttendanceRepository implements ChildAttendanceReposit
     const conditions: string[] = [];
     const values: (Date | string)[] = [];
     let paramIndex = 1;
+    if (onlyIncomplete) {
+      conditions.push(`ca.status IS NULL`);
+    }
   
     if (attendance_date) {
       conditions.push(`ca.attendance_date = $${paramIndex}`);
@@ -147,26 +151,30 @@ export class PostgresChildAttendanceRepository implements ChildAttendanceReposit
   }
   
   async createChildAttendanceList(
-    organizer_id: string
+    organizer_id: string,
+    attendance_date: string
   ): Promise<ChildAttendance[]> {
-    const attendance_date = new Date(); // Set to today's date
-    const { rows } = await this.pool.query(`
+    const { rows } = await this.pool.query(
+      `
       INSERT INTO child_attendance (
-         id, fullname, gender, age, family_id,
-         attendance_date, camp_event_id, user_id,
-         created_at, updated_at
-       )
-       SELECT 
-         gen_random_uuid(), fullname, gender, age, family_id,
-         $1, camp_event_id, user_id,
-         NOW(), NOW()
-       FROM child_attendance
-       WHERE user_id = $2
-       RETURNING *`,
+        id, fullname, gender, age, family_id,
+        attendance_date, camp_event_id, user_id,
+        created_at, updated_at
+      )
+      SELECT 
+        gen_random_uuid(), fullname, gender, age, family_id,
+        CURRENT_DATE, camp_event_id, user_id,
+        NOW(), NOW()
+      FROM child_attendance
+      WHERE DATE(attendance_date) = DATE($1) AND user_id = $2
+      RETURNING *`,
       [attendance_date, organizer_id]
     );
   
+    console.log(".............", attendance_date, organizer_id);
+  
     return rows;
   }
+  
   
 }
