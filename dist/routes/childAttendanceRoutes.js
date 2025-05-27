@@ -8,10 +8,10 @@ function childAttendanceRoutes(controller) {
     router.use(authMiddleware_1.authMiddleware);
     router.post("/", controller.createChildAttendance.bind(controller));
     router.get("/", controller.getAllChildAttendances.bind(controller));
+    router.get("/attendance", controller.getChildAttendanceByDateAndUser.bind(controller)); // New endpoint with query params
     router.get("/:id", controller.getChildAttendanceById.bind(controller));
-    router.patch("/:id/:state", controller.updateChildAttendance.bind(controller));
+    router.patch("/:id", controller.updateChildAttendance.bind(controller));
     router.delete("/:id", controller.deleteChildAttendance.bind(controller));
-    router.get("/attendance-date/:date", controller.getChildAttendanceByDate.bind(controller));
-    router.get("/created-by/:user_id", controller.getChildAttendanceByUser.bind(controller));
+    router.post("/checklist", controller.createChildAttendanceList.bind(controller));
     return router;
 }

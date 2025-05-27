@@ -37,5 +37,26 @@ class CampEventOrganizerController {
             next(err);
         }
     }
+    async updateCampEventOrganizer(req, res, next) {
+        try {
+            const { id } = req.params;
+            const { camp_event_id, user_id } = req.body;
+            const organizer = await this.service.updateCampEventOrganizer(id, { camp_event_id, user_id });
+            res.status(200).json({ message: "Camp event organizer updated", data: organizer });
+        }
+        catch (err) {
+            next(err);
+        }
+    }
+    async deleteCampEventOrganizer(req, res, next) {
+        try {
+            const { id } = req.params;
+            await this.service.deleteCampEventOrganizer(id);
+            res.status(200).json({ message: "Camp event organizer deleted" });
+        }
+        catch (err) {
+            next(err);
+        }
+    }
 }
 exports.CampEventOrganizerController = CampEventOrganizerController;
