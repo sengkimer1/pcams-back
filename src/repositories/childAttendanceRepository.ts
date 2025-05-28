@@ -44,16 +44,21 @@ export class PostgresChildAttendanceRepository implements ChildAttendanceReposit
   //   );
   //   return rows;
   // }
-  async findAll(): Promise<ChildAttendance[]> {
+  async findAll(userId: string): Promise<ChildAttendance[]> {
     const { rows } = await this.pool.query(
-      `SELECT 
-         ca.id, ca.fullname, ca.gender, ca.age, ca.family_id, 
-         ca.attendance_date, ca.status, ca.camp_event_id, ca.user_id, 
-         ca.created_at, ca.updated_at,
-         u.id as user_id, u.username, u.email
-       FROM child_attendance ca
-       JOIN users u ON ca.user_id = u.id`
-    );
+      `
+
+      SELECT 
+      ca.id, ca.fullname, ca.gender, ca.age, ca.family_id, 
+      ca.attendance_date, ca.status, ca.camp_event_id, ca.user_id, 
+      ca.created_at, ca.updated_at,
+      u.id AS user_id, u.username, u.email
+    FROM child_attendance ca
+    JOIN camp_event_organizer co ON co.camp_event_id = ca.camp_event_id
+    JOIN users u ON u.id = co.user_id
+    WHERE u.id = $1
+`
+    , [userId]);
     return rows;
   }
 

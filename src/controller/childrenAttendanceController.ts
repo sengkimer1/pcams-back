@@ -31,7 +31,8 @@ export class ChildAttendanceController {
 
   async getAllChildAttendances(req: Request, res: Response, next: NextFunction) {
     try {
-      const attendances = await this.service.getAllChildAttendances();
+      const { userId} = req.params;
+      const attendances = await this.service.getAllChildAttendances(userId);
       res.status(200).json({ data: attendances });
     } catch (err) {
       next(err);

@@ -16,7 +16,7 @@ export interface ChildAttendance {
   
   export interface ChildAttendanceRepository {
     create(data: Omit<ChildAttendance, "id" | "created_at" | "updated_at">): Promise<ChildAttendance>;
-    findAll(): Promise<ChildAttendance[]>;
+    findAll(userId: string): Promise<ChildAttendance[]>;
     findById(id: string): Promise<ChildAttendance | null>;
     update(id: string, data: Partial<ChildAttendance>): Promise<ChildAttendance>;
     delete(id: string): Promise<void>;
@@ -29,7 +29,7 @@ export interface ChildAttendance {
   
   export interface ChildAttendanceService {
     createChildAttendance(data: Omit<ChildAttendance, "id" | "created_at" | "updated_at">): Promise<ChildAttendance>;
-    getAllChildAttendances(): Promise<ChildAttendance[]>;
+    getAllChildAttendances(userId: string): Promise<ChildAttendance[]>;
     getChildAttendanceById(id: string): Promise<ChildAttendance>;
     updateChildAttendance(id: string, data: Partial<ChildAttendance>): Promise<ChildAttendance>;
     deleteChildAttendance(id: string): Promise<void>;

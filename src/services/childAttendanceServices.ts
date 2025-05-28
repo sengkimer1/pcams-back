@@ -13,8 +13,8 @@ export class ChildAttendanceService implements IChildAttendanceService {
     return this.repository.create(data);
   }
 
-  async getAllChildAttendances(): Promise<ChildAttendance[]> {
-    return this.repository.findAll();
+  async getAllChildAttendances(userId:string): Promise<ChildAttendance[]> {
+    return this.repository.findAll(userId);
   }
 
   async getChildAttendanceById(id: string): Promise<ChildAttendance> {
