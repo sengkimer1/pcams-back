@@ -71,4 +71,17 @@ export class PostgresCampEventOrganizerRepository implements CampEventOrganizerR
       throw new Error("Camp event organizer not found");
     }
   }
+
+  async findCampEventsByUserId(userId: string): Promise<any[]> {
+    const { rows } = await this.pool.query(
+      `SELECT ce.id, ce.camp_id, c.camp_name, ce.event_id, e.event_name, e.from_date, e.end_date
+       FROM camp_event_organizer ceo
+       JOIN camp_event ce ON ceo.camp_event_id = ce.id
+       JOIN camp c ON ce.camp_id = c.id
+       JOIN event e ON ce.event_id = e.id
+       WHERE ceo.user_id = $1`,
+      [userId]
+    );
+    return rows;
+  }
 }
