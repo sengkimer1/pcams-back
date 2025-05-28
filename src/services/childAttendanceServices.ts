@@ -51,7 +51,7 @@ export class ChildAttendanceService implements IChildAttendanceService {
   }
   async createChildAttendanceList(
     organizer_id: string,
-    attendance_date: Date
+    attendance_date: string
   ): Promise<ChildAttendance[]> {
     if (!organizer_id || !attendance_date) {
       throw new Error("organizer_id and attendance_date are required");

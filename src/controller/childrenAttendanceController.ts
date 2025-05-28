@@ -94,16 +94,21 @@ export class ChildAttendanceController {
         throw new Error("organizer_id is required");
       }
   
+      // Validate the format: YYYY-MM-DD
       const date = new Date(attendance_date);
       if (isNaN(date.getTime())) {
         throw new Error("Invalid attendance_date format. Use YYYY-MM-DD");
       }
   
-      const result = await this.service.createChildAttendanceList(organizer_id, date);
+      // Convert it back to 'YYYY-MM-DD' string to pass to service
+      const formattedDate = date.toISOString().split('T')[0];
+  
+      const result = await this.service.createChildAttendanceList(organizer_id, formattedDate);
       res.status(201).json({ data: result });
     } catch (err) {
       next(err);
     }
   }
+  
   
 }
