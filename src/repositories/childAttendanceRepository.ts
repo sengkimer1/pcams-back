@@ -44,6 +44,14 @@ export class PostgresChildAttendanceRepository implements ChildAttendanceReposit
     );
     return rows;
   }
+
+  // async findAllByUserId(userId: string): Promise<ChildAttendance[]> {
+  //   const { rows } = await this.pool.query(
+  //     `SELECT id, fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id, created_at, updated_at FROM child_attendance
+  //     WHERE user_id=$1
+  //     `, [userId]);
+  //   return rows;
+  // }
 //   async findAll(userId: string): Promise<ChildAttendance[]> {
 //     const { rows } = await this.pool.query(
 //       `

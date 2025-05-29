@@ -34,6 +34,7 @@ export interface IUserRepository {
   update(id: string, user: Partial<Omit<IUser, "id" | "password"> & { password?: string }>): Promise<IUserWithoutPassword | null>;
   delete(id: string): Promise<boolean>;
   getOneUserByRole(roleName: UserRole): Promise<IUserWithoutPassword | null>;
+  getUserbycamp(camp_event_id: string): Promise<IUserWithoutPassword[]>;
 }
 
 export interface IUserService {
@@ -44,4 +45,5 @@ export interface IUserService {
   updateUser(id: string, updateData: Partial<Omit<IUser, "id" | "password"> & { password?: string; nationality?: string }>): Promise<IUserWithoutPassword>;
   deleteUser(id: string): Promise<void>;
   getOneUserByRole(role: UserRole): Promise<IUserWithoutPassword>;
+  getUserbycamp(camp_event_id: string): Promise<IUserWithoutPassword[]>;
 }

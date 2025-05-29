@@ -75,9 +75,10 @@ const campEventService = new CampEventService(campEventRepository);
 const campEventOrganizerService = new CampEventOrganizerService(campEventOrganizerRepository);
 const childAttendanceService = new ChildAttendanceService(childAttendanceRepository);
 const dashboardService = new DashboardService(coordiantorRepository);
+
 // Controllers
 const authController = new AuthController(userService, campEventOrganizerService);
-const userController = new UserController(userService);
+const userController = new UserController(userService,campEventOrganizerService);
 const campController = new CampController(campService);
 const eventController = new EventController(eventService);
 const campEventController = new CampEventController(campEventService);

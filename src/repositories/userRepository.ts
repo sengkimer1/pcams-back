@@ -5,7 +5,7 @@ import { queryWithLogging } from "./utils";
 import { v4 as uuidv4 } from "uuid";
 
 export class PostgresUserRepository implements IUserRepository {
-  constructor(private pool: Pool) {}
+  constructor(private pool: Pool) { }
 
   async findAll(): Promise<IUserWithoutPassword[]> {
     const { rows } = await queryWithLogging(
@@ -109,4 +109,17 @@ export class PostgresUserRepository implements IUserRepository {
     );
     return rows[0] || null;
   }
+  async getUserbycamp(camp_event_id: string): Promise<IUserWithoutPassword[]> {
+    const { rows } = await queryWithLogging(
+      this.pool,
+      `SELECT b.* 
+       FROM public.camp_event_organizer a
+       JOIN public.users b ON a.user_id = b.id
+       WHERE a.camp_event_id = $1`,
+      [camp_event_id]
+    );
+    return rows;
+  }
+  
+  
 }

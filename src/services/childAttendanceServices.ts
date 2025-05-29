@@ -35,7 +35,14 @@ export class ChildAttendanceService implements IChildAttendanceService {
   async deleteChildAttendance(id: string): Promise<void> {
     return this.repository.delete(id);
   }
-
+  async findByUserId(user_id: string): Promise<ChildAttendance[]> {
+    const attendances = await this.repository.findByUserId(user_id); // repo method returns ChildAttendance[]
+    if (!attendances || attendances.length === 0) {
+      throw new Error("Child attendance records not found");
+    }
+    return attendances;
+  }
+  
   async getChildAttendanceByDateAndUser(attendance_date: string | null, user_id: string | null): Promise<ChildAttendance[]> {
     let parsedDate: Date | null = null;
 

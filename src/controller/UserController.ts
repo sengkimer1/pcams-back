@@ -1,9 +1,17 @@
 import { Request, Response, NextFunction } from "express";
 import { IUserService, UserRole } from "../interfaces/userinterfaces";
 import { logger } from "../services/loggerService";
+import { AuthRequest } from "../middlewares/authMiddleware";
+import { CampEventOrganizerService } from "../services/campEventOrganizerService";
+
+
 
 export class UserController {
-  constructor(private userService: IUserService) {}
+  constructor(
+    private userService: IUserService,
+    private campEventOrganizerService: CampEventOrganizerService
+
+  ) {}
 
   async createUser(req: Request, res: Response, next: NextFunction) {
     try {
@@ -101,4 +109,36 @@ export class UserController {
       next(err);
     }
   }
+  async getUserbycamp(req: AuthRequest, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const userId = req.user?.id;
+
+    if (!userId) {
+      res.status(401).json({ message: 'Unauthorized: User not found' });
+      return;
+    }
+
+    const campEvents = await this.campEventOrganizerService.getCampEventsByUserId(userId);
+    const camp_event_id = campEvents?.[0]?.id;
+
+    if (!camp_event_id) {
+      res.status(400).json({ message: 'Camp event ID not found for user' });
+      return;
+    }
+
+    const user = await this.userService.getUserbycamp(camp_event_id);
+
+    logger.info("Fetched user by camp_event_id", { camp_event_id });
+
+    res.status(200).json(user); // ✅ don't return this line
+  } catch (err) {
+    logger.error("Error in getUserbycamp", {
+      error: err instanceof Error ? err.message : "Unknown error",
+    });
+    next(err);
+  }
+}
+
+  
+  
 }

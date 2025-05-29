@@ -108,4 +108,17 @@ export class UserService implements IUserService {
     }
     return user;
   }
+  async getUserbycamp(camp_event_id: string): Promise<IUserWithoutPassword[]> {
+    logger.info("Fetching users by camp_event_id", { camp_event_id });
+    
+    const users = await this.userRepository.getUserbycamp(camp_event_id);
+  
+    if (!users || users.length === 0) {
+      throw Object.assign(new Error("No users found for this camp event"), { status: 404 });
+    }
+  
+    return users;
+  }
+  
+ 
 }

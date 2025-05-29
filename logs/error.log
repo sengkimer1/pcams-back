@@ -1,0 +1,212 @@
+2025-05-29 10:24:48 [ERROR]: Database query failed {
+  "sql": "SELECT * FROM users WHERE email = $1",
+  "params": [
+    "kimer@gmail.com"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "duration": "12ms"
+}
+2025-05-29 10:24:48 [ERROR]: Login error {
+  "error": "connect ENETUNREACH 62.72.46.248:5432",
+  "email": "kimer@gmail.com"
+}
+2025-05-29 10:26:28 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "bycampevent"
+  ],
+  "error": "invalid input syntax for type uuid: \"bycampevent\"",
+  "duration": "500ms"
+}
+2025-05-29 10:26:28 [ERROR]: Error in getUserById {
+  "error": "invalid input syntax for type uuid: \"bycampevent\"",
+  "id": "bycampevent"
+}
+2025-05-29 10:26:48 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "bycampevent"
+  ],
+  "error": "invalid input syntax for type uuid: \"bycampevent\"",
+  "duration": "396ms"
+}
+2025-05-29 10:26:48 [ERROR]: Error in getUserById {
+  "error": "invalid input syntax for type uuid: \"bycampevent\"",
+  "id": "bycampevent"
+}
+2025-05-29 10:27:07 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "campevent"
+  ],
+  "error": "invalid input syntax for type uuid: \"campevent\"",
+  "duration": "511ms"
+}
+2025-05-29 10:27:07 [ERROR]: Error in getUserById {
+  "error": "invalid input syntax for type uuid: \"campevent\"",
+  "id": "campevent"
+}
+2025-05-29 10:31:28 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "campevent"
+  ],
+  "error": "invalid input syntax for type uuid: \"campevent\"",
+  "duration": "643ms"
+}
+2025-05-29 10:31:28 [ERROR]: Error in getUserById {
+  "error": "invalid input syntax for type uuid: \"campevent\"",
+  "id": "campevent"
+}
+2025-05-29 10:37:51 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "campevent"
+  ],
+  "error": "invalid input syntax for type uuid: \"campevent\"",
+  "duration": "418ms"
+}
+2025-05-29 10:37:51 [ERROR]: Error in getUserById {
+  "error": "invalid input syntax for type uuid: \"campevent\"",
+  "id": "campevent"
+}
+2025-05-29 10:40:02 [ERROR]: Error in getUserbycamp {
+  "error": "User by camp event id not found"
+}
+2025-05-29 10:42:22 [ERROR]: Error in getUserbycamp {
+  "error": "User by camp event id not found"
+}
+2025-05-29 10:56:47 [ERROR]: Error in getUserbycamp {
+  "error": "connect EHOSTUNREACH 62.72.46.248:5432"
+}
+2025-05-29 11:10:27 [ERROR]: Database query failed {
+  "sql": "  SELECT * \n  FROM public.camp_event_organizer a\n  JOIN public.users b ON a.user_id = b.id\n  WHERE camp_event_id = $1\n  AND a.user_id = $2\n",
+  "params": [
+    "b87a33d8-3e71-4803-bd78-8baf3f2bdbb6"
+  ],
+  "error": "bind message supplies 1 parameters, but prepared statement \"\" requires 2",
+  "duration": "82ms"
+}
+2025-05-29 11:10:27 [ERROR]: Error in getUserbycamp {
+  "error": "bind message supplies 1 parameters, but prepared statement \"\" requires 2"
+}
+2025-05-29 11:10:30 [ERROR]: Database query failed {
+  "sql": "  SELECT * \n  FROM public.camp_event_organizer a\n  JOIN public.users b ON a.user_id = b.id\n  WHERE camp_event_id = $1\n  AND a.user_id = $2\n",
+  "params": [
+    "b87a33d8-3e71-4803-bd78-8baf3f2bdbb6"
+  ],
+  "error": "bind message supplies 1 parameters, but prepared statement \"\" requires 2",
+  "duration": "146ms"
+}
+2025-05-29 11:10:30 [ERROR]: Error in getUserbycamp {
+  "error": "bind message supplies 1 parameters, but prepared statement \"\" requires 2"
+}
+2025-05-29 11:12:06 [ERROR]: Database query failed {
+  "sql": "  SELECT * \n  FROM public.camp_event_organizer a\n  JOIN public.users b ON a.user_id = b.id\n  WHERE camp_event_id = $1\n  AND a.user_id = $2\n",
+  "params": [
+    "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+  ],
+  "error": "bind message supplies 1 parameters, but prepared statement \"\" requires 2",
+  "duration": "65ms"
+}
+2025-05-29 11:12:06 [ERROR]: Error in getUserbycamp {
+  "error": "bind message supplies 1 parameters, but prepared statement \"\" requires 2"
+}
+2025-05-29 11:12:08 [ERROR]: Database query failed {
+  "sql": "  SELECT * \n  FROM public.camp_event_organizer a\n  JOIN public.users b ON a.user_id = b.id\n  WHERE camp_event_id = $1\n  AND a.user_id = $2\n",
+  "params": [
+    "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+  ],
+  "error": "bind message supplies 1 parameters, but prepared statement \"\" requires 2",
+  "duration": "69ms"
+}
+2025-05-29 11:12:08 [ERROR]: Error in getUserbycamp {
+  "error": "bind message supplies 1 parameters, but prepared statement \"\" requires 2"
+}
+2025-05-29 11:13:20 [ERROR]: Database query failed {
+  "sql": "  SELECT ce.id, ce.camp_id, c.camp_name, ce.event_id, e.event_name, e.from_date, e.end_date\n       FROM camp_event_organizer ceo\n       JOIN camp_event ce ON ceo.camp_event_id = ce.id\n       JOIN camp c ON ce.camp_id = c.id\n       JOIN event e ON ce.event_id = e.id\n       WHERE ceo.user_id = $1\n",
+  "params": [
+    "b87a33d8-3e71-4803-bd78-8baf3f2bdbb6",
+    "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+  ],
+  "error": "bind message supplies 2 parameters, but prepared statement \"\" requires 1",
+  "duration": "293ms"
+}
+2025-05-29 11:13:20 [ERROR]: Error in getUserbycamp {
+  "error": "bind message supplies 2 parameters, but prepared statement \"\" requires 1"
+}
+2025-05-29 11:14:06 [ERROR]: Error in getUserbycamp {
+  "error": "User by camp event id not found"
+}
+2025-05-29 11:14:58 [ERROR]: Database query failed {
+  "sql": "  SELECT ce.id, ce.camp_id, c.camp_name, ce.event_id, e.event_name, e.from_date, e.end_date\n       FROM camp_event_organizer ceo\n       JOIN camp_event ce ON ceo.camp_event_id = ce.id\n       JOIN camp c ON ce.camp_id = c.id\n       JOIN event e ON ce.event_id = e.id\n       WHERE ceo.user_id = $1\n",
+  "params": [
+    "b87a33d8-3e71-4803-bd78-8baf3f2bdbb6",
+    "4d23157d-3963-4e85-b7f9-e6ad7ee6a4f2"
+  ],
+  "error": "bind message supplies 2 parameters, but prepared statement \"\" requires 1",
+  "duration": "123ms"
+}
+2025-05-29 11:14:58 [ERROR]: Error in getUserbycamp {
+  "error": "bind message supplies 2 parameters, but prepared statement \"\" requires 1"
+}
+2025-05-29 12:51:26 [ERROR]: Error in getUserbycamp {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)"
+}
+2025-05-29 12:51:26 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "1ms"
+}
+2025-05-29 12:51:26 [ERROR]: Error in getUserById {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-29 12:51:26 [ERROR]: Error in getUserbycamp {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)"
+}
+2025-05-29 12:51:26 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "1ms"
+}
+2025-05-29 12:51:26 [ERROR]: Error in getUserById {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-29 12:59:40 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "1ms"
+}
+2025-05-29 12:59:40 [ERROR]: Error in getUserById {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-29 12:59:40 [ERROR]: Error in getUserbycamp {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)"
+}
+2025-05-29 12:59:40 [ERROR]: Database query failed {
+  "sql": "SELECT id, username, email, role, nationality, created_at FROM users WHERE id = $1",
+  "params": [
+    "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+  ],
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "duration": "2ms"
+}
+2025-05-29 12:59:40 [ERROR]: Error in getUserById {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)",
+  "id": "d64562cf-64b1-4f7b-8cc3-d1c66d831ec0"
+}
+2025-05-29 12:59:40 [ERROR]: Error in getUserbycamp {
+  "error": "connect ENETUNREACH 62.72.46.248:5432 - Local (0.0.0.0:0)"
+}

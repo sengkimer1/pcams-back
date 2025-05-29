@@ -110,6 +110,19 @@ export class ChildAttendanceController {
       next(err);
     }
   }
-  
+  async getByUserId(req: AuthRequest, res: Response) {
+    try {
+      const user_id = req.user?.id;
+      if (!user_id) {
+        throw new Error("User ID not found in token");
+      }  // assuming route param named userId
+      const attendances = await this.service.findByUserId(user_id);
+      res.status(200).json(attendances);
+    } catch (error) {
+      console.error('Error fetching child attendance:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  }
+
   
 }

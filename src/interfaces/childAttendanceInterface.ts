@@ -35,5 +35,7 @@ export interface ChildAttendance {
     deleteChildAttendance(id: string): Promise<void>;
     getChildAttendanceByDateAndUser(attendance_date: string | null, user_id: string | null): Promise<ChildAttendance[]>; 
     createChildAttendanceList(organizer_id: string,attendance_date: string ): Promise<ChildAttendance[]>;
+    findByUserId(user_id: string): Promise<ChildAttendance[]>;
+
       }
   
