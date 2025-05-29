@@ -38,29 +38,29 @@ export class PostgresChildAttendanceRepository implements ChildAttendanceReposit
   }
   
 
-  // async findAll(): Promise<ChildAttendance[]> {
-  //   const { rows } = await this.pool.query(
-  //     `SELECT id, fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id, created_at, updated_at FROM child_attendance`
-  //   );
-  //   return rows;
-  // }
-  async findAll(userId: string): Promise<ChildAttendance[]> {
+  async findAll(): Promise<ChildAttendance[]> {
     const { rows } = await this.pool.query(
-      `
-
-      SELECT 
-      ca.id, ca.fullname, ca.gender, ca.age, ca.family_id, 
-      ca.attendance_date, ca.status, ca.camp_event_id, ca.user_id, 
-      ca.created_at, ca.updated_at,
-      u.id AS user_id, u.username, u.email
-    FROM child_attendance ca
-    JOIN camp_event_organizer co ON co.camp_event_id = ca.camp_event_id
-    JOIN users u ON u.id = co.user_id
-    WHERE u.id = $1
-`
-    , [userId]);
+      `SELECT id, fullname, gender, age, family_id, attendance_date, status, camp_event_id, user_id, created_at, updated_at FROM child_attendance`
+    );
     return rows;
   }
+//   async findAll(userId: string): Promise<ChildAttendance[]> {
+//     const { rows } = await this.pool.query(
+//       `
+
+//       SELECT 
+//       ca.id, ca.fullname, ca.gender, ca.age, ca.family_id, 
+//       ca.attendance_date, ca.status, ca.camp_event_id, ca.user_id, 
+//       ca.created_at, ca.updated_at,
+//       u.id AS user_id, u.username, u.email
+//     FROM child_attendance ca
+//     JOIN camp_event_organizer co ON co.camp_event_id = ca.camp_event_id
+//     JOIN users u ON u.id = co.user_id
+//     WHERE u.id = $1
+// `
+//     , [userId]);
+//     return rows;
+//   }
 
   async findById(id: string): Promise<ChildAttendance | null> {
     const { rows } = await this.pool.query(
