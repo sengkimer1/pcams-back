@@ -52,7 +52,7 @@ const pgPool = connectPostgresDb();
 
 // Add CORS Middleware
 app.use(cors({
-  origin: "http://pse-camp-attendance.final25.psewmad.org",
+  origin: "*",
 }));
 
 // Middleware
